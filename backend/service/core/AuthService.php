@@ -27,9 +27,7 @@ class AuthService extends BaseService
                 $res=AlphaUsers::findOne($uid);
                 if ($res && $res->user_status != AlphaUsers::STOP) {
                     CookieE::setCookie("UID", set_secret($uid), 604800);
-
                     self::$uid = $uid;
-
                     $flag = true;
                 }
             }
@@ -38,7 +36,5 @@ class AuthService extends BaseService
         }
         return $flag;
     }
-
     //权限验证
-
 }

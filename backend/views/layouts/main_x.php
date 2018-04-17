@@ -5,16 +5,19 @@ use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\helpers\Url;
 use yii\widgets\Breadcrumbs;
-use common\widgets\Alert;
+AppAsset::register($this);
 ?>
+<?php $this->beginPage() ?>
 <!DOCTYPE html>
-<html lang="">
+<html lang="<?= Yii::$app->language ?>">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <?= Html::csrfMetaTags() ?>
+    <title><?= Html::encode($this->title) ?></title>
     <link rel="icon" href="upload/admin/common/logo.png" type="image/x-icon" />
-    <?=$this->render('head_out')?>
+    <?php $this->head() ?>
     <style type="text/css">
         html, body{
             overflow: hidden;
@@ -22,6 +25,7 @@ use common\widgets\Alert;
     </style>
 </head>
 <body>
+<?php $this->beginBody() ?>
 <div class="animated fadeIn page-container page-navigation-top-fixed">
     <?=$this->render('sidebar')?>
     <div class="page-content">
@@ -29,6 +33,7 @@ use common\widgets\Alert;
         <iframe id="frame" width="100%" height="99%" src="<?= Url::to(['core/admin/index'])?>" frameborder="0"></iframe>
     </div>
 </div>
+<?php $this->endBody() ?>
 <?=$this->render('alert')?>
 <script type="text/javascript" src="alpha/js/plugins/jquery/jquery.min.js"></script>
 <script type="text/javascript" src="alpha/js/plugins/jquery/jquery-ui.min.js"></script>
@@ -43,3 +48,4 @@ use common\widgets\Alert;
 <script type="text/javascript" src="alpha/js/actions.js"></script>
 </body>
 </html>
+<?php $this->endPage() ?>

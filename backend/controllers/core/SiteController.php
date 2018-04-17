@@ -12,6 +12,7 @@ use yii\helpers\Url;
  */
 class SiteController extends BaseController
 {
+    public $layout = false;
     public function actionIndex()
     {
         InitService::InitAdminData();

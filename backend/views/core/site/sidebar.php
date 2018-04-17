@@ -28,7 +28,7 @@ $role_name = $this->params['role_name'];
         <?php foreach ($menuAuth as $k=>$v){?>
             <?php if (empty($v['child'])){?>
                 <li  class="<?=in_array($v['id'],$menuNavList)?'active':''?> active_li">
-                    <a href="#"  data-url="<?= Url::to([$v['module'].'/'.$v['controller'].'/'.$v['method']])?>" onclick="turn_url(this)"><span class="<?=$v['icon']?>"></span> <span class="xn-text"><?=$v['name']?></span></a>
+                    <a href="#"  data-url="<?= Url::to([$v['controller'].'/'.$v['method']])?>" onclick="turn_url(this)"><span class="<?=$v['icon']?>"></span> <span class="xn-text"><?=$v['name']?></span></a>
                 </li>
                 <?php }else{?>
                 <li class="<?=in_array($v['id'],$menuNavList)?'active':''?> xn-openable">
@@ -36,12 +36,12 @@ $role_name = $this->params['role_name'];
                     <ul>
                         <?php foreach ($v['child'] as $k1=>$v1){?>
                             <?php if (empty($v1['child'])){?>
-                            <li class="<?=in_array($v1['id'],$menuNavList)?'active':''?> active_li"><a href="#" data-url="<?= Url::to([$v1['module'].'/'.$v1['controller'].'/'.$v1['method']])?>" onclick="turn_url(this)"><span class="<?=$v1['icon']?>"></span><?=$v1['name']?></a></li>
+                            <li class="<?=in_array($v1['id'],$menuNavList)?'active':''?> active_li"><a href="#" data-url="<?= Url::to([$v1['controller'].'/'.$v1['method']])?>" onclick="turn_url(this)"><span class="<?=$v1['icon']?>"></span><?=$v1['name']?></a></li>
                              <?php }else{?>
                             <li><a href="#"><span class="<?=$v1['icon']?>"></span><?=$v1['name']?></a>
                                 <ul>
                                     <?php foreach ($v['child'] as $k2=>$v2){?>
-                                    <li  class="<?=in_array($v1['id'],$menuNavList)?'active':''?> active_li"><a href="#" data-url="<?= Url::to([$v2['module'].'/'.$v2['controller'].'/'.$v2['method']])?>" onclick="turn_url(this)"><span class="<?=$v2['icon']?>"></span><?=$v2['name']?></a></li>
+                                    <li  class="<?=in_array($v1['id'],$menuNavList)?'active':''?> active_li"><a href="#" data-url="<?= Url::to([$v2['controller'].'/'.$v2['method']])?>" onclick="turn_url(this)"><span class="<?=$v2['icon']?>"></span><?=$v2['name']?></a></li>
                                    <?php }?>
                                 </ul>
                             </li>

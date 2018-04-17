@@ -40,7 +40,6 @@
     ],
     "autoload": {
         "files": [
-            "common/components/functions.php"
         ]
     }
 }
