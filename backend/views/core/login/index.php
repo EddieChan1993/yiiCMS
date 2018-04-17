@@ -9,7 +9,7 @@ use yii\helpers\Url;
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="upload/admin/common/logo.png" type="image/x-icon" />
     <!-- END META SECTION -->
     <!-- CSS INCLUDE -->
     <link rel="stylesheet" type="text/css" id="theme" href="alpha/css/theme-default.css"/>
@@ -41,7 +41,7 @@ use yii\helpers\Url;
         <div  class="login-logo animated bounceIn"></div>
         <div  class="login-body ">
             <div class="login-title animated fadeIn"><strong>欢迎使用</strong>, 请登录</div>
-            <form open_verify="" id="login_in_form" action="<?=Url::to(['login-think'])?>" class="form-horizontal" method="post">
+            <form open_verify="<?=YII_ENV?>" id="login_in_form" action="<?=Url::to(['login-think'])?>" class="form-horizontal" method="post">
                 <div class="form-group">
                     <div class="col-md-12">
                         <input name="username" type="text" class="form-control" placeholder="用户名"/>

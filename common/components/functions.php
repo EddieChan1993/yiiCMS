@@ -8,6 +8,7 @@
 // +----------------------------------------------------------------------
 // | Author: 流年 <liu21st@gmail.com>
 // +----------------------------------------------------------------------
+use common\helps\Tree;
 use think\cache\driver\Memcache;
 use think\Db;
 use think\Log;
@@ -118,9 +119,9 @@ function set_secret($txt)
  * @param string $key 解密密钥，默认读取data_auth_key配置
  * @return string 解密后的字符串
  */
-function open_secret($txt, $key = null)
+function open_secret($txt)
 {
-    empty($key) && $key = config('data_auth_key');
+    $key = "GLZpriHMdRo5Slmau9zeFxkhIBNwPEOyW6104UT3";
     $chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-=_";
     $ch = $txt[0];
     $nh = strpos($chars, $ch);
@@ -318,7 +319,7 @@ function tranTime($timeInt, $format = 'Y-m-d H:i:s')
 function get_tree_array($data, $parent_name)
 {
 
-    $tree = new \Tree();
+    $tree=new Tree();
     $tree->init($data, ['parentid' => $parent_name]);
     $menuList = $tree->get_arraylist($data);
 

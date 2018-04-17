@@ -26,8 +26,8 @@ AppAsset::register($this);
 </head>
 <body>
 <?php $this->beginBody() ?>
-<?=$this->params['data']?>
 <div class="animated fadeIn page-container page-navigation-top-fixed">
+    <?=$this->render('sidebar')?>
     <div class="page-content">
         <?=$this->render('nav')?>
         <iframe id="frame" width="100%" height="99%" src="" frameborder="0"></iframe>
