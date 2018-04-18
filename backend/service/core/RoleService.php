@@ -44,4 +44,14 @@ class RoleService extends AuthService
         }
         return $flag;
     }
+
+    public static function getOne($id)
+    {
+        $res=AlphaRole::find()
+            ->where(['id'=>$id])
+            ->asArray()
+            ->select();
+
+
+    }
 }

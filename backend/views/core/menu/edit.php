@@ -1,9 +1,10 @@
 <?php
+use common\helps\FormW;
 use \yii\helpers\Url;
 ?>
 <!DOCTYPE html>
 <div class="panel panel-default">
-    <form id="edit_form" method="post" action="<?=Url::to(['core/edit'])?>" class="form-horizontal" role="form">
+    <form id="edit_form" method="post" action="<?=Url::to(['core/menu/edit'])?>" class="form-horizontal" role="form">
         <input type="hidden" value="<?=$id?>" name="id">
         <div class="panel-body">
             <div class="row">
@@ -12,7 +13,7 @@ use \yii\helpers\Url;
                         <label class="col-xs-3 control-label">父级菜单</label>
                         <div class="col-xs-9">
                             <select name="parentid" class="form-control select">
-                                <option  value="">作为父级</option>
+                                <option  value="0">作为父级</option>
                                 <?php foreach ($menu_list as $k=>$v){?>
                                 <option <?=is_selected($parentid,$v['id'])?> value="<?=$v['id']?>"><?=$v['lefthtml']?><?=$v['name']?></option>
                                 <?php }?>
@@ -22,40 +23,38 @@ use \yii\helpers\Url;
                     <div class="form-group">
                         <label class="col-xs-3 control-label">菜单名称</label>
                         <div class="col-xs-9">
-                            <input name="name" value="<?=$name?>" type="text" class="form-control"/>
+                            <?=FormW::Input('name',$name)?>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-xs-3 control-label">@控制器/方法</label>
                         <div class="col-xs-3">
-                            <input name="controller" type="text" value="<?=$controller?>" class="form-control"/>
+                            <?=FormW::Input('controller',$controller)?>
                             <span class="help-block">控制器</span>
                         </div>
                         <div class="col-xs-3">
-                            <input value="<?=$method?>" name="method" type="text"  class="form-control"/>
+                            <?=FormW::Input('method',$method)?>
                             <span class="help-block">若有子级菜单，填写default</span>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-xs-3 control-label">菜单徽标</div>
                         <div class="col-xs-9">
-                            <input value="<?=$icon?>" name="icon" type="text" class="form-control"/>
+                            <?=FormW::Input('icon',$icon)?>
                             <span class="help-block">格式:fa fa-users</span>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-xs-3 control-label">备注</label>
                         <div class="col-xs-9 col-xs-12">
-                            <textarea name="remark" class="form-control" rows="5"><?=$remark?></textarea>
+                            <?=FormW::TextArea('remark',5,$remark)?>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-xs-3 control-label">菜单类型</label>
                         <div class="col-xs-9">
-                            <select name="type" class="form-control select">
-                                <option <?=is_selected($type,0)?> value="0">菜单</option>
-                                <option <?=is_selected($type,1)?> value="1">权限认证</option>
-                            </select>
+                            <?=FormW::Select('type',["菜单","权限认证"],$type)?>
+
                             <span class="help-block">【菜单】显示在左边栏的内容</span>
                             <span class="help-block">【权限认证】仅作为功能，不显示</span>
                         </div>

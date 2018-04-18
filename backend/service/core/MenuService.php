@@ -38,19 +38,13 @@ class MenuService extends AuthService
         $flag = false;
         try {
             $menuModel = new AlphaMenu();
-            $menuModel->controller = $postData['controller'];
-            $menuModel->method = $postData['method'];
-            $menuModel->remark = $postData['remark'];
-            $menuModel->name = $postData['name'];
             $menuModel->parentid = $postData['parentid'];
-            $menuModel->icon = $postData['icon'];
-            $menuModel->type = $postData['type'];
             $menuModel->status = !empty($postData['status']) ? $postData['status'] : AlphaMenu::STOP;
+            $menuModel->load($postData);
 
             if (!$menuModel->save()) {
                 throw new \Exception(current($menuModel->getFirstErrors()));
             }
-
             $menuModel->nav_list = get_menu_nav($menuModel->id, $postData['parentid']);
             if (!$menuModel->save()) {
                 throw new \Exception(current($menuModel->getFirstErrors()));
@@ -83,15 +77,9 @@ class MenuService extends AuthService
         $flag = false;
         try {
             $menuModel = AlphaMenu::findOne($postData['id']);
-            $menuModel->controller = $postData['controller'];
-            $menuModel->method = $postData['method'];
-            $menuModel->remark = $postData['remark'];
-            $menuModel->name = $postData['name'];
             $menuModel->parentid = $postData['parentid'];
-            $menuModel->icon = $postData['icon'];
-            $menuModel->type = $postData['type'];
             $menuModel->status = !empty($postData['status']) ? $postData['status'] : AlphaMenu::STOP;
-
+            $menuModel->load($postData);
             if (!$menuModel->save()) {
                 throw new \Exception(current($menuModel->getFirstErrors()));
             }

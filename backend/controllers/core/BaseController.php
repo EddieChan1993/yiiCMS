@@ -11,6 +11,7 @@ namespace backend\controllers\core;
 
 use app\models\AlphaMenu;
 use backend\service\core\AuthService;
+use backend\service\core\CurdService;
 use Yii;
 use yii\data\Pagination;
 use yii\db\Query;
@@ -20,10 +21,6 @@ use yii\web\Response;
 
 class BaseController extends Controller
 {
-    public static $model;
-    //表数据的时间创建字段，如果调用getDataList，需要设置
-    public static $c_time_key="c_time";
-
     //总标题
     private $title="标题内容";
     //单页面
@@ -34,10 +31,12 @@ class BaseController extends Controller
 
     public function beforeAction($action)
     {
+
         if (!AuthService::isLogin()) {
             $this->redirect(Url::to(['/core/login/index']));
+        }else{
+            return true;
         }
-        return true;
     }
     /*页面标题设置
      * =============================================================*/
@@ -112,82 +111,23 @@ class BaseController extends Controller
         $response->send();
     }
 
-    /*条件查询
-     * =============================================================*/
-    /**
-     * @param $data
-     * @param null $filed 需要显示的字段
-     * @param string $c_time_key 创建时间key
-     * @return array
-     * @throws \Exception
-     */
-    protected static function getDataList($data, $filed = "*", $c_time_key='c_time')
-    {
-        if (empty(self::$model)) {
-            throw new \Exception("模型没有指定");
-        }
-
-        $query=(new Query())->from(self::$model);
-        if (!empty($data['condition']) && is_array($data['condition'])) {
-            foreach ($data['condition'] as $key => $val) {
-                if (!empty($val)||$val==="0") {
-                    //排除为空的字段
-                    $query->andFilterCompare($key, $val);
-                }
-            }
-        }
-        if (!empty($data['s_date']) && !empty($data['e_date'])) {
-            $query->andFilterCompare($c_time_key, ['BETWEEN',[strtotime($data['s_date']),strtotime($data['e_date'])+86400]]);
-        }
-        if (!empty($data['s_date'])&&empty($data['e_date'])) {
-            $query->andFilterCompare($c_time_key, ['>=',strtotime($data['s_date'])]);
-        }
-        if (!empty($data['e_date'])&&empty($data['s_date'])) {
-            $query->andFilterCompare($c_time_key, ['<=',strtotime($data['e_date'])]);
-        }
-
-        $countNums = $query->count();
-        $pagination = new Pagination([
-            'defaultPageSize' => 13,
-            'totalCount' => $countNums,
-        ]);
-        $lists = $query->orderBy("$c_time_key desc")
-            ->offset($pagination->offset)
-            ->limit($pagination->limit)
-            ->select($filed)
-            ->all();
-
-        $pages = getPageWidge($pagination);
-        $data = [
-            'dataArr' => $lists,//每页数据
-            'pages' => $pages,//分页按钮
-            'dataNums' => $countNums,//总个数
-            'get'=>$_GET
-        ];
-        return $data;
-    }
-
     /*CURD
   * =============================================================*/
     function actionIndex()
     {
-        $get = $_GET;
-        $res=self::getDataList($get,'*',self::$c_time_key);
+        $res=CurdService::getDataList($_GET,'*',CurdService::getCTimeKey());
         return $this->render('index', $res);
     }
 
     function actionAdd()
     {
-
     }
 
     function actionUpdate()
     {
-
     }
 
     function actionDel()
     {
-
     }
 }

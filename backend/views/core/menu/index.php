@@ -6,6 +6,7 @@
  * Time: 19:45
  */
 
+use common\helps\FormW;
 use yii\helpers\Url;
 
 $title = $this->params['title'];
@@ -70,7 +71,7 @@ $tab_2 = $this->params['tab_2'];
                                             <label class="col-md-3 control-label">父级菜单</label>
                                             <div class="col-md-9">
                                                 <select name="parentid" class="form-control select">
-                                                    <option  value="">作为父级</option>
+                                                    <option  value="0">作为父级</option>
                                                     <?php foreach ($menu_list as $k=>$v){ ?>
                                                         <?php if(!empty($menuChild)){?>
                                                              <option <?=is_selected($menuChild,$v['id'])?> value="<?=$v['id']?>"><?=$v['lefthtml']?><?=$v['name']?></option>
@@ -84,40 +85,37 @@ $tab_2 = $this->params['tab_2'];
                                         <div class="form-group">
                                             <label class="col-md-3 control-label">菜单名称</label>
                                             <div class="col-md-9">
-                                                <input name="name" type="text" class="form-control"/>
+                                                <?=FormW::Input('name')?>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-md-3 control-label">@控制器/方法</label>
                                             <div class="col-xs-3">
-                                                <input name="controller" type="text" value="" class="form-control"/>
+                                                <?=FormW::Input('controller')?>
                                                 <span class="help-block">控制器,若有子级菜单，则选择Default</span>
                                             </div>
                                             <div class="col-md-3">
-                                                <input name="method" type="text" value="" class="form-control"/>
+                                                <?=FormW::Input('method')?>
                                                 <span class="help-block">若有子级菜单，填写default</span>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <div class="col-md-3 control-label">菜单徽标</div>
                                             <div class="col-md-9">
-                                                <input name="icon" type="text" class="form-control"/>
+                                                <?=FormW::Input('icon')?>
                                                 <span class="help-block">格式:fa fa-users</span>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-md-3 control-label">备注</label>
                                             <div class="col-md-9 col-xs-12">
-                                                <textarea name="remark" class="form-control" rows="5"></textarea>
+                                                <?=FormW::TextArea('remark')?>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-md-3 control-label">菜单类型</label>
                                             <div class="col-md-9">
-                                                <select name="type" class="form-control select">
-                                                    <option value="0">菜单</option>
-                                                    <option value="1">权限认证</option>
-                                                </select>
+                                                <?=FormW::Select('type',["菜单","权限认证"])?>
                                                 <span class="help-block">【菜单】显示在左边栏的内容</span>
                                                 <span class="help-block">【权限认证】仅作为功能，不显示</span>
                                             </div>

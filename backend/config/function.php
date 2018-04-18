@@ -64,12 +64,16 @@ function get_menu_nav($menu_id,$parend_id)
         ->where(['id' => $parend_id])
         ->select('nav_list')
         ->one();
-    $parent_nav = $parend_nav->nav_list;
-    $nav = '';
-    if (!empty($parent_nav)) {
-        $nav .=$parent_nav.'-';
+    if (empty($parend_nav)) {
+        $nav =$menu_id."";
+    }else{
+        $parent_nav = $parend_nav->nav_list;
+        $nav = '';
+        if (!empty($parent_nav)) {
+            $nav .=$parent_nav.'-';
+        }
+        $nav .=$menu_id;
     }
-    $nav .=$menu_id;
     return $nav;
 }
 

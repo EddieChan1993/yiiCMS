@@ -24,8 +24,9 @@ class LoginController extends BaseController
     {
         if (AuthService::isLogin()) {
             $this->redirect(Url::to(['/core/site/index']));
+        }else{
+            return true;
         }
-        return true;
     }
 
     function actionIndex()
