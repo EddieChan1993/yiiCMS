@@ -20,6 +20,8 @@ use Yii;
  */
 class AlphaRole extends \yii\db\ActiveRecord
 {
+    const STOP = 0;
+    const PASS = 1;
     /**
      * @inheritdoc
      */
@@ -35,10 +37,11 @@ class AlphaRole extends \yii\db\ActiveRecord
     {
         return [
             [['name'], 'required'],
+            [['name'], 'unique'],
             [['pid', 'create_time', 'update_time', 'listorder'], 'integer'],
             [['rules'], 'string'],
             [['name'], 'string', 'max' => 20],
-            [['status'], 'string', 'max' => 1],
+            [['status'], 'integer', 'max' => 1],
             [['remark', 'nav_list'], 'string', 'max' => 255],
         ];
     }
@@ -50,7 +53,7 @@ class AlphaRole extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'name' => 'Name',
+            'name' => '角色名称',
             'pid' => 'Pid',
             'status' => 'Status',
             'remark' => 'Remark',

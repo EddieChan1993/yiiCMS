@@ -7,16 +7,23 @@
  */
 
 use yii\helpers\Url;
+
+$title = $this->params['title'];
+$tab_1 = $this->params['tab_1'];
+$tab_2 = $this->params['tab_2'];
 ?>
+<div class="page-title">
+    <h2><span class="fa fa-arrow-circle-o-left"><?=$title?></span></h2>
+</div>
 <div class="row animated fadeIn">
     <div class="row">
         <div class="col-md-10">
             <div class="panel panel-default tabs">
                 <ul class="nav nav-tabs" role="tablist">
-                    <li class="<?=!empty($menuChild)?'':'active'?>"><a href="#tab-first" role="tab" data-toggle="tab">菜单列表
+                    <li class="<?=!empty($menuChild)?'':'active'?>"><a href="#tab-first" role="tab" data-toggle="tab"><?=$tab_1?>
                             <button class="btn btn-success btn-rounded btn-sm"><?=$menu_nums?></button>
                         </a></li>
-                    <li class="<?=!empty($menuChild)?'active':''?>""><a href="#tab-second" role="tab" data-toggle="tab">菜单添加</a></li>
+                    <li class="<?=!empty($menuChild)?'active':''?>""><a href="#tab-second" role="tab" data-toggle="tab"><?=$tab_1?></a></li>
                 </ul>
                 <div class="panel-body tab-content">
                     <div class="tab-pane <?=!empty($menuChild)?'':'active'?>" id="tab-first">
@@ -39,7 +46,7 @@ use yii\helpers\Url;
                                 <td>@<?=$v['controller']?>/<?=$v['method']?></td>
                                 <td><?=is_stop($v['status'])?></td>
                                 <td><i class="<?=$v['icon']?>"></i></td>
-                                <td><input onchange="change_order(this)" style="width: 70px" type="number" class="order_change form-control" data-url="<?= Url::to(['core/menu/updateOrder'])?>" pk-id="<?=$v['id']?>" value="<?=$v['listorder']?>"></td>
+                                <td><input onchange="change_order(this)" style="width: 70px" type="number" class="order_change form-control" data-url="<?= Url::to(['core/menu/update-order'])?>" pk-id="<?=$v['id']?>" value="<?=$v['listorder']?>"></td>
                                 <td>
                                     <a href="<?=Url::to(['core/menu/index','id'=>$v['id']])?>" class="btn btn-primary btn-rounded btn-sm"><span class="fa fa-plus"></span></a>
                                     <a title="<?=$v['name']?>【编辑】" data-url="<?=Url::to(['core/menu/edit','id'=>$v['id']])?>" onclick="edit_row(this)" class="btn btn-default btn-rounded btn-sm"><span class="fa fa-pencil"></span></a>
@@ -83,7 +90,7 @@ use yii\helpers\Url;
                                         <div class="form-group">
                                             <label class="col-md-3 control-label">@控制器/方法</label>
                                             <div class="col-xs-3">
-                                                <input name="extra_controller" type="text" value="" class="form-control"/>
+                                                <input name="controller" type="text" value="" class="form-control"/>
                                                 <span class="help-block">控制器,若有子级菜单，则选择Default</span>
                                             </div>
                                             <div class="col-md-3">

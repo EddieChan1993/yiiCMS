@@ -1,15 +1,20 @@
-{extend name='Public:content'/}
-{block name='title'}{$title}{/block}
-{block name='content'}
+<?php
+$title = $this->params['title'];
+$tab_1 = $this->params['tab_1'];
+$tab_2 = $this->params['tab_2'];
+?>
+<div class="page-title">
+    <h2><span class="fa fa-arrow-circle-o-left"><?=$title?></span></h2>
+</div>
 <div class="row animated fadeIn">
     <div class="row">
         <div class="col-md-8">
             <div class="panel panel-default tabs">
                 <ul class="nav nav-tabs" role="tablist">
-                    <li class="active"><a href="#tab-first" role="tab" data-toggle="tab">{$tab_1}
+                    <li class="active"><a href="#tab-first" role="tab" data-toggle="tab"><?=$tab_1?>
                         <button class="btn btn-success btn-rounded btn-sm">{$dataNums}</button>
                     </a></li>
-                    <li><a href="#tab-second" role="tab" data-toggle="tab">{$tab_2}</a></li>
+                    <li><a href="#tab-second" role="tab" data-toggle="tab"><?=$tab_2?></a></li>
                 </ul>
                 <div class="panel-body tab-content">
                     <div class="tab-pane active" id="tab-first">
@@ -223,4 +228,3 @@
         "order": [],
     });
 </script>
-{/block}

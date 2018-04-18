@@ -14,12 +14,9 @@ class LoginService extends BaseService
     {
         $flag = false;
         try {
-            $validate = new Validate([
-                ['username', 'require', '用户名必须填写'],
-                ['password', 'require', '密码必须填写'],
-            ]);
-            if (!$validate->check($postData)) {
-                throw new \Exception($validate->getError());
+
+            if (empty($postData['username']) || empty($postData['password'])) {
+                throw new \Exception("用户名或密码不能为空");
             }
             if (YII_ENV == 'prod') {
                 //生产模式

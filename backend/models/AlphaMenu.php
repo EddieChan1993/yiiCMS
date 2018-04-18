@@ -23,6 +23,11 @@ use Yii;
  */
 class AlphaMenu extends \yii\db\ActiveRecord
 {
+    const STOP = 0;
+    const PASS = 1;
+
+    const ONLY_MENU = 0;
+    const AUTH_MENU = 1;
     /**
      * @inheritdoc
      */
@@ -39,9 +44,11 @@ class AlphaMenu extends \yii\db\ActiveRecord
         return [
             [['parentid', 'listorder'], 'integer'],
             [['name'], 'required'],
+            [['name'], 'unique'],
             [['module', 'controller'], 'string', 'max' => 30],
+            [['module', 'controller'], 'required'],
             [['method', 'data', 'name', 'icon'], 'string', 'max' => 50],
-            [['type', 'status'], 'string', 'max' => 1],
+            [['type', 'status'], 'integer', 'max' => 1],
             [['remark', 'nav_list'], 'string', 'max' => 255],
         ];
     }
@@ -55,12 +62,12 @@ class AlphaMenu extends \yii\db\ActiveRecord
             'id' => 'ID',
             'parentid' => 'Parentid',
             'module' => 'Module',
-            'controller' => 'Controller',
-            'method' => 'Method',
+            'controller' => '控制器',
+            'method' => '方法',
             'data' => 'Data',
             'type' => 'Type',
             'status' => 'Status',
-            'name' => 'Name',
+            'name' => '菜单名称',
             'icon' => 'Icon',
             'remark' => 'Remark',
             'listorder' => 'Listorder',

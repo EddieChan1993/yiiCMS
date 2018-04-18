@@ -107,8 +107,8 @@ class AuthE
         if (in_array($uid,$this->_config['auth_open_id'])){
             //超级用户id，不需要被验证，拥有所有权限
             $req = [
-                'type' => 0,
-                'status' => 1,//没被禁用的
+                'type' => AlphaMenu::ONLY_MENU,
+                'status' => AlphaMenu::PASS,//没被禁用的
             ];
         } else {
             $groupAccess = AlphaRoleUser::findOne(['user_id', $uid]);
@@ -119,7 +119,7 @@ class AuthE
             $req = [
                 'and',
                 ['in','id',$rules],
-                ['type'=>0,'staus'=>1]
+                ['type'=>AlphaMenu::ONLY_MENU,'staus'=>AlphaMenu::PASS]
             ];
         }
 

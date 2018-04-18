@@ -12,7 +12,7 @@ function delete_row(dom){
     }, function(index){
         //调取服务器
         $.post(del_url,function (res) {
-            if(res.code) {
+            if(res.error==0) {
                 parent.m_success(res.msg,{time:500})
                 del_tr=$(dom).parents('.del_tr');
                 del_tr.hide("slow",function(){
@@ -41,7 +41,7 @@ function showRequest() {
 
 function showResponse(res) {
     parent.destory();
-    if(res.code) {
+    if(res.error==0) {
         parent.m_success(res.msg,{
             time:500,
         },function () {
@@ -51,7 +51,7 @@ function showResponse(res) {
             }, function (index) {
                 layer.close(index);
             },function (index) {
-                window.location.href=res.url
+                window.location.reload()
             });
         })
     }else{
@@ -91,12 +91,39 @@ function editRequest() {
 function editResponse(res) {
     var index = parent.layer.getFrameIndex(window.name); //获取窗口索引
     destory();
-    if(res.code) {
+    if(res.error==0) {
         m_success(res.msg,{
             time:500
         },function () {
             parent.layer.close(index);
-            window.location.href=res.url
+            window.location.reload()
+        })
+    }else{
+        m_error(res.msg);
+    }
+}
+
+/*========================================================菜单编辑=====================================================*/
+//编辑提交处理
+$('#edit_menu_form').ajaxForm({
+    beforeSubmit: editRequest,
+    success: editResponse
+});
+
+function editRequest() {
+    m_loading('数据提交中，请耐心等待...',{
+        time:-1
+    });
+}
+
+function editResponse(res) {
+    var index = parent.layer.getFrameIndex(window.name); //获取窗口索引
+    destory();
+    if(res.error==0) {
+        m_success(res.msg,{
+            time:500
+        },function () {
+            parent.layer.close(index);
         })
     }else{
         m_error(res.msg);

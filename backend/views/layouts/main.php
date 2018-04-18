@@ -29,9 +29,7 @@ AppAsset::register($this);
         <!-- START CONTENT FRAME -->
 
         <!-- START CONTENT FRAME TOP -->
-        <div class="page-title">
-            <h2><span class="fa fa-arrow-circle-o-left">213123</span></h2>
-        </div>
+
         <!-- END CONTENT FRAME TOP -->
 
         <div class="content-frame-body content-frame-body-left">
