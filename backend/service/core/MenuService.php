@@ -35,6 +35,8 @@ class MenuService extends AuthService
 
     public static function add(array $postData):bool
     {
+        $db = \Yii::$app->db;
+        $trans = $db->beginTransaction();
         $flag = false;
         try {
             $menuModel = new AlphaMenu();
@@ -50,7 +52,9 @@ class MenuService extends AuthService
                 throw new \Exception(current($menuModel->getFirstErrors()));
             }
             $flag = true;
+            $trans->commit();
         } catch (\Exception $e) {
+            $trans->rollBack();
             self::setErr($e);
         }
         return $flag;
@@ -74,6 +78,8 @@ class MenuService extends AuthService
 
     public static function edit(array $postData):bool
     {
+        $db = \Yii::$app->db;
+        $trans = $db->beginTransaction();
         $flag = false;
         try {
             $menuModel = AlphaMenu::findOne($postData['id']);
@@ -83,17 +89,16 @@ class MenuService extends AuthService
             if (!$menuModel->save()) {
                 throw new \Exception(current($menuModel->getFirstErrors()));
             }
-
             $menuModel->nav_list = get_menu_nav($menuModel->id, $postData['parentid']);
             if (!$menuModel->save()) {
                 throw new \Exception(current($menuModel->getFirstErrors()));
             }
             $flag = true;
-
+            $trans->commit();
         } catch (\Exception $e) {
+            $trans->rollBack();
             self::setErr($e);
         }
-
         return $flag;
     }
 

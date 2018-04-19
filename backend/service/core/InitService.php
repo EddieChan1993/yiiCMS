@@ -9,6 +9,7 @@
 namespace backend\service\core;
 
 
+use app\models\AlphaMenu;
 use app\models\AlphaRole;
 use app\models\AlphaRoleUser;
 use app\models\AlphaUsers;
@@ -23,6 +24,29 @@ class InitService extends AuthService
         self::authMenu();
         self::menuNavList();
         self::adminUserInfo();
+        return self::getNowMenuContent();
+    }
+
+    //获取初始化显示页面
+    public static function  getNowMenuContent()
+    {
+        $uid = self::$uid;
+        $navList = AlphaUsers::find()
+            ->alias('u')
+            ->asArray()
+            ->leftJoin(AlphaRoleUser::tableName().' As ra', 'ra.user_id=u.id')
+            ->leftJoin(AlphaRole::tableName().' As r', 'r.id=ra.role_id')
+            ->where(['ra.user_id'=>$uid])
+            ->select('r.nav_list')
+            ->one();
+        $lastMenuId = explode('-', $navList['nav_list']);
+        $menuId= end($lastMenuId);
+        return AlphaMenu::find()
+            ->asArray()
+            ->where(['id' => $menuId])
+            ->select('controller,method')
+            ->one();
+
     }
 
     /**

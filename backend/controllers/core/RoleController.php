@@ -13,6 +13,7 @@ use app\models\AlphaRole;
 use app\models\AlphaUsers;
 use backend\service\core\CurdService;
 use backend\service\core\RoleService;
+use yii\rbac\Role;
 
 class RoleController extends BaseController
 {
@@ -51,10 +52,15 @@ class RoleController extends BaseController
     {
         $req = \Yii::$app->request;
         if ($req->isPost) {
-
+            $postData = $req->post();
+            $res = RoleService::Edit($postData);
+            if (!$res) {
+                self::warning(RoleService::getErr());
+            }
+            self::output("角色编辑成功");
         }else{
             $getData = $req->get();
-            $res = RoleService::getOne($getData->id);
+            $res = RoleService::getOne($getData['id']);
             return $this->render('edit', $res);
         }
     }

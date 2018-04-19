@@ -438,6 +438,9 @@ function getAttr($json, $key)
 
 function my_sort($arrays, $sort_key, $sort_order = SORT_ASC, $sort_type = SORT_NUMERIC)
 {
+    if (empty($arrays)) {
+        return $arrays;
+    }
     if (is_array($arrays)) {
         foreach ($arrays as $array) {
             if (is_array($array)) {

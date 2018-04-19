@@ -15,8 +15,8 @@ class SiteController extends BaseController
     public $layout = false;
     public function actionIndex()
     {
-        InitService::InitAdminData();
-        return $this->render('index');
+        $res=InitService::InitAdminData();
+        return $this->render('index',$res);
     }
 
     //退出登录
