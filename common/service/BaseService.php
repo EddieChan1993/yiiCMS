@@ -18,6 +18,8 @@ class BaseService
 
     protected static function setErr($err)
     {
+        $str = sprintf("%s[%s:%s]",$err->getMessage(),$err->getFile(),$err->getLine());
+        \Yii::warning($str);
         self::$err = $err->getMessage();
     }
 }

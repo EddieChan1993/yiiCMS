@@ -18,7 +18,8 @@ var domain, img_url,url;
 function upload_single(dom,path,type) {
     type=type||'img';
     domain = getRootPath();
-    url = domain + '/admin.php/admin/core.Upload/show_upload_sigle/dom/'+dom+'/type/'+type+'/path/'+path+'.html';
+
+    url = domain + '/index.php?r=core/upload/show-upload-single&dom='+dom+'&type='+type+'&path='+path;
 
     layer.open({
         title:'单文件上传',

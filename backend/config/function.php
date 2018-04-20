@@ -7,6 +7,8 @@
  */
 
 use app\models\AlphaMenu;
+use app\models\AlphaRole;
+use app\models\AlphaRoleUser;
 use backend\controllers\core\BaseController;
 use yii\widgets\LinkPager;
 
@@ -97,4 +99,35 @@ function getPageWidge($page)
         'lastPageLabel' => '尾页',
         'options' => ['class' => 'pagination pagination-sm pull-right'],
     ]);
+}
+
+/**
+ * 默认图片
+ * @param $img
+ * @return string
+ */
+function is_img($img)
+{
+    $imgExa = Yii::getAlias("@web").'/upload/admin/common/upload.svg';
+    return !empty($img) ? $img : $imgExa;
+}
+
+/**
+ * 获取管理员角色
+ * @param $uid
+ * @return mixed
+ */
+function get_role($uid)
+{
+    $name=AlphaRole::find()
+        ->asArray()
+        ->alias('r')
+        ->leftJoin(AlphaRoleUser::tableName().' AS ra', 'r.id=ra.role_id')
+        ->select('name')
+        ->where(['ra.user_id'=>$uid])
+        ->one();
+    if (empty($name)) {
+        return "";
+    }
+    return $name['name'];
 }

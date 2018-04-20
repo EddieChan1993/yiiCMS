@@ -76,7 +76,7 @@ class RoleService extends AuthService
         return $role;
     }
 
-    public static function Edit(array $postData):bool
+    public static function edit(array $postData):bool
     {
         $flag = false;
         try {

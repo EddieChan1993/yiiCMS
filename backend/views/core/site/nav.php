@@ -1,3 +1,6 @@
+<?php
+use \yii\helpers\Url;
+?>
 <ul class="x-navigation x-navigation-horizontal x-navigation-panel">
     <!-- TOGGLE NAVIGATION -->
     <li class="xn-icon-button">
@@ -18,7 +21,7 @@
     <!-- END SIGN OUT -->
     <!-- MESSAGES -->
     <li class="xn-icon-button pull-right">
-        <a href="#" title="【编辑】" data-url="" onclick="edit_row(this)"><span class="fa fa-user"></span></a>
+        <a href="javascript:void(0)" title="【编辑】个人资料" data-url="<?=Url::to(['core/admin/edit-self'])?>" onclick="edit_row(this)"><span class="fa fa-user"></span></a>
         <div class="informer informer-danger"></div>
     </li>
     <li class="xn-icon-button pull-right">

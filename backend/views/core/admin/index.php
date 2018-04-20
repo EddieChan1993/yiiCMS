@@ -5,133 +5,88 @@
  * Date: 2018/4/17
  * Time: 16:53
  */
+
+use common\helps\FormW;
+use yii\helpers\Url;
+
+$title = $this->params['title'];
+$tab_1 = $this->params['tab_1'];
+$tab_2 = $this->params['tab_2'];
 ?>
+<div class="page-title">
+    <h2><span class="fa fa-arrow-circle-o-left"><?=$title?></span></h2>
+</div>
 <div class="row animated fadeIn">
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-9">
             <div class="panel panel-default tabs">
                 <ul class="nav nav-tabs" role="tablist">
-                    <li class="active"><a href="#tab-first" role="tab" data-toggle="tab">
-                            <button class="btn btn-success btn-rounded btn-sm">123</button>
+                    <li class="active"><a href="#tab-first" role="tab" data-toggle="tab"><?=$tab_1?>
+                            <button class="btn btn-success btn-rounded btn-sm"><?=$dataNums?></button>
                         </a></li>
-                    <li><a href="#tab-second" role="tab" data-toggle="tab">123</a></li>
+                    <li><a href="#tab-second" role="tab" data-toggle="tab"><?=$tab_2?></a></li>
                 </ul>
                 <div class="panel-body tab-content">
-                    <div class="tab-pane active" id="tab-first">
-                        <div class="alert alert-info" role="alert">
-                            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                            <strong>Heads up!</strong> This alert needs your attention, but it's not super important.
-                        </div>
-                        <table id="table_demo" class="table datatable table-hover">
-                            <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>Position</th>
-                                <th>Office</th>
-                                <th>Age</th>
-                                <th>Start date</th>
-                                <th>Salary</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr class="del_tr">
-                                <td>Tiger Nixon</td>
-                                <td>System Architect</td>
-                                <td>Edinburgh</td>
-                                <td>61</td>
-                                <td>2011/04/25</td>
-                                <td>
-                                    <a title="【编辑】" data-url="" onclick="edit_row(this)"  class="btn btn-default btn-rounded btn-sm"><span class="fa fa-pencil"></span></a>
-                                    <button onClick="delete_row(this);" data-url="" class="btn btn-danger btn-rounded btn-sm" ><span class="fa fa-times"></span></button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Garrett Winters</td>
-                                <td>Accountant</td>
-                                <td>Tokyo</td>
-                                <td>63</td>
-                                <td>2011/07/25</td>
-                                <td>$170,750</td>
-                            </tr>
-                            </tbody>
-                        </table>
-                        <h3>基本table</h3>
+                    <div class="active tab-pane" id="tab-first">
                         <table class="table table-hover">
                             <thead>
                             <tr>
-                                <th>Name</th>
-                                <th>Position</th>
-                                <th>Office</th>
-                                <th>Age</th>
-                                <th>Start date</th>
-                                <th>Salary</th>
+                                <th>登陆名</th>
+                                <th>头像</th>
+                                <th>登录次数</th>
+                                <th>角色</th>
+                                <th>注册时间</th>
+                                <th>最近登录IP</th>
+                                <th>最近登录时间</th>
+                                <th>状态</th>
+                                <th></th>
                             </tr>
                             </thead>
                             <tbody>
-                            <tr class="del_tr">
-                                <td>Tiger Nixon</td>
-                                <td>System Architect</td>
-                                <td>Edinburgh</td>
-                                <td>61</td>
-                                <td>2011/04/25</td>
-                                <td>
-                                    <a title="【编辑】" data-url="" onclick="edit_row(this)"  class="btn btn-default btn-rounded btn-sm"><span class="fa fa-pencil"></span></a>
-                                    <button onClick="delete_row(this);" class="btn btn-danger btn-rounded btn-sm" ><span class="fa fa-trash-o"></span></button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Garrett Winters</td>
-                                <td>Accountant</td>
-                                <td>Tokyo</td>
-                                <td>63</td>
-                                <td>2011/07/25</td>
-                                <td>$170,750</td>
-                            </tr>
+                            <?php foreach ($dataArr as $k=>$v){?>
+                                <tr class="del_tr">
+                                    <td><?=$v['user_login']?></td>
+                                    <td  style="background: url('<?=is_img($v['avatar'])?>');background-size: contain;background-repeat: no-repeat;"></td>
+                                    <td><span class="label label-danger"><?=$v['user_hits']?></span></td>
+                                    <td><span class="label label-info"><?=get_role($v['id'])?></span></td>
+                                    <td><?=tranTime($v['create_time'])?></td>
+                                    <td><?=$v['last_login_ip']?></td>
+                                    <td><?=tranTime($v['last_login_time'])?></td>
+                                    <td><?=is_stop($v['user_status'])?></td>
+                                    <td>
+                                        <?php if ($v['id']==1){?>
+                                            <?php if ($uid!=1){?>
+                                                <a disabled title="<?=$v['user_login']?>【编辑】"  class="btn btn-default btn-rounded btn-sm"><span class="fa fa-pencil"></span></a>
+                                               <?php }else{?>
+                                                <a title="<?=$v['user_login']?>【编辑】" data-url="<?= Url::to(['core/admin/edit','id'=>$v['id']])?>" onclick="edit_row(this)" class="btn btn-default btn-rounded btn-sm"><span class="fa fa-pencil"></span></a>
+                                            <?php }?>
+                                            <button disabled class="btn btn-danger btn-rounded btn-sm" ><span class="fa fa-trash-o"></span></button>
+                                            <?php }else{?>
+                                            <a title="<?=$v['user_login']?>【编辑】" data-url="<?=Url::to(['core/admin/edit','id'=>$v['id']])?>" onclick="edit_row(this)"  class="btn btn-default btn-rounded btn-sm"><span class="fa fa-pencil"></span></a>
+                                            <button data-url="<?=Url::to(['core/admin/del','id'=>$v['id']])?>" onClick="delete_row(this);" class="btn btn-danger btn-rounded btn-sm" ><span class="fa fa-trash-o"></span></button>
+                                        <?php }?>
+                                    </td>
+                                </tr>
+                            <?php }?>
                             </tbody>
                         </table>
+                        <?=$pages?>
                     </div>
                     <div class="tab-pane" id="tab-second">
-                        <form id="add_form"  method="post" action="" class="form-horizontal">
+                        <form id="add_form" action="<?=Url::to(['core/admin/add'])?>" method="post" class="form-horizontal">
                             <div class="panel-body">
                                 <div class="row">
-                                    <div class="col-md-6">
+                                    <div class="col-md-10">
                                         <div class="form-group">
-                                            <label class="col-md-3 control-label">Text Field</label>
-                                            <div class="col-md-9">
-                                                <div class="input-group">
-                                                    <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
-                                                    <input type="text" class="form-control"/>
-                                                </div>
-                                                <span class="help-block">This is sample of text field</span>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-md-3 control-label">Password</label>
-                                            <div class="col-md-9 col-xs-12">
-                                                <div class="input-group">
-                                                    <span class="input-group-addon"><span class="fa fa-unlock-alt"></span></span>
-                                                    <input type="password" class="form-control"/>
-                                                </div>
-                                                <span class="help-block">Password field sample</span>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-md-3 control-label">Textarea</label>
-                                            <div class="col-md-9 col-xs-12">
-                                                <textarea class="form-control" rows="5"></textarea>
-                                                <span class="help-block">Default textarea field</span>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-md-3 control-label">Img</label>
-                                            <div class="col-md-9">
+                                            <label class="col-md-3 control-label">头像</label>
+                                            <div class="col-md-7">
                                                 <div class="gallery">
                                                     <a class="gallery-item"  href="javascript:void('')" title="Space picture 2" data-gallery>
-                                                        <div style="width: 150px" class="image" >
-                                                            <input hidden type="text" id="inp">
+                                                        <div class="image" >
+                                                            <input hidden name="AlphaUsers[avatar]" type="text" id="inp">
                                                             <img src="upload/admin/common/upload.svg" alt="Space picture 2"/>
                                                             <ul class="gallery-item-controls">
-                                                                <li onclick="upload_single('inp','setting')"><i class="fa fa-cloud-upload"></i></li>
+                                                                <li onclick="upload_single('inp','avatar')"><i class="fa fa-cloud-upload"></i></li>
                                                                 <li onclick="del_pic('inp')"><i class="fa fa-times"></i></li>
                                                             </ul>
                                                         </div>
@@ -140,63 +95,41 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="col-md-3 control-label">File</label>
+                                            <label class="col-md-3 control-label">登录名</label>
                                             <div class="col-md-9">
-                                                <div class="gallery">
-                                                    <a class="gallery-item"  href="javascript:void('')" title="Space picture 2" data-gallery>
-                                                        <div style="width: 150px" class="image" >
-                                                            <input hidden type="text" id="inp2">
-                                                            <img src="upload/admin/common/upload.svg" alt="Space picture 2"/>
-                                                            <ul class="gallery-item-controls">
-                                                                <li onclick="upload_single('inp2','setting',false,'file')"><i class="fa fa-cloud-upload"></i></li>
-                                                                <li onclick="del_pic('inp2')"><i class="fa fa-times"></i></li>
-                                                            </ul>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label class="col-md-3 control-label">Datepicker</label>
-                                            <div class="col-md-9">
-                                                <div class="input-group">
-                                                    <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
-                                                    <input type="text" class="form-control datepicker" value="2014-11-01">
-                                                </div>
-                                                <span class="help-block">Click on input field to get datepicker</span>
+                                                <?=FormW::Input('user_login')?>
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="col-md-3 control-label">Tags</label>
+                                            <label class="col-md-3 control-label">密码</label>
                                             <div class="col-md-9">
-                                                <input type="text" class="tagsinput" value="First,Second,Third"/>
-                                                <span class="help-block">Default textarea field</span>
+                                                <?=FormW::Input('user_pass',null,'password')?>
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="col-md-3 control-label">Select</label>
+                                            <label class="col-md-3 control-label">确认密码</label>
                                             <div class="col-md-9">
-                                                <select class="form-control select">
-                                                    <option value="1">Option 1</option>
-                                                    <option value="2">Option 2</option>
-                                                    <option value="3">Option 3</option>
-                                                    <option value="4">Option 4</option>
-                                                    <option value="5">Option 5</option>
+                                                <input type="password" name="confirm_pass" class="form-control">
+                                            </div>
+                                        </div>
+                                        <!--<div class="form-group">-->
+                                        <!--<label class="col-md-3 control-label">邮箱</label>-->
+                                        <!--<div class="col-md-9">-->
+                                        <!--<input name="user_email" type="text" class="form-control"/>-->
+                                        <!--</div>-->
+                                        <!--</div>-->
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">角色</label>
+                                            <div class="col-md-9">
+                                                <select name="role_id" class="form-control select">
+                                                <?php foreach ($roleArr as $k=>$v){?>
+                                                    <option value="<?=$v['id']?>"><?=$v['name']?></option>
+                                                <?php }?>
                                                 </select>
-                                                <span class="help-block">Select box example</span>
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="col-md-3 control-label">Checkbox</label>
-                                            <div class="col-md-9">
-                                                <label class="check"><input type="checkbox" class="icheckbox" checked="checked"/> Checkbox title</label>
-                                                <span class="help-block">Checkbox sample, easy to use</span>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-md-3  control-label">菜单状态</label>
+                                            <label class="col-md-3  control-label">管理员状态</label>
                                             <div class="col-md-9">
                                                 <label class="switch">
                                                     <input name="status" type="checkbox" checked value="1"/>
@@ -209,11 +142,7 @@
                                 </div>
                             </div>
                             <div class="panel-footer">
-                                <button class="btn btn-info pull-right">保存修改<span class="fa fa-floppy-o fa-right"></span></button>
-                                <div class="btn-group">
-                                    <button class="btn btn-primary"><span class="fa fa-pencil"></span>编辑</button>
-                                    <button class="btn btn-danger"><span class="fa fa-trash-o"></span>删除</button>
-                                </div>
+                                <button class="btn btn-info pull-right">保存添加<span class="fa fa-floppy-o fa-right"></span></button>
                             </div>
                         </form>
                     </div>
@@ -222,9 +151,6 @@
         </div>
     </div>
 </div>
-
 <script type="text/javascript">
-    $('.table-form').dataTable({
-        "order": []
-    });
+
 </script>

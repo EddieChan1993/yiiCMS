@@ -31,7 +31,6 @@ class BaseController extends Controller
 
     public function beforeAction($action)
     {
-
         if (!AuthService::isLogin()) {
             $this->redirect(Url::to(['/core/login/index']));
         }else{
@@ -113,6 +112,10 @@ class BaseController extends Controller
 
     /*CURD
   * =============================================================*/
+    /**
+     * @return string
+     * @throws \Exception
+     */
     function actionIndex()
     {
         $res=CurdService::getDataList($_GET,'*',CurdService::getCTimeKey());
@@ -121,13 +124,16 @@ class BaseController extends Controller
 
     function actionAdd()
     {
+        echo "OK";
     }
 
     function actionUpdate()
     {
+        echo "OK";
     }
 
     function actionDel()
     {
+        echo "Ok";
     }
 }

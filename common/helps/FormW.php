@@ -7,11 +7,11 @@ use backend\service\core\CurdService;
 class FormW
 {
     //input插件
-    public static function Input($key,$value=null,$placeholder=null)
+    public static function Input($key,$value=null,$type='text')
     {
         $formModelName=CurdService::getModelNameForm();
         $formModelName = sprintf("%s[%s]", $formModelName, $key);
-        return sprintf('<input type="text" placeholder="%s" value="%s" name="%s" class="form-control"/>',$placeholder,$value,$formModelName);
+        return sprintf('<input type="%s" value="%s" name="%s" class="form-control"/>',$type,$value,$formModelName);
     }
 
     //textarea插件

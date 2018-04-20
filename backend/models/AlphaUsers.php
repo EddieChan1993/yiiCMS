@@ -41,6 +41,7 @@ class AlphaUsers extends \yii\db\ActiveRecord
     {
         return [
             [['last_login_time', 'update_time', 'create_time', 'user_status', 'user_hits'], 'integer'],
+            [['user_login'], 'unique'],
             [['user_login'], 'string', 'max' => 60],
             [['avatar', 'user_pass_salt'], 'string', 'max' => 255],
             [['user_pass'], 'string', 'max' => 64],
@@ -58,9 +59,9 @@ class AlphaUsers extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'user_login' => 'User Login',
+            'user_login' => '账号',
             'avatar' => 'Avatar',
-            'user_pass' => 'User Pass',
+            'user_pass' => '密码',
             'user_pass_salt' => 'User Pass Salt',
             'user_nicename' => 'User Nicename',
             'user_email' => 'User Email',

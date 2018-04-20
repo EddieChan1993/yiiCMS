@@ -93,13 +93,7 @@ class InitService extends AuthService
         }
         Yii::$app->view->params['avatar'] = $img;
 
-        $name=AlphaRole::find()
-            ->asArray()
-            ->alias('r')
-            ->leftJoin(AlphaRoleUser::tableName().' AS ra', 'r.id=ra.role_id')
-            ->select('name')
-            ->where(['ra.user_id'=>self::$uid])
-            ->one();
-        Yii::$app->view->params['role_name'] = $name['name'];
+        $roleName = get_role(self::$uid);
+        Yii::$app->view->params['role_name'] = $roleName;
     }
 }

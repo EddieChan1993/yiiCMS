@@ -36,5 +36,15 @@ class AuthService extends BaseService
         }
         return $flag;
     }
+
+    /**
+     * 获取uid
+     * @return mixed
+     */
+    public static function getUid()
+    {
+        return self::$uid;
+    }
     //权限验证
+
 }
