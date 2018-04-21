@@ -12,6 +12,7 @@ namespace backend\controllers\core;
 use app\models\AlphaMenu;
 use backend\service\core\AuthService;
 use backend\service\core\CurdService;
+use common\helps\AuthE;
 use Yii;
 use yii\data\Pagination;
 use yii\db\Query;
@@ -33,9 +34,12 @@ class BaseController extends Controller
     {
         if (!AuthService::isLogin()) {
             $this->redirect(Url::to(['/core/login/index']));
-        }else{
-            return true;
         }
+        $res = AuthService::authUser();
+        if (!$res) {
+            self::warning(AuthService::getErr());
+        }
+        return true;
     }
     /*页面标题设置
      * =============================================================*/

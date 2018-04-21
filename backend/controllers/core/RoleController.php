@@ -54,6 +54,14 @@ class RoleController extends BaseController
         self::output("角色删除成功");
     }
 
+    function actionEditPage()
+    {
+        $req = \Yii::$app->request;
+        $getData = $req->get();
+        $res = RoleService::getOne($getData['id']);
+        return $this->render('edit', $res);
+    }
+
     function actionEdit()
     {
         $req = \Yii::$app->request;
@@ -64,10 +72,6 @@ class RoleController extends BaseController
                 self::warning(RoleService::getErr());
             }
             self::output("角色编辑成功");
-        }else{
-            $getData = $req->get();
-            $res = RoleService::getOne($getData['id']);
-            return $this->render('edit', $res);
         }
     }
 }

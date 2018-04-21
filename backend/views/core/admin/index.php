@@ -58,11 +58,11 @@ $tab_2 = $this->params['tab_2'];
                                             <?php if ($uid!=1){?>
                                                 <a disabled title="<?=$v['user_login']?>【编辑】"  class="btn btn-default btn-rounded btn-sm"><span class="fa fa-pencil"></span></a>
                                                <?php }else{?>
-                                                <a title="<?=$v['user_login']?>【编辑】" data-url="<?= Url::to(['core/admin/edit','id'=>$v['id']])?>" onclick="edit_row(this)" class="btn btn-default btn-rounded btn-sm"><span class="fa fa-pencil"></span></a>
+                                                <a title="<?=$v['user_login']?>【编辑】" data-url="<?= Url::to(['core/admin/edit-page','id'=>$v['id']])?>" onclick="edit_row(this)" class="btn btn-default btn-rounded btn-sm"><span class="fa fa-pencil"></span></a>
                                             <?php }?>
                                             <button disabled class="btn btn-danger btn-rounded btn-sm" ><span class="fa fa-trash-o"></span></button>
                                             <?php }else{?>
-                                            <a title="<?=$v['user_login']?>【编辑】" data-url="<?=Url::to(['core/admin/edit','id'=>$v['id']])?>" onclick="edit_row(this)"  class="btn btn-default btn-rounded btn-sm"><span class="fa fa-pencil"></span></a>
+                                            <a title="<?=$v['user_login']?>【编辑】" data-url="<?=Url::to(['core/admin/edit-page','id'=>$v['id']])?>" onclick="edit_row(this)"  class="btn btn-default btn-rounded btn-sm"><span class="fa fa-pencil"></span></a>
                                             <button data-url="<?=Url::to(['core/admin/del','id'=>$v['id']])?>" onClick="delete_row(this);" class="btn btn-danger btn-rounded btn-sm" ><span class="fa fa-trash-o"></span></button>
                                         <?php }?>
                                     </td>

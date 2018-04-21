@@ -64,16 +64,16 @@ use \yii\helpers\Url;
                                             <?php foreach ($v['child'] as $k1=>$v1){?>
                                                 <li id="show-iemac<?=$k?><?=$k1?>">
                                                     <i id="bjgl" class="plus"></i>
-                                                    <input <?=in_array($v1['id'],$rules)?:"checked"?> id="check-iemac<?=$k?><?=$k1?>" name="rules[]" value="<?=$v1['id']?>" type="checkbox" /><?=$v1['name']?>
+                                                    <input <?=in_array($v1['id'],$rules)?"checked":""?> id="check-iemac<?=$k?><?=$k1?>" name="rules[]" value="<?=$v1['id']?>" type="checkbox" /><?=$v1['name']?>
                                                     <ul id="tree-iemac<?=$k?><?=$k1?>" class="showtime">
-                                                        <?php foreach ($v['child'] as $k2=>$v2){?>
+                                                        <?php foreach ($v1['child'] as $k2=>$v2){?>
                                                             <li>
                                                                 <i id="bjgl" class="plus"></i>
-                                                                <input  <?=in_array($v2['id'],$rules)?:"checked"?>   name="rules[]" value="<?=$v2['id']?>" type="checkbox" /><?=$v2['name']?>
+                                                                <input  <?=in_array($v2['id'],$rules)?"checked":""?>   name="rules[]" value="<?=$v2['id']?>" type="checkbox" /><?=$v2['name']?>
                                                                 <ul class="showtime">
                                                                     <?php foreach ($v2['child'] as $k3=>$v3){?>
                                                                         <i id="bjgl" class="plus"></i>
-                                                                        <li><input  <?=in_array($v3['id'],$rules)?:"checked"?> name="rules[]" value="<?=$v3['id']?>" type="checkbox" /><?=$v3['name']?></li>
+                                                                        <li><input  <?=in_array($v3['id'],$rules)?"checked":""?> name="rules[]" value="<?=$v3['id']?>" type="checkbox" /><?=$v3['name']?></li>
                                                                     <?php }?>
                                                                 </ul>
                                                             </li>

@@ -50,7 +50,7 @@ $tab_2 = $this->params['tab_2'];
                                 <td><input onchange="change_order(this)" style="width: 70px" type="number" class="order_change form-control" data-url="<?= Url::to(['core/menu/update-order'])?>" pk-id="<?=$v['id']?>" value="<?=$v['listorder']?>"></td>
                                 <td>
                                     <a href="<?=Url::to(['core/menu/index','id'=>$v['id']])?>" class="btn btn-primary btn-rounded btn-sm"><span class="fa fa-plus"></span></a>
-                                    <a title="<?=$v['name']?>【编辑】" data-url="<?=Url::to(['core/menu/edit','id'=>$v['id']])?>" onclick="edit_row(this)" class="btn btn-default btn-rounded btn-sm"><span class="fa fa-pencil"></span></a>
+                                    <a title="<?=$v['name']?>【编辑】" data-url="<?=Url::to(['core/menu/edit-page','id'=>$v['id']])?>" onclick="edit_row(this)" class="btn btn-default btn-rounded btn-sm"><span class="fa fa-pencil"></span></a>
                                     <button onClick="delete_row(this);" data-url="<?=Url::to(['core/menu/del','id'=>$v['id']])?>" class="btn btn-danger btn-rounded btn-sm" ><span class="fa fa-trash-o"></span></button>
                                 </td>
                             </tr>

@@ -52,7 +52,7 @@ $tab_2 = $this->params['tab_2'];
                                     <td><?=tranTime($v['update_time'])?></td>
                                     <td><?=is_stop($v['status'])?></td>
                                     <td>
-                                        <a title="<?=$v['name']?>【编辑】" data-url="<?= Url::to(['core/role/edit','id'=>$v['id']])?>" onclick="edit_row(this)" class="btn btn-default btn-rounded btn-sm"><span class="fa fa-pencil"></span></a>
+                                        <a title="<?=$v['name']?>【编辑】" data-url="<?= Url::to(['core/role/edit-page','id'=>$v['id']])?>" onclick="edit_row(this)" class="btn btn-default btn-rounded btn-sm"><span class="fa fa-pencil"></span></a>
                                         <button data-url="<?=Url::to(['core/role/del','id'=>$v['id']])?>" onClick="delete_row(this);" class="btn btn-danger btn-rounded btn-sm" ><span class="fa fa-trash-o"></span></button>
                                     </td>
                                 </tr>

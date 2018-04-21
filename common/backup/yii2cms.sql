@@ -1,5 +1,5 @@
 ﻿# Host: localhost  (Version: 5.5.53)
-# Date: 2018-04-21 09:42:53
+# Date: 2018-04-21 17:15:52
 # Generator: MySQL-Front 5.3  (Build 4.234)
 
 /*!40101 SET NAMES utf8 */;
@@ -55,7 +55,7 @@ CREATE TABLE `alpha_menu` (
 # Data for table "alpha_menu"
 #
 
-INSERT INTO `alpha_menu` VALUES (211,249,'admin','core/menu','index','',0,1,'后台菜单','fa fa-sitemap','',2,'249-211'),(216,0,'admin','Default','default','',0,1,'管理组','fa fa-users','12323',0,'216'),(217,216,'admin','core/admin','index','',0,1,'管理员','fa fa-user','',0,'216-217'),(218,216,'admin','core/role','index','',0,1,'角色管理','fa fa-map-marker','',0,'216-218'),(249,0,'admin','Default','default','',0,1,'设置','fa fa-gears','',0,'249'),(304,249,'admin','core/imgs','index','',0,1,'系统图库','glyphicon glyphicon-picture','',0,'249-304'),(305,217,'admin','core/admin','add','',1,1,'管理员添加逻辑','','',0,'216-217-305'),(306,217,'admin','core/admin','edit','',1,1,'管理员编辑逻辑','','',0,'216-217-306'),(307,217,'admin','core/admin','del','',1,1,'管理员删除逻辑','','',0,'216-217-307'),(308,218,'admin','core/role','add','',1,1,'角色添加逻辑','','',0,'216-218-308'),(309,218,'admin','core/role','del','',1,1,'角色删除逻辑','','',0,'216-218-309'),(310,218,'admin','core/role','edit','',1,1,'角色编辑逻辑','','',0,'216-218-310'),(316,211,'admin','core/menu','del','',1,1,'后台菜单删除逻辑','','',0,'249-211-316'),(317,211,'admin','core/menu','add','',1,1,'后台菜单添加逻辑','','',0,'249-211-317'),(318,211,'admin','core/menu','edit','',1,1,'后台菜单编辑逻辑','','',0,'249-211-318'),(322,304,'admin','core/imgs','del','',1,1,'删除图库文件','','',0,'249-304-322'),(326,328,'admin','core/upload','upload-sigle','',1,1,'单图片上传逻辑','','',0,'328-326'),(327,328,'admin','core/upload','del-sigle-file','',1,1,'单图片删除逻辑','','',0,'328-327'),(328,0,'admin','Default','default','',0,0,'功能模块','','',0,'328'),(345,0,'admin','Default','default','',0,1,'模板','','',0,'345'),(346,345,'admin','test','index','',0,1,'模板1','','',0,'345-346'),(347,345,'admin','test2','index','',0,1,'模板2','','',0,'345-347');
+INSERT INTO `alpha_menu` VALUES (211,249,'admin','core/menu','index','',0,1,'后台菜单','fa fa-sitemap','',2,'249-211'),(216,0,'admin','Default','default','',0,1,'管理组','fa fa-users','12323',0,'216'),(217,216,'admin','core/admin','index','',0,1,'管理员','fa fa-user','',0,'216-217'),(218,216,'admin','core/role','index','',0,1,'角色管理','fa fa-map-marker','',0,'216-218'),(249,0,'admin','Default','default','',0,1,'设置','fa fa-gears','',0,'249'),(304,249,'admin','core/imgs','index','',0,1,'系统图库','glyphicon glyphicon-picture','',0,'249-304'),(305,217,'admin','core/admin','add','',1,1,'管理员添加逻辑','','',0,'216-217-305'),(306,217,'admin','core/admin','edit','',1,1,'管理员编辑逻辑','','',0,'216-217-306'),(307,217,'admin','core/admin','del','',1,1,'管理员删除逻辑','','',0,'216-217-307'),(308,218,'admin','core/role','add','',1,1,'角色添加逻辑','','',0,'216-218-308'),(309,218,'admin','core/role','del','',1,1,'角色删除逻辑','','',0,'216-218-309'),(310,218,'admin','core/role','edit','',1,1,'角色编辑逻辑','','',0,'216-218-310'),(316,211,'admin','core/menu','del','',1,1,'后台菜单删除逻辑','','',0,'249-211-316'),(317,211,'admin','core/menu','add','',1,1,'后台菜单添加逻辑','','',0,'249-211-317'),(318,211,'admin','core/menu','edit','',1,1,'后台菜单编辑逻辑','','',0,'249-211-318'),(322,304,'admin','core/imgs','del','',1,1,'删除图库文件','','',0,'249-304-322'),(326,328,'admin','core/upload','upload-sigle','',1,1,'单图片上传逻辑','','',0,'328-326'),(327,328,'admin','core/upload','del-sigle-file','',1,1,'单图片删除逻辑','','',0,'328-327'),(328,0,'admin','Default','default','',0,0,'功能模块','','',0,'328'),(345,0,'admin','Default','default','',0,1,'模板','','',0,'345'),(346,345,'admin','test','index','',0,1,'模板1','fa fa-gift','',0,'345-346'),(347,345,'admin','test2','index','',0,1,'模板2','fa fa-gift','',0,'345-347'),(348,345,'','widget','index','',0,1,'组件模块','fa fa-anchor','',0,'345-348');
 
 #
 # Structure for table "alpha_role"
@@ -82,7 +82,7 @@ CREATE TABLE `alpha_role` (
 # Data for table "alpha_role"
 #
 
-INSERT INTO `alpha_role` VALUES (25,'超级管理员',NULL,1,'',1523759170,1523759201,0,'216,218,310,309,308,217,307,306,305,249,331,304,322,252,330,329,321,320,319,250,312,311,211,318,317,316,265,267,325,324,323,266,315,314,313,328,327,326,345,347,346','216-217');
+INSERT INTO `alpha_role` VALUES (25,'超级管理员',NULL,1,'',1523759170,1523759201,0,'216,218,310,308,249,304,322,211,318,317,316,328,327,326,345,347,346','216-217'),(26,'123',NULL,1,'213',1524298922,0,0,NULL,NULL);
 
 #
 # Structure for table "alpha_role_user"
@@ -94,7 +94,7 @@ CREATE TABLE `alpha_role_user` (
   `user_id` int(11) DEFAULT NULL,
   `role_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`role_user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COMMENT='角色用户关联表';
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COMMENT='角色用户关联表';
 
 #
 # Data for table "alpha_role_user"
@@ -146,10 +146,10 @@ CREATE TABLE `alpha_users` (
   PRIMARY KEY (`id`),
   KEY `user_login_key` (`user_login`),
   KEY `user_nicename` (`user_nicename`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COMMENT='用户表';
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COMMENT='用户表';
 
 #
 # Data for table "alpha_users"
 #
 
-INSERT INTO `alpha_users` VALUES (1,'admin','','f354bc916f4979959bb4c274e8e92976','aZKZBygJtL','admin','dc_wen663@163.com','112.44.105.221','1523758506','1523759186','1489155324',1,'',3);
+INSERT INTO `alpha_users` VALUES (1,'admin',NULL,'','aZKZBygJtL','admin','dc_wen663@163.com','127.0.0.1','1524275434','1524293211','1489155324',1,'',4);

@@ -11,9 +11,11 @@ namespace common\helps;
 use app\models\AlphaMenu;
 use app\models\AlphaRole;
 use app\models\AlphaRoleUser;
-use Exception;
+use app\models\AlphaUsers;
+use Yii;
+use yii\web\Controller;
 
-class AuthE
+class AuthE extends Controller
 {
     protected $_config = [
         'auth_on' => true,           // 认证开关
@@ -22,10 +24,11 @@ class AuthE
 
     public function __construct()
     {
-//        if (config('auth_config')) {
-//            //可设置配置项 auth_config, 此配置项为数组。
-//            $this->_config = array_merge($this->_config, config('auth_config'));
-//        }
+        $authParams = \Yii::$app->params['auth'];
+        if (!empty($authParams)) {
+            //可设置配置项 auth_config, 此配置项为数组。
+            $this->_config = array_merge($this->_config, $authParams);
+        }
     }
 
     public function check($uid)
@@ -35,29 +38,29 @@ class AuthE
         } else {
             if ($this->_config['auth_on']) {
                 //获取当前的[模块][控制器][操作方法]
-                $module = Request()->module();
-                $controller = Request()->controller();
-                $action = Request()->action();
-
                 $map = [
-                    'module' => $module,
-                    'controller' => $controller,
-                    'method' => $action
+                    'controller' => Yii::$app->controller->id,
+                    'method' => Yii::$app->controller->action->id
                 ];
-                $authOne = Db::name($this->_config['auth_rule'])->where($map)->find();
+                $authOne = AlphaMenu::find()
+                    ->where($map)
+                    ->asArray()
+                    ->select('id,type,name,status')
+                    ->one();
                 if ($authOne['type'] == 1) {
                     //该菜单是否需要验证
                     if ($authOne['status'] == 1) {
                         //只对没被禁用的菜单进行验证
-                        $userStatus = Db::name($this->_config['auth_user'])
+                        $userStatus = AlphaUsers::find()
                             ->where(['id' => $uid])
-                            ->value('user_status');
-                        if ($userStatus === 0) {
-                            throw new Exception("操作无效,该管理员已经【被禁用】");
+                            ->select('user_status')
+                            ->one();
+                        if ($userStatus->user_status === 0) {
+                            throw new \Exception("操作无效,该管理员已经【被禁用】");
                         }
                         $this->role_rule_in($uid, $authOne['id'], $authOne['name']);
                     } else {
-                        throw new Exception($authOne['name'] . '权限【被暂时禁用】');
+                        throw new \Exception($authOne['name'] . '权限【被暂时禁用】');
                     }
                 }
             }
@@ -69,30 +72,27 @@ class AuthE
      * @param $uid
      * @param $rule_id
      * @param $rule_name
-     * @throws Exception
+     * @throws \Exception
      */
     function role_rule_in($uid, $rule_id, $rule_name)
     {
-        $groupAccess = Db::name($this->_config['auth_group_access'])
-            ->order('role_user_id desc')
-            ->where('user_id', $uid)
-            ->find();
-        $group = Db::name($this->_config['auth_group'])->find($groupAccess['role_id']);
-
+        $groupAccess=AlphaRoleUser::find()
+            ->where(['user_id' => $uid])
+            ->asArray()
+            ->one();
+        $group = AlphaRole::find()
+            ->where(['id' => $groupAccess['role_id']])
+            ->asArray()
+            ->one();
         if ($group['status']) {
             $rules = explode(',', $group['rules']);
-            if (in_array($rule_id, $rules)) {
-                //写入操作日志
-                $mess = sprintf("ID:%d操作【%s】", $uid, $rule_name);
-                write_log($mess, 'auth');
-                //拥有该权限
-            } else {
+            if (!in_array($rule_id, $rules)) {
                 //该角色不包含该权限
-                throw new Exception('无权操作【' . $rule_name . '】权限');
+                throw new \Exception('无权操作【' . $rule_name . '】权限');
             }
         } else {
             //该角色所有权限被禁
-            throw new Exception('该角色所有权限暂时【被禁用】');
+            throw new \Exception('该角色所有权限暂时【被禁用】');
         }
 
     }

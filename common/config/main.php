@@ -10,5 +10,16 @@ return [
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
+        'log' => [
+            'traceLevel' => YII_DEBUG ? 3 : 0,
+            'targets' => [
+                [
+                    'class' => 'yii\log\FileTarget',
+                    'levels' => ['error', 'warning'],
+                    'logFile' => '@app/runtime/logs/'.date('Ym').'/'.date('d').'.log',
+                    'logVars' => ['_GET','_POST' ,'_FILES','_COOKIE','_SESSION'],
+                ],
+            ],
+        ],
     ],
 ];

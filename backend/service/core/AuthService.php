@@ -10,6 +10,7 @@ namespace backend\service\core;
 
 
 use app\models\AlphaUsers;
+use common\helps\AuthE;
 use common\helps\CookieE;
 use common\service\BaseService;
 use Yii;
@@ -46,5 +47,16 @@ class AuthService extends BaseService
         return self::$uid;
     }
     //权限验证
-
+    public static function authUser():bool
+    {
+        $flag = false;
+        try {
+            $auth=new AuthE();
+            $auth->check(self::$uid);
+            $flag = true;
+        } catch (\Exception $e) {
+            self::setErr($e);
+        }
+        return $flag;
+    }
 }

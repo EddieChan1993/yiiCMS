@@ -53,6 +53,14 @@ class AdminController extends BaseController
         self::output("管理员账号添加成功");
     }
 
+    function actionEditPage()
+    {
+        $req = \Yii::$app->request;
+        $getData = $req->get();
+        $res = AdminService::getOne($getData['id']);
+        return $this->render('edit',$res);
+    }
+
     function actionEdit()
     {
         $req = \Yii::$app->request;
@@ -62,14 +70,14 @@ class AdminController extends BaseController
                 self::warning(AdminService::getErr());
             }
             self::output("管理员账号编辑成功");
-        }else{
-            $getData = $req->get();
-            $res = AdminService::getOne($getData['id']);
-            return $this->render('edit',$res);
         }
     }
-
-
+    //个人资料编辑页面
+    function actionEditSelfPage()
+    {
+        $res = AdminService::getOne();
+        return $this->render('edit-self',$res);
+    }
     //编辑个人资料
     function actionEditSelf()
     {
@@ -80,9 +88,6 @@ class AdminController extends BaseController
                 self::warning(AdminService::getErr());
             }
             self::output("管理员账号编辑成功");
-        }else{
-            $res = AdminService::getOne();
-            return $this->render('edit-self',$res);
         }
     }
 

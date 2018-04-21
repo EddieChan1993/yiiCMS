@@ -80,14 +80,14 @@ class RoleService extends AuthService
     {
         $flag = false;
         try {
-            $OneRoleModel = AlphaRole::findOne($postData['id']);
-            $OneRoleModel->nav_list = $postData['nav_list'];
-            $OneRoleModel->rules = implode(",",$postData['rules']);
-            $OneRoleModel->status= !empty($postData['status']) ? $postData['status'] : AlphaRole::STOP;
+            $oneRoleModel = AlphaRole::findOne($postData['id']);
+            $oneRoleModel->nav_list = $postData['nav_list'];
+            $oneRoleModel->rules = implode(",",$postData['rules']);
+            $oneRoleModel->status= !empty($postData['status']) ? $postData['status'] : AlphaRole::STOP;
 
-            $OneRoleModel->load($postData);
-            if (!$OneRoleModel->save()) {
-                throw new \Exception(current($OneRoleModel->getFirstErrors()));
+            $oneRoleModel->load($postData);
+            if (!$oneRoleModel->save()) {
+                throw new \Exception(current($oneRoleModel->getFirstErrors()));
             }
             $flag = true;
         } catch (\Exception $e) {

@@ -42,6 +42,13 @@ class MenuController extends BaseController
         self::output("菜单添加成功");
     }
 
+    function actionEditPage()
+    {
+        $req = Yii::$app->request;
+        $getData = $req->get();
+        $res = MenuService::getOne($getData);
+        return $this->render('edit', $res);
+    }
     function actionEdit()
     {
         $req = Yii::$app->request;
@@ -52,10 +59,6 @@ class MenuController extends BaseController
                 self::warning(MenuService::getErr());
             }
             self::output("菜单编辑成功");
-        }else{
-            $getData = $req->get();
-            $res = MenuService::getOne($getData);
-            return $this->render('edit', $res);
         }
     }
 
