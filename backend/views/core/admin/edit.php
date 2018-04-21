@@ -19,18 +19,7 @@ use yii\helpers\Url;
                     <div class="form-group">
                         <label class="col-xs-3 control-label">头像</label>
                         <div class="col-xs-6">
-                            <div  style="width: 300px" class="gallery">
-                                <a class="gallery-item"  href="javascript:void('')" title="Space picture 2" data-gallery>
-                                    <div class="image" >
-                                        <input value="<?=$avatar?>" hidden name="avatar" type="text" id="inp">
-                                        <img src="<?=is_img($avatar)?>" alt="Space picture 2"/>
-                                        <ul class="gallery-item-controls">
-                                            <li onclick="upload_single('inp','avatar')"><i class="fa fa-cloud-upload"></i></li>
-                                            <li onclick="del_pic('inp')"><i class="fa fa-times"></i></li>
-                                        </ul>
-                                    </div>
-                                </a>
-                            </div>
+                            <?=FormW::SingleUpload('avatar',$avatar,'inp1')?>
                         </div>
                     </div>
                     <div class="form-group">

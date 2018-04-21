@@ -6,6 +6,8 @@ use yii\bootstrap\NavBar;
 use yii\helpers\Url;
 use yii\widgets\Breadcrumbs;
 use common\widgets\Alert;
+
+$title = Yii::$app->params['title'];
 ?>
 <!DOCTYPE html>
 <html lang="">
@@ -13,7 +15,7 @@ use common\widgets\Alert;
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>|YooCMS</title>
+    <title><?=$title?>|YooCMS</title>
     <link rel="icon" href="upload/admin/common/logo.png" type="image/x-icon" />
     <?=$this->render('head_out')?>
     <style type="text/css">

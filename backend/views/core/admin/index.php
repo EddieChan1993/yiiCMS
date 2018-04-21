@@ -79,19 +79,8 @@ $tab_2 = $this->params['tab_2'];
                                     <div class="col-md-10">
                                         <div class="form-group">
                                             <label class="col-md-3 control-label">头像</label>
-                                            <div class="col-md-7">
-                                                <div class="gallery">
-                                                    <a class="gallery-item"  href="javascript:void('')" title="Space picture 2" data-gallery>
-                                                        <div class="image" >
-                                                            <input hidden name="AlphaUsers[avatar]" type="text" id="inp">
-                                                            <img src="upload/admin/common/upload.svg" alt="Space picture 2"/>
-                                                            <ul class="gallery-item-controls">
-                                                                <li onclick="upload_single('inp','avatar')"><i class="fa fa-cloud-upload"></i></li>
-                                                                <li onclick="del_pic('inp')"><i class="fa fa-times"></i></li>
-                                                            </ul>
-                                                        </div>
-                                                    </a>
-                                                </div>
+                                            <div class="col-md-9">
+                                                <?=FormW::SingleUpload('avatar',null,'inp1')?>
                                             </div>
                                         </div>
                                         <div class="form-group">

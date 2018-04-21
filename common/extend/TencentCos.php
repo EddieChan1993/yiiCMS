@@ -9,10 +9,46 @@
 namespace common\extend;
 
 
+use Qcloud\Cos\Client;
+
 class TencentCos
 {
-    public static function aa()
+    private static $instance;
+    private static $TenceCosClient;
+    private static $bucket;
+    /**
+     * TencentCos constructor.
+     */
+    private function __construct($conf)
     {
-        echo 12;
+        self::$TenceCosClient = new Client($conf);
+    }
+    /**
+     * TencentCos constructor.
+     */
+    public static function getInstance()
+    {
+        if (empty(static::$instance)) {
+            $params = \Yii::$app->params;
+            $region = $params['tencent_cos']['region'];
+            $secretId = $params['tencent_cos']['secretId'];
+            $secretKey = $params['tencent_cos']['secretKey'];
+            self::$bucket = $params['tencent_cos']['Bucket'];
+            $cosConf = [
+                'region'=>$region,
+                'credentials'=>[
+                    'secretId'=>$secretId,
+                    'secretKey'=>$secretKey
+                ]
+            ];
+            self::$instance = new TencentCos($cosConf);
+        }
+        return self::$instance;
+    }
+
+    public static function upload($key,$temp_name)
+    {
+        $res=self::$TenceCosClient->upload(self::$bucket, $key, fopen($temp_name, 'r+'));
+        return $res['Location'];
     }
 }

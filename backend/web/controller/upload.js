@@ -18,9 +18,7 @@ var domain, img_url,url;
 function upload_single(dom,path,type) {
     type=type||'img';
     domain = getRootPath();
-
     url = domain + '/index.php?r=core/upload/show-upload-single&dom='+dom+'&type='+type+'&path='+path;
-
     layer.open({
         title:'单文件上传',
         type: 2,
@@ -43,7 +41,7 @@ function del_pic(dom) {
         $.post(url,{
             file_path: img_url
         },function (res) {
-            if(res.code) {
+            if(res.error==0) {
                 m_success('删除图片成功',{
                     time:500
                 },function () {

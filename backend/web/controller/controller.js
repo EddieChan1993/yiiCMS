@@ -11,18 +11,28 @@ function delete_row(dom){
         icon:2
     }, function(index){
         //调取服务器
-        $.post(del_url,function (res) {
-            if(res.error==0) {
-                parent.m_success(res.msg,{time:500})
-                del_tr=$(dom).parents('.del_tr');
-                del_tr.hide("slow",function(){
-                    $(this).remove();
-                });
-            }else{
-                parent.m_error(res.msg)
+        $.ajax({
+            url: del_url,
+            type:"JSON",
+            beforeSend: function () {
+                parent.m_loading('数据提交中，耐心等待...', {
+                    time: -1
+                })
+            },
+            success:function (res) {
+                parent.destory();
+                if(res.error==0) {
+                    parent.m_success(res.msg,{time:500})
+                    del_tr=$(dom).parents('.del_tr');
+                    del_tr.hide("slow",function(){
+                        $(this).remove();
+                    });
+                }else{
+                    parent.m_error(res.msg)
+                }
+                layer.close(index);
             }
-            layer.close(index);
-        })
+        });
     }, function(){
         parent.m_warning('您已取消该操作');
     });
@@ -91,12 +101,13 @@ function editRequest() {
 function editResponse(res) {
     var index = parent.layer.getFrameIndex(window.name); //获取窗口索引
     destory();
+    console.log(123);
     if(res.error==0) {
         m_success(res.msg,{
             time:500
         },function () {
             parent.layer.close(index);
-            window.location.reload()
+            parent.parent.window.location.reload()
         })
     }else{
         m_error(res.msg);

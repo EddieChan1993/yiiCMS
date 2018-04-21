@@ -10,6 +10,7 @@ namespace backend\service\core;
 
 
 use yii\data\Pagination;
+use yii\db\Exception;
 use yii\db\Query;
 
 class CurdService extends AuthService
@@ -28,17 +29,23 @@ class CurdService extends AuthService
     public static function getModelNameForm()
     {
         if (empty(self::$modelNameForm)) {
-            throw new \Exception("ModelNameForm没有设置");
+            throw new Exception("模型对象未定义,无法使用表单插件");
         }
         return self::$modelNameForm;
     }
 
     /**
-     * @param mixed $modelNameForm
+     * @param $object
+     * @throws Exception
+     * @internal param mixed $modelNameForm
      */
-    public static function setModelNameForm($modelNameForm)
+    public static function setModelNameForm($object=null)
     {
-        self::$modelNameForm = $modelNameForm;
+        if (empty($object)) {
+            throw new Exception("模型对象未定义,无法使用表单插件");
+        }
+        $arr=explode("\\", get_class($object));
+        self::$modelNameForm = end($arr);
     }
 
     /**
@@ -48,7 +55,7 @@ class CurdService extends AuthService
     public static function getModel()
     {
         if (empty(self::$model)) {
-            throw new \Exception("model模型未定义");
+            throw new \Exception("model模型未定义,无法使用多功能列表查询");
         }
         return self::$model;
     }

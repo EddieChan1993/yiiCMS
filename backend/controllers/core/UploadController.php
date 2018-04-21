@@ -8,8 +8,7 @@
 
 namespace backend\controllers\core;
 
-
-use backend\service\core\AuthService;
+use backend\service\core\UploadService;
 
 class UploadController extends BaseController
 {
@@ -22,5 +21,17 @@ class UploadController extends BaseController
             'type'=>$req['type']
         ];
         return $this->render('upload-sigle',$map);
+    }
+
+    function actionUploadSingle()
+    {
+        $file = $_FILES;
+        $req = \Yii::$app->request;
+        $postData=$req->post();
+        $res=UploadService::tencentCos($file,$postData);
+        if (empty($res)) {
+            self::warning(UploadService::getErr());
+        }
+        self::output($res);
     }
 }

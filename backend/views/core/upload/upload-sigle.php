@@ -51,10 +51,10 @@ use yii\helpers\Url;
     </style>
 </head>
 <body>
-<form action="<?= Url::to(['core/upload/upload-sigle'])?>" method="post" enctype="multipart/form-res">
+<form action="<?= Url::to(['core/upload/upload-single'])?>" method="post" enctype="multipart/form-res">
     <input type="text" value="<?=$path?>" hidden name="path">
     <input type="file" name="files">
-    <div class="col-xs-9">
+    <div class="col-xs-12">
         <button class="btn btn-info btn-block" type="submit">上传</button>
     </div>
 </form>
@@ -75,7 +75,7 @@ use yii\helpers\Url;
     }
     function showResponse2(res) {
         destory();
-        if (res.code) {
+        if (res.error==0) {
             m_success('图片上传成功^_^', {
                 time: 500,
             },function () {
