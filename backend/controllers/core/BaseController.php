@@ -33,7 +33,7 @@ class BaseController extends Controller
     public function beforeAction($action)
     {
         if (!AuthService::isLogin()) {
-            $this->redirect(Url::to(['/core/login/index']));
+            $this->redirect(Url::to(['/core/login/index']))->send();
         }
         $res = AuthService::authUser();
         if (!$res) {
@@ -79,7 +79,6 @@ class BaseController extends Controller
     {
         $this->tab_2 = $tab_2;
         Yii::$app->view->params['tab_2'] = $this->tab_2;
-
     }
 
     /*返回格式

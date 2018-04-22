@@ -5,10 +5,8 @@
  * Date: 2018/4/17
  * Time: 19:45
  */
-
 use common\helps\FormW;
 use yii\helpers\Url;
-
 $title = $this->params['title'];
 $tab_1 = $this->params['tab_1'];
 $tab_2 = $this->params['tab_2'];
@@ -24,7 +22,7 @@ $tab_2 = $this->params['tab_2'];
                     <li class="<?=!empty($menuChild)?'':'active'?>"><a href="#tab-first" role="tab" data-toggle="tab"><?=$tab_1?>
                             <button class="btn btn-success btn-rounded btn-sm"><?=$menu_nums?></button>
                         </a></li>
-                    <li class="<?=!empty($menuChild)?'active':''?>""><a href="#tab-second" role="tab" data-toggle="tab"><?=$tab_1?></a></li>
+                    <li class="<?=!empty($menuChild)?'active':''?>""><a href="#tab-second" role="tab" data-toggle="tab"><?=$tab_2?></a></li>
                 </ul>
                 <div class="panel-body tab-content">
                     <div class="tab-pane <?=!empty($menuChild)?'':'active'?>" id="tab-first">

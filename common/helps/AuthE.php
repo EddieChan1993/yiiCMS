@@ -111,7 +111,7 @@ class AuthE extends Controller
                 'status' => AlphaMenu::PASS,//没被禁用的
             ];
         } else {
-            $groupAccess = AlphaRoleUser::findOne(['user_id', $uid]);
+            $groupAccess = AlphaRoleUser::findOne(['user_id'=>$uid]);
             $group = AlphaRole::findOne($groupAccess->role_id);
 
             $rules = explode(',', $group->rules);
@@ -119,7 +119,7 @@ class AuthE extends Controller
             $req = [
                 'and',
                 ['in','id',$rules],
-                ['type'=>AlphaMenu::ONLY_MENU,'staus'=>AlphaMenu::PASS]
+                ['type'=>AlphaMenu::ONLY_MENU,'status'=>AlphaMenu::PASS]
             ];
         }
 

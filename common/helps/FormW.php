@@ -54,7 +54,7 @@ class FormW
         $str .= sprintf('<img src="%s" alt="Space picture 2"/>', is_img($value));
         $str .= '<ul class="gallery-item-controls">';
         $str .= '<li onclick="upload_single(\'inp\',\'avatar\')"><i class="fa fa-cloud-upload"></i></li>';
-        $str .= '<li onclick="del_pic(\'inp\')"><i class="fa fa-times"></i></li>';
+//        $str .= '<li onclick="del_pic(\'inp\')"><i class="fa fa-times"></i></li>';
         $str .= ' </ul>';
         $str .= "</div>";
         $str .= '</a>';

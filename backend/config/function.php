@@ -131,3 +131,20 @@ function get_role($uid)
     }
     return $name['name'];
 }
+
+/**
+ * 获取用户信息
+ * @param $user_id
+ * @return array|false|PDOStatement|string|\think\Model
+ */
+function get_users($user_id)
+{
+    $adminInfo = \app\models\AlphaUsers::find()
+        ->select('user_login')
+        ->where(['id'=>$user_id])
+        ->one();
+    if (empty($adminInfo)) {
+        return "";
+    }
+    return $adminInfo->user_login;
+}

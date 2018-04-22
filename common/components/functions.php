@@ -508,49 +508,6 @@ function userTextDecode($str)
     return json_decode($text);
 }
 
-
-/**
- * 上传多图片
- * @param $name 文件名
- * @param $pathName 文件路径
- * @return string
- */
-function upload_more($name, $pathName)
-{
-    $files = request()->file($name);
-    foreach ($files as $k => $file) {
-        if ($k <= 3) {
-            $info = $file->move(ROOT_PATH . 'data' . DS . 'upload/' . $pathName);
-            if ($info) {
-                $imgJson[$k] = $info->getSaveName();
-            } else {
-                echo $file->getError();
-            }
-        }
-    }
-
-    return json_encode($imgJson);
-}
-
-/**
- * 单图上传
- * @param $name
- * @param $pathName
- * @return string
- */
-function upload_sigle($name, $pathName)
-{
-    $file = request()->file($name);
-    $info = $file->move('upload/' . $pathName);
-
-    if ($info) {
-        $drivePath = $info->getSaveName();
-    } else {
-        $drivePath = '';
-    }
-    return $drivePath;
-}
-
 /**
  * curl的post和get请求
  * @param $url （请求地址）

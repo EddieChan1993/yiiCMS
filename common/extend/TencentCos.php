@@ -22,6 +22,7 @@ class TencentCos
     private function __construct($conf)
     {
         self::$TenceCosClient = new Client($conf);
+
     }
     /**
      * TencentCos constructor.
@@ -46,6 +47,12 @@ class TencentCos
         return self::$instance;
     }
 
+    /**
+     * 分片上传文件
+     * @param $key
+     * @param $temp_name
+     * @return mixed
+     */
     public static function upload($key,$temp_name)
     {
         $res=self::$TenceCosClient->upload(self::$bucket, $key, fopen($temp_name, 'r+'));

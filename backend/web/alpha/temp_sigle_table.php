@@ -1,12 +1,16 @@
+<?php
+$title = $this->params['title'];
+$panel_title = $this->params['panel_title'];
+?>
 <div class="page-title">
-    <h2><span class="fa fa-arrow-circle-o-left">213123</span></h2>
+    <h2><span class="fa fa-arrow-circle-o-left"><?=$title?></span></h2>
 </div>
 <div class="animated fadeIn col-md-9">
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h3 class="panel-title">{$panel_title}</h3>
+            <h3 class="panel-title"><?=$panel_title?></h3>
             <ul class="panel-controls">
-                <label class="label label-info">{$dataNums}</label>
+                <label class="label label-info"><?=$dataNums?></label>
             </ul>
         </div>
             <div class="panel-body">

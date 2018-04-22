@@ -5,7 +5,7 @@ use yii\helpers\Url;
 <html lang="en" class="body-full-height">
 <head>
     <!-- META SECTION -->
-    <title>|后台登录</title>
+    <title>登录|YooCMS</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -63,7 +63,7 @@ use yii\helpers\Url;
             <div class="pull-left">
             </div>
             <div class="pull-right animated bounceIn">
-                &copy;2016- alphaCMS
+                &copy;2016-<?=date("Y")?>&nbsp;alphaCMS
             </div>
         </div>
     </div>

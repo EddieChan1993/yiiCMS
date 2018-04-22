@@ -26,7 +26,7 @@ return [
             'name' => 'advanced-backend',
         ],
         'errorHandler' => [
-            'errorAction' => 'site/error',
+            'errorAction' => 'core/site/error',
         ],
         /*
         'urlManager' => [
