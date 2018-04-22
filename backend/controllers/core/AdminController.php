@@ -75,7 +75,7 @@ class AdminController extends BaseController
     //个人资料编辑页面
     function actionEditSelfPage()
     {
-        $res = AdminService::getOne();
+        $res = AdminService::getOne(AuthService::getUid());
         return $this->render('edit-self',$res);
     }
     //编辑个人资料

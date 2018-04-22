@@ -34,12 +34,13 @@ class BaseController extends Controller
     {
         if (!AuthService::isLogin()) {
             $this->redirect(Url::to(['/core/login/index']))->send();
+        }else{
+            $res = AuthService::authUser();
+            if (!$res) {
+                self::warning(AuthService::getErr());
+            }
+            return true;
         }
-        $res = AuthService::authUser();
-        if (!$res) {
-            self::warning(AuthService::getErr());
-        }
-        return true;
     }
     /*页面标题设置
      * =============================================================*/

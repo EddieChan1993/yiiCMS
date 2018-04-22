@@ -71,13 +71,13 @@ class AdminService extends AuthService
         return $flag;
     }
 
-    public static function getOne(): array
+    public static function getOne($uid): array
     {
         $users = AlphaUsers::find()
-            ->where(['id' => self::$uid])
+            ->where(['id' => $uid])
             ->asArray()
             ->one();
-        $roleName = get_role(self::$uid);
+        $roleName = get_role($uid);
         $roleList = self::getRoleList();
 
         $map = $users;

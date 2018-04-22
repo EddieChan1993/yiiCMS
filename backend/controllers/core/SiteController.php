@@ -2,9 +2,11 @@
 namespace backend\controllers\core;
 
 use backend\service\core\InitService;
+use Codeception\Util\HttpCode;
 use common\helps\AuthE;
 use common\helps\CookieE;
 use Yii;
+use yii\db\Exception;
 use yii\helpers\Url;
 
 /**
@@ -24,5 +26,19 @@ class SiteController extends BaseController
     {
         CookieE::delCookie("UID");
         $this->redirect(Url::to(['core/login/index']));
+    }
+
+    public function actionError()
+    {
+        $exception = Yii::$app->errorHandler->exception;
+        if ($exception->statusCode == HttpCode::NOT_FOUND) {
+            //调试模式和生产模式，显示
+            return $this->render("404");
+        }else{
+            if ($exception != null) {
+                //生产模式显示
+                return $this->render("500");
+            }
+        }
     }
 }
