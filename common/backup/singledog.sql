@@ -1,5 +1,5 @@
 ﻿# Host: localhost  (Version: 5.5.53)
-# Date: 2018-04-21 17:15:52
+# Date: 2018-04-22 20:24:17
 # Generator: MySQL-Front 5.3  (Build 4.234)
 
 /*!40101 SET NAMES utf8 */;
@@ -11,20 +11,20 @@
 DROP TABLE IF EXISTS `alpha_imgs`;
 CREATE TABLE `alpha_imgs` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `img_size` varchar(255) DEFAULT NULL,
-  `upload_date` varchar(255) DEFAULT NULL COMMENT '上传日期',
+  `img_size` varchar(10) DEFAULT NULL,
+  `upload_date` int(11) DEFAULT NULL COMMENT '上传日期',
   `user_id` varchar(255) DEFAULT NULL COMMENT '操作者',
   `ip` varchar(255) DEFAULT NULL COMMENT '操作ip',
   `img_path` varchar(255) DEFAULT NULL COMMENT '图片路径',
-  `type` tinyint(1) NOT NULL DEFAULT '0' COMMENT '来源0-本地1-七牛',
+  `type` tinyint(1) NOT NULL DEFAULT '0' COMMENT '来源0-腾讯cos 1-七牛',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COMMENT='图片管理';
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COMMENT='图片管理';
 
 #
 # Data for table "alpha_imgs"
 #
 
-INSERT INTO `alpha_imgs` VALUES (2,'80.765KB','1523760228','','171.214.234.87','http://p2otxz81j.bkt.clouddn.com/5011b394ab55b684c3bfdb25790e7ef2.jpg',1),(3,'166.445KB','1523765413','','112.44.105.221','http://p2otxz81j.bkt.clouddn.com/7faee630c5cfe7ebb2bb9d52642648d3.jpg',1),(4,'252.103KB','1523765426','','112.44.105.221','http://p2otxz81j.bkt.clouddn.com/8844b63cf5f82a982e253a0ff740f02e.jpg',1),(5,'154.563KB','1523765473','','112.44.105.221','http://p2otxz81j.bkt.clouddn.com/369f5395c6797fc6d99a94ed388864fd.jpg',1),(6,'252.147KB','1523765487','','112.44.105.221','http://p2otxz81j.bkt.clouddn.com/f2994df6d89353362b9dc0df41253a00.jpg',1),(7,'127.007KB','1523767148','','171.210.230.213','http://p2otxz81j.bkt.clouddn.com/6968314726c092ade029c070969c5f66.png',1);
+INSERT INTO `alpha_imgs` VALUES (9,'150.274KB',1524313536,'1','127.0.0.1','http://qaqgame-1256160854.cos.ap-shanghai.myqcloud.com/avatar1524313535.png',0),(10,'2.351KB',1524367076,'1','127.0.0.1','http://qaqgame-1256160854.cos.ap-shanghai.myqcloud.com/avatar1524367074.png',0),(11,'2.351KB',1524377045,'1','127.0.0.1','http://qaqgame-1256160854.cos.ap-shanghai.myqcloud.com/avatar1524377044.png',0);
 
 #
 # Structure for table "alpha_menu"
@@ -49,13 +49,13 @@ CREATE TABLE `alpha_menu` (
   KEY `status` (`status`),
   KEY `parentid` (`parentid`),
   KEY `model` (`controller`)
-) ENGINE=InnoDB AUTO_INCREMENT=348 DEFAULT CHARSET=utf8mb4 COMMENT='后台菜单表';
+) ENGINE=InnoDB AUTO_INCREMENT=349 DEFAULT CHARSET=utf8mb4 COMMENT='后台菜单表';
 
 #
 # Data for table "alpha_menu"
 #
 
-INSERT INTO `alpha_menu` VALUES (211,249,'admin','core/menu','index','',0,1,'后台菜单','fa fa-sitemap','',2,'249-211'),(216,0,'admin','Default','default','',0,1,'管理组','fa fa-users','12323',0,'216'),(217,216,'admin','core/admin','index','',0,1,'管理员','fa fa-user','',0,'216-217'),(218,216,'admin','core/role','index','',0,1,'角色管理','fa fa-map-marker','',0,'216-218'),(249,0,'admin','Default','default','',0,1,'设置','fa fa-gears','',0,'249'),(304,249,'admin','core/imgs','index','',0,1,'系统图库','glyphicon glyphicon-picture','',0,'249-304'),(305,217,'admin','core/admin','add','',1,1,'管理员添加逻辑','','',0,'216-217-305'),(306,217,'admin','core/admin','edit','',1,1,'管理员编辑逻辑','','',0,'216-217-306'),(307,217,'admin','core/admin','del','',1,1,'管理员删除逻辑','','',0,'216-217-307'),(308,218,'admin','core/role','add','',1,1,'角色添加逻辑','','',0,'216-218-308'),(309,218,'admin','core/role','del','',1,1,'角色删除逻辑','','',0,'216-218-309'),(310,218,'admin','core/role','edit','',1,1,'角色编辑逻辑','','',0,'216-218-310'),(316,211,'admin','core/menu','del','',1,1,'后台菜单删除逻辑','','',0,'249-211-316'),(317,211,'admin','core/menu','add','',1,1,'后台菜单添加逻辑','','',0,'249-211-317'),(318,211,'admin','core/menu','edit','',1,1,'后台菜单编辑逻辑','','',0,'249-211-318'),(322,304,'admin','core/imgs','del','',1,1,'删除图库文件','','',0,'249-304-322'),(326,328,'admin','core/upload','upload-sigle','',1,1,'单图片上传逻辑','','',0,'328-326'),(327,328,'admin','core/upload','del-sigle-file','',1,1,'单图片删除逻辑','','',0,'328-327'),(328,0,'admin','Default','default','',0,0,'功能模块','','',0,'328'),(345,0,'admin','Default','default','',0,1,'模板','','',0,'345'),(346,345,'admin','test','index','',0,1,'模板1','fa fa-gift','',0,'345-346'),(347,345,'admin','test2','index','',0,1,'模板2','fa fa-gift','',0,'345-347'),(348,345,'','widget','index','',0,1,'组件模块','fa fa-anchor','',0,'345-348');
+INSERT INTO `alpha_menu` VALUES (211,249,'admin','core/menu','index','',0,1,'后台菜单','fa fa-sitemap','',1,'249-211'),(216,0,'admin','Default','default','',0,1,'管理组','fa fa-users','12323',0,'216'),(217,216,'admin','core/admin','index','',0,1,'管理员','fa fa-user','',0,'216-217'),(218,216,'admin','core/role','index','',0,1,'角色管理','fa fa-map-marker','',0,'216-218'),(249,0,'admin','Default','default','',0,1,'设置','fa fa-gears','',0,'249'),(304,249,'admin','core/img','index','',0,1,'系统图库','glyphicon glyphicon-picture','',0,'249-304'),(305,217,'admin','core/admin','add','',1,1,'管理员添加逻辑','','',0,'216-217-305'),(306,217,'admin','core/admin','edit','',1,1,'管理员编辑逻辑','','',0,'216-217-306'),(307,217,'admin','core/admin','del','',1,1,'管理员删除逻辑','','',0,'216-217-307'),(308,218,'admin','core/role','add','',1,1,'角色添加逻辑','','',0,'216-218-308'),(309,218,'admin','core/role','del','',1,1,'角色删除逻辑','','',0,'216-218-309'),(310,218,'admin','core/role','edit','',1,1,'角色编辑逻辑','','',0,'216-218-310'),(316,211,'admin','core/menu','del','',1,1,'后台菜单删除逻辑','','',0,'249-211-316'),(317,211,'admin','core/menu','add','',1,1,'后台菜单添加逻辑','','',0,'249-211-317'),(318,211,'admin','core/menu','edit','',1,1,'后台菜单编辑逻辑','','',0,'249-211-318'),(322,304,'admin','core/imgs','del','',1,1,'删除图库文件','','',0,'249-304-322'),(326,328,'admin','core/upload','upload-sigle','',1,1,'单图片上传逻辑','','',0,'328-326'),(327,328,'admin','core/upload','del-sigle-file','',1,1,'单图片删除逻辑','','',0,'328-327'),(328,0,'admin','Default','default','',0,0,'功能模块','','',0,'328'),(345,0,'admin','Default','default','',0,1,'模板','','',0,'345'),(346,345,'admin','test','index','',0,1,'模板1','fa fa-gift','',0,'345-346'),(348,345,'','core/example','index','',0,1,'组件模块','fa fa-anchor','',0,'345-348');
 
 #
 # Structure for table "alpha_role"
@@ -76,13 +76,13 @@ CREATE TABLE `alpha_role` (
   PRIMARY KEY (`id`),
   KEY `parentId` (`pid`),
   KEY `status` (`status`)
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COMMENT='角色表';
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4 COMMENT='角色表';
 
 #
 # Data for table "alpha_role"
 #
 
-INSERT INTO `alpha_role` VALUES (25,'超级管理员',NULL,1,'',1523759170,1523759201,0,'216,218,310,308,249,304,322,211,318,317,316,328,327,326,345,347,346','216-217'),(26,'123',NULL,1,'213',1524298922,0,0,NULL,NULL);
+INSERT INTO `alpha_role` VALUES (25,'超级管理员',NULL,1,'',1523759170,1523759201,0,'216,218,310,309,308,217,307,306,305,249,304,322,211,318,317,316,328,327,326,345,348,347,346','216-217');
 
 #
 # Structure for table "alpha_role_user"
@@ -94,13 +94,13 @@ CREATE TABLE `alpha_role_user` (
   `user_id` int(11) DEFAULT NULL,
   `role_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`role_user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COMMENT='角色用户关联表';
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COMMENT='角色用户关联表';
 
 #
 # Data for table "alpha_role_user"
 #
 
-INSERT INTO `alpha_role_user` VALUES (14,39,2),(15,1,25);
+INSERT INTO `alpha_role_user` VALUES (14,39,2),(15,1,25),(16,2,25);
 
 #
 # Structure for table "alpha_test"
@@ -152,4 +152,4 @@ CREATE TABLE `alpha_users` (
 # Data for table "alpha_users"
 #
 
-INSERT INTO `alpha_users` VALUES (1,'admin',NULL,'','aZKZBygJtL','admin','dc_wen663@163.com','127.0.0.1','1524275434','1524293211','1489155324',1,'',4);
+INSERT INTO `alpha_users` VALUES (1,'admin','','f354bc916f4979959bb4c274e8e92976','aZKZBygJtL','admin','dc_wen663@163.com','127.0.0.1','1524382600','1523759186','1489155324',1,'',12),(2,'test','http://qaqgame-1256160854.cos.ap-shanghai.myqcloud.com/avatar1524377044.png','712d15ab800f2834b0aa62dfd1ddc8db','UKvPZxoYFS','test','','127.0.0.1','1524380061','0','1524377058',1,'',2);
