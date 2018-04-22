@@ -20,7 +20,7 @@ class CurdService extends AuthService
     //用于调用getDataList时使用得数据表名,eg::AlphaMenu::className()
     private static $model;
     //表数据的时间创建字段，如果调用getDataList，需要设置
-    private static $c_time_key="c_time";
+    private static $c_time_key = "c_time";
 
     /**
      * @return mixed
@@ -39,12 +39,12 @@ class CurdService extends AuthService
      * @throws Exception
      * @internal param mixed $modelNameForm
      */
-    public static function setModelNameForm($object=null)
+    public static function setModelNameForm($object = null)
     {
         if (empty($object)) {
             throw new Exception("模型对象未定义,无法使用表单插件");
         }
-        $arr=explode("\\", get_class($object));
+        $arr = explode("\\", get_class($object));
         self::$modelNameForm = end($arr);
     }
 
@@ -95,26 +95,35 @@ class CurdService extends AuthService
      * @return array
      * @throws \Exception
      */
-    public static function getDataList($data, $filed = "*", $c_time_key='c_time')
+    public static function getDataList($data, $filed = "*", $c_time_key = 'c_time', $isStrtotime = true)
     {
         if (empty(self::$model)) {
             throw new \Exception("模型没有指定");
         }
 
-        $query=(new Query())->from(self::$model);
+        $query = (new Query())->from(self::$model);
         if (!empty($data['condition']) && is_array($data['condition'])) {
             foreach ($data['condition'] as $key => $val) {
-                if (!empty($val)||$val==="0") {
+                if (!empty($val) || $val === "0") {
                     //排除为空的字段
                     $query->andFilterCompare($key, $val);
                 }
             }
         }
-        if (!empty($data['s_date'])&&empty($data['e_date'])) {
-            $query->andFilterCompare($c_time_key, ['>=',strtotime($data['s_date'])]);
-        }
-        if (!empty($data['e_date'])&&empty($data['s_date'])) {
-            $query->andFilterCompare($c_time_key, ['<=',strtotime($data['e_date'])]);
+        if ($isStrtotime) {
+            if (!empty($data['s_date'])) {
+                $query->andFilterCompare($c_time_key, strtotime($data['s_date']), '>=');
+            }
+            if (!empty($data['e_date'])) {
+                $query->andFilterCompare($c_time_key, strtotime($data['e_date']), '<=');
+            }
+        } else {
+            if (!empty($data['s_date'])) {
+                $query->andFilterCompare($c_time_key, ['>=', $data['s_date']]);
+            }
+            if (!empty($data['e_date'])) {
+                $query->andFilterCompare($c_time_key, ['<=', $data['e_date']]);
+            }
         }
 
         $countNums = $query->count();
@@ -129,13 +138,13 @@ class CurdService extends AuthService
             ->all();
 
         $pages = getPageWidge($pagination);
-        $data = [
+        $res = [
             'dataArr' => $lists,//每页数据
             'pages' => $pages,//分页按钮
             'dataNums' => $countNums,//总个数
-            'get'=>$_GET
+            'get' => $data
         ];
-        return $data;
+        return $res;
     }
 
 }

@@ -1,5 +1,4 @@
 var morrisCharts = function() {
-
     Morris.Line({
       element: 'morris-line-example',
       data: [

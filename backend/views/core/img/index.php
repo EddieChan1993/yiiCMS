@@ -1,12 +1,12 @@
 <?php
-$pannel_title = $this->params['pannel_title'];
+$panel_title = $this->params['panel_title'];
 ?>
 <div class="row animated fadeIn">
     <div class="row">
         <div class="col-md-8">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title"><?=$pannel_title?></h3>
+                    <h3 class="panel-title"><?=$panel_title?></h3>
                     <ul class="panel-controls">
                         <label class="label label-info"><?=$dataNums?></label>
                     </ul>

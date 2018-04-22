@@ -59,7 +59,7 @@ class BaseController extends Controller
     public function setPannelTitle($pannel_title)
     {
         $this->pannel_title = $pannel_title;
-        Yii::$app->view->params['pannel_title'] = $this->pannel_title;
+        Yii::$app->view->params['panel_title'] = $this->pannel_title;
 
     }
 
