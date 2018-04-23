@@ -22,6 +22,17 @@ class CurdService extends AuthService
     //表数据的时间创建字段，如果调用getDataList，需要设置
     private static $c_time_key = "c_time";
 
+    //创建时间是否为时间戳
+    private static $isTimestrap=true;
+
+    /**
+     * @param bool $isTimestrap
+     */
+    public static function setIsTimestrap(bool $isTimestrap)
+    {
+        self::$isTimestrap = $isTimestrap;
+    }
+
     /**
      * @return mixed
      * @throws \Exception
@@ -82,9 +93,6 @@ class CurdService extends AuthService
      */
     public static function setCTimeKey($c_time_key)
     {
-        if (empty(self::$c_time_key)) {
-            throw new \Exception("c_time_key创建时间字段没有说明");
-        }
         self::$c_time_key = $c_time_key;
     }
 
@@ -95,7 +103,7 @@ class CurdService extends AuthService
      * @return array
      * @throws \Exception
      */
-    public static function getDataList($data, $filed = "*", $c_time_key = 'c_time', $isStrtotime = true)
+    public static function getDataList($data, $filed = "*")
     {
         if (empty(self::$model)) {
             throw new \Exception("模型没有指定");
@@ -110,7 +118,9 @@ class CurdService extends AuthService
                 }
             }
         }
-        if ($isStrtotime) {
+
+        $c_time_key = self::$c_time_key;
+        if (self::$isTimestrap) {
             if (!empty($data['s_date'])) {
                 $query->andFilterCompare($c_time_key, strtotime($data['s_date']), '>=');
             }
@@ -119,10 +129,10 @@ class CurdService extends AuthService
             }
         } else {
             if (!empty($data['s_date'])) {
-                $query->andFilterCompare($c_time_key, ['>=', $data['s_date']]);
+                $query->andFilterCompare($c_time_key, strtotime($data['s_date']), '>=');
             }
             if (!empty($data['e_date'])) {
-                $query->andFilterCompare($c_time_key, ['<=', $data['e_date']]);
+                $query->andFilterCompare($c_time_key, strtotime($data['e_date']), '<=');
             }
         }
 

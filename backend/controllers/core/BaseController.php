@@ -122,7 +122,7 @@ class BaseController extends Controller
      */
     function actionIndex()
     {
-        $res=CurdService::getDataList($_GET,'*',CurdService::getCTimeKey());
+        $res=CurdService::getDataList($_GET,'*');
         return $this->render('index', $res);
     }
 
