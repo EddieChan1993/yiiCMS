@@ -1,6 +1,7 @@
 <?php
 return [
     'language' => 'zh-CN',
+    'timeZone' => 'Asia/Shanghai',
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
