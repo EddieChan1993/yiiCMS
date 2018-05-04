@@ -16,6 +16,7 @@ class MenuService extends AuthService
 {
     public static function lists($getData): array
     {
+
         $menuList = AlphaMenu::find()
             ->asArray()
             ->all();
@@ -30,6 +31,7 @@ class MenuService extends AuthService
             $menuMap['menuChild'] = $getData['id'];
         }
         $flag = $menuMap;
+        unset($menuList);
         return $flag;
     }
 
@@ -132,5 +134,4 @@ class MenuService extends AuthService
         }
         return $flag;
     }
-
 }
