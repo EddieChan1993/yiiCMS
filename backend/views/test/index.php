@@ -1,7 +1,7 @@
 <?php
 $panel_title = $this->params['panel_title'];
-$id = !empty($get['condition']['id']) ? $get['condition']['id'] : '';
-$type = isset($get['condition']['type'])&&(!empty($get['condition']['type']) || $get['condition']['type'] === "0") ? $get['condition']['type'] : '';
+$id = $get['condition']['id'];
+$type =$get['condition']['type'];
 ?>
 <div class="animated fadeIn col-md-9">
     <div class="panel panel-default">
@@ -15,13 +15,13 @@ $type = isset($get['condition']['type'])&&(!empty($get['condition']['type']) || 
             <form class="form-inline" action="" method="get">
                 <input type="hidden" value="test/index" name="r">
                 <div class="form-group">
-                    <input class="form-control" value="<?= $id ?>" placeholder="Id" type="text" name="condition[id]">
+                    <input class="form-control" value="<?= $id ?>" placeholder="Id" type="text" name="id">
                 </div>
                 <div class="form-group">
                     <div class="input-group">
                         <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
                         <input class="form-control datepicker"
-                               value="<?= !empty($get['s_date']) ? $get['s_date'] : '' ?>" placeholder="开始时间"
+                               value="<?=$get['s_date']?>" placeholder="开始时间"
                                type="text" name="s_date">
                     </div>
                 </div>
@@ -30,13 +30,13 @@ $type = isset($get['condition']['type'])&&(!empty($get['condition']['type']) || 
                         <div class="input-group">
                             <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
                             <input class="form-control datepicker"
-                                   value="<?= !empty($get['e_date']) ? $get['e_date'] : '' ?>" placeholder="截至时间"
+                                   value="<?=$get['e_date'] ?>" placeholder="截至时间"
                                    type="text" name="e_date">
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
-                    <select name="condition[type]" class="form-control select">
+                    <select name="type" class="form-control select">
                         <option <?= $type === '' ? "selected" : "" ?> value="">全部</option>
                         <option <?= $type === "0" ? "selected" : "" ?> value="0">0</option>
                         <option <?= $type === "1" ? "selected" : "" ?> value="1">1</option>
