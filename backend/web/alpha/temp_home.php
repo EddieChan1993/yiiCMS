@@ -12,7 +12,7 @@ $tab_2 = $this->params['tab_2'];
             <div class="panel panel-default tabs">
                 <ul class="nav nav-tabs" role="tablist">
                     <li class="active"><a href="#tab-first" role="tab" data-toggle="tab"><?=$tab_1?>
-                        <button class="btn btn-success btn-rounded btn-sm">{$dataNums}</button>
+                        <button class="btn btn-success btn-rounded btn-sm"><?=$dataNums?></button>
                     </a></li>
                     <li><a href="#tab-second" role="tab" data-toggle="tab"><?=$tab_2?></a></li>
                 </ul>

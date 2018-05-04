@@ -9,6 +9,7 @@
 namespace backend\controllers\core;
 
 use backend\service\core\UploadService;
+use Yii;
 
 class UploadController extends BaseController
 {
@@ -33,5 +34,27 @@ class UploadController extends BaseController
             self::warning(UploadService::getErr());
         }
         self::output($res);
+    }
+
+    /*===================================Excel上传========================================*/
+    function actionShowUploadExcel()
+    {
+        $req = \Yii::$app->request->get();
+        $map = [
+            'path' => $req['path'],
+        ];
+        return $this->render('upload-excel',$map);
+    }
+    /**
+     * 前端调用方式
+     * "cdk/import-excel"指定控制器方法
+     * upload_excel("cdk/import-excel")
+     */
+    function actionUploadExcel()
+    {
+        $file = $_FILES;
+        $post = \Yii::$app->request->post();
+        //请求指定控制器处理excel
+        Yii::$app->runAction($post['path'],['tmp_name'=>$file['files']['tmp_name']]);
     }
 }

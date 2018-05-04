@@ -57,3 +57,20 @@ function del_pic(dom) {
     }
 }
 
+//上传excel
+//path=上传的文件处理地址
+function upload_excel(path) {
+    domain = getRootPath();
+    url = domain + '/index.php?r=core/upload/show-upload-excel&path='+path;
+    layer.open({
+        title:'Excel上传',
+        type: 2,
+        closeBtn: 0,
+        shadeClose: true,
+        area: '480px',
+        content: url,
+        success: function(layero, index) {
+            layer.iframeAuto(index);
+        }
+    });
+}

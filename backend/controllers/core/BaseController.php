@@ -122,10 +122,11 @@ class BaseController extends Controller
      */
     function actionIndex()
     {
-        $where['condition']['id'] = Yii::$app->request->get("id");
-        $where['condition']['type'] = Yii::$app->request->get("type");
-        $where['s_date'] = Yii::$app->request->get("s_date");
-        $where['e_date'] = Yii::$app->request->get('e_date');
+        $req = Yii::$app->request;
+        $where['condition']['id'] = $req->get("id");
+        $where['condition']['type'] = $req->get("type");
+        $where['s_date'] = $req->get("s_date");
+        $where['e_date'] = $req->get('e_date');
         $res=CurdService::getDataList($where,'*');
         return $this->render('index', $res);
     }
