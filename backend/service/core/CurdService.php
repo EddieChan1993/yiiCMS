@@ -25,6 +25,19 @@ class CurdService extends AuthService
     //创建时间是否为时间戳
     private static $isTimestrap=true;
 
+    //每页显示条数
+    private static $pageLimit = 13;
+
+    /**
+     * @param int $pageLimit
+     */
+    public static function setPageLimit(int $pageLimit)
+    {
+        self::$pageLimit = $pageLimit;
+    }
+
+
+
     /**
      * @param bool $isTimestrap
      */
@@ -138,7 +151,7 @@ class CurdService extends AuthService
 
         $countNums = $query->count();
         $pagination = new Pagination([
-            'defaultPageSize' => 13,
+            'defaultPageSize' => self::$pageLimit,
             'totalCount' => $countNums,
         ]);
         $lists = $query->orderBy("$c_time_key desc")
@@ -156,4 +169,5 @@ class CurdService extends AuthService
         ];
         return $res;
     }
+
 }

@@ -38,22 +38,24 @@ class FormW
 
     /**
      * 图片上传
-     * @param $value input的value
      * @param $name input的name
-     * @param $key 关键字，用于区分
+     * @param $value input的value
+     * @param string $key 标识区分其他同类
+     * @param string $pathName 保存地址前缀
      * @return string
+     * @throws \Exception
      */
-    public static function SingleUpload($name,$value,$key)
+    public static function SingleUpload($name,$value,$key='inp',$pathName='avatar')
     {
         $formModelName=CurdService::getModelNameForm();
         $formModelName = sprintf("%s[%s]", $formModelName, $name);
         $str = '<div class="gallery">';
         $str .= '<a class="gallery-item"  href="javascript:void(\'\')" title="Space picture 2" data-gallery>';
-        $str .= '<div style="width: 150px" class="image">';
-        $str .= sprintf('<input value="%s" hidden name="%s" type="text" id="inp">', $value,$formModelName);
+        $str .= '<div style="width: 120px" class="image">';
+        $str .= sprintf('<input value="%s" hidden name="%s" type="text" id="%s">', $value,$formModelName,$key);
         $str .= sprintf('<img src="%s" alt="Space picture 2"/>', is_img($value));
         $str .= '<ul class="gallery-item-controls">';
-        $str .= '<li onclick="upload_single(\'inp\',\'avatar\')"><i class="fa fa-cloud-upload"></i></li>';
+        $str .= sprintf('<li onclick="upload_single(\'%s\',\'%s\')"><i class="fa fa-cloud-upload"></i></li>',$key,$pathName);
 //        $str .= '<li onclick="del_pic(\'inp\')"><i class="fa fa-times"></i></li>';
         $str .= ' </ul>';
         $str .= "</div>";
