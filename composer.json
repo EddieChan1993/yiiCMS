@@ -33,12 +33,12 @@
             "enabled": false
         }
     },
-    "repositories": [
-        {
+    "repositories": {
+        "packagist": {
             "type": "composer",
-            "url": "https://asset-packagist.org"
+            "url": "https://packagist.phpcomposer.com"
         }
-    ],
+    },
     "autoload": {
         "files": [
           "common/components/functions.php"
