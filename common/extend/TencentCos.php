@@ -56,6 +56,6 @@ class TencentCos
     public static function upload($key,$temp_name)
     {
         $res=self::$TenceCosClient->upload(self::$bucket, $key, fopen($temp_name, 'r+'));
-        return $res['Location'];
+        return urlencode($res['Location']);
     }
 }

@@ -25,10 +25,12 @@ class UploadService extends AuthService
         $trans = $db->beginTransaction();
         $flag = "";
         try {
+            $forder = \Yii::$app->params['tencent_cos']['folder'];
+
             $keyHead = $postData['path'];
             $fileType=get_extension($fileData['files']['name']);
             $fileSize = $fileData['files']['size'];
-            $key = sprintf("%s%d.%s", $keyHead, time(), $fileType);
+            $key = sprintf("%s/%s%d.%s", $forder,$keyHead, time(), $fileType);
             $temp_name = $fileData['files']['tmp_name'];
 
             $instance = TencentCos::getInstance();
