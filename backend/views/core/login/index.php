@@ -1,5 +1,7 @@
 <?php
 use yii\helpers\Url;
+
+$cms = Yii::$app->params['cms'];
 ?>
 <!DOCTYPE html>
 <html lang="en" class="body-full-height">
@@ -63,7 +65,7 @@ use yii\helpers\Url;
             <div class="pull-left">
             </div>
             <div class="pull-right animated bounceIn">
-                &copy;2016-<?=date("Y")?>&nbsp;alphaCMS
+                &copy;2016-<?=date("Y")?>&nbsp;<?=$cms?>
             </div>
         </div>
     </div>

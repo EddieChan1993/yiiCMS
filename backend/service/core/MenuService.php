@@ -10,18 +10,20 @@ namespace backend\service\core;
 
 
 use app\models\AlphaMenu;
+use common\helps\LogE;
 use common\helps\Validate;
+use Psr\Log\LogLevel;
+use yii\debug\models\search\Log;
+use yii\log\FileTarget;
 
 class MenuService extends AuthService
 {
     public static function lists($getData): array
     {
-
         $menuList = AlphaMenu::find()
             ->asArray()
             ->all();
         $menuList = menu_left($menuList, 'id', 'parentid');
-
         $menuNum = AlphaMenu::find()->count();
         $menuMap = [
             'menu_nums' => $menuNum,

@@ -8,6 +8,7 @@ use yii\widgets\Breadcrumbs;
 use common\widgets\Alert;
 
 $title = Yii::$app->params['title'];
+$cms = Yii::$app->params['cms'];
 ?>
 <!DOCTYPE html>
 <html lang="">
@@ -15,7 +16,7 @@ $title = Yii::$app->params['title'];
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title><?=$title?>|YooCMS</title>
+    <title><?=$title?>|<?=$cms?></title>
     <link rel="icon" href="upload/admin/common/logo.png" type="image/x-icon" />
     <?=$this->render('head_out')?>
     <style type="text/css">
