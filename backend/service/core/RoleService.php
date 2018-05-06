@@ -84,6 +84,7 @@ class RoleService extends AuthService
             $oneRoleModel->nav_list = $postData['nav_list'];
             $oneRoleModel->rules = implode(",",$postData['rules']);
             $oneRoleModel->status= !empty($postData['status']) ? $postData['status'] : AlphaRole::STOP;
+            $oneRoleModel->update_time = time();
 
             $oneRoleModel->load($postData);
             if (!$oneRoleModel->save()) {
