@@ -1,7 +1,5 @@
 <?php
 ?>
-<script type="text/javascript" src="alpha/js/plugins/morris/raphael-min.js"></script>
-<script type="text/javascript" src="alpha/js/plugins/morris/morris.min.js"></script>
 <br/>
 <div class="row">
     <div class="col-md-3">

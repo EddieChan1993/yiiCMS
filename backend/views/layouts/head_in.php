@@ -18,6 +18,9 @@
 <script type="text/javascript" src="alpha/js/plugins/tagsinput/jquery.tagsinput.min.js"></script>
 <script type="text/javascript" src="alpha/js/plugins/datatables/jquery.dataTables.min.js"></script>
 
+
+<script type="text/javascript" src="alpha/js/plugins/morris/raphael-min.js"></script>
+<script type="text/javascript" src="alpha/js/plugins/morris/morris.min.js"></script>
 <!-- END THIS PAGE PLUGINS -->
 <script type="text/javascript" src="alpha/js/plugins.js"></script>
 <script type="text/javascript" src="alpha/js/actions.js"></script>
