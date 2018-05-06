@@ -2,12 +2,14 @@
 use yii\helpers\Url;
 
 $cms = Yii::$app->params['cms'];
+$title = Yii::$app->params['title'];
+
 ?>
 <!DOCTYPE html>
 <html lang="en" class="body-full-height">
 <head>
     <!-- META SECTION -->
-    <title>登录|YooCMS</title>
+    <title><?=$title?>|<?=$cms?></title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
