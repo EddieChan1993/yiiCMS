@@ -101,13 +101,12 @@ function editRequest() {
 function editResponse(res) {
     var index = parent.layer.getFrameIndex(window.name); //获取窗口索引
     destory();
-    console.log(123);
     if(res.error==0) {
         m_success(res.msg,{
             time:500
         },function () {
             parent.layer.close(index);
-            parent.parent.window.location.reload()
+            parent.window.location.reload()
         })
     }else{
         m_error(res.msg);
@@ -117,17 +116,17 @@ function editResponse(res) {
 /*========================================================菜单编辑=====================================================*/
 //编辑提交处理
 $('#edit_menu_form').ajaxForm({
-    beforeSubmit: editRequest,
-    success: editResponse
+    beforeSubmit: editRequest1,
+    success: editResponse1
 });
 
-function editRequest() {
+function editRequest1() {
     m_loading('数据提交中，请耐心等待...',{
         time:-1
     });
 }
 
-function editResponse(res) {
+function editResponse1(res) {
     var index = parent.layer.getFrameIndex(window.name); //获取窗口索引
     destory();
     if(res.error==0) {

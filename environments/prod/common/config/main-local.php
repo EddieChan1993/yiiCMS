@@ -8,5 +8,12 @@ return [
             'password' => 'root',
             'charset' => 'utf8',
         ],
+        'redis' => [
+            'class' => 'yii\redis\Connection',
+            'hostname' => 'localhost',
+            'port' => 6379,
+            'password' => "root",
+            'database' => 0,
+        ],
     ],
 ];
