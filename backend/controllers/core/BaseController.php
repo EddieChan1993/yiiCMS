@@ -33,7 +33,7 @@ class BaseController extends Controller
     public function beforeAction($action)
     {
         if (!AuthService::isLogin()) {
-            $this->redirect(Url::to(['/core/login/index']))->send();
+            $this->redirect(Url::toRoute(['/core/login/index']))->send();
         }else{
             $res = AuthService::authUser();
             if (!$res) {

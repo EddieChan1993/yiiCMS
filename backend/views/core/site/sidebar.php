@@ -32,7 +32,7 @@ $role_name = $this->params['role_name'];
                 </li>
                 <?php }else{?>
                 <li class="<?=in_array($v['id'],$menuNavList)?'active':''?> xn-openable">
-                    <a href="#"><span class=""></span> <span class="xn-text"><?=$v['name']?></span></a>
+                    <a href="#"><span class=""></span><span class="<?=$v['icon']?>"></span><span class="xn-text"><?=$v['name']?></span></a>
                     <ul>
                         <?php foreach ($v['child'] as $k1=>$v1){?>
                             <?php if (empty($v1['child'])){?>
