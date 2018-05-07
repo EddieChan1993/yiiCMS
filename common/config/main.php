@@ -25,7 +25,6 @@ return [
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
-            'suffix' => '.jsp',//后缀
             'rules' => [
             ],
         ],
