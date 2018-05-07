@@ -17,7 +17,7 @@ $cms = Yii::$app->params['cms'];
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title><?=$title?>|<?=$cms?></title>
-    <link rel="icon" href="upload/admin/common/logo.png" type="image/x-icon" />
+    <link rel="icon" href="<?=Url::to('@web/upload/admin/common/logo.png')?>" type="image/x-icon" />
     <?=$this->render('head_out')?>
     <style type="text/css">
         html, body{
@@ -34,16 +34,16 @@ $cms = Yii::$app->params['cms'];
     </div>
 </div>
 <?=$this->render('alert')?>
-<script type="text/javascript" src="alpha/js/plugins/jquery/jquery.min.js"></script>
-<script type="text/javascript" src="alpha/js/plugins/jquery/jquery-ui.min.js"></script>
-<script type="text/javascript" src="alpha/js/plugins/bootstrap/bootstrap.min.js"></script>
+<script type="text/javascript" src="<?=Url::to('@web/alpha/js/plugins/jquery/jquery.min.js')?>"></script>
+<script type="text/javascript" src="<?=Url::to('@web/alpha/js/plugins/jquery/jquery-ui.min.js')?>"></script>
+<script type="text/javascript" src="<?=Url::to('@web/alpha/js/plugins/bootstrap/bootstrap.min.js')?>"></script>
 <!-- END PLUGINS -->
 <!-- THIS PAGE PLUGINS -->
-<script type='text/javascript' src='alpha/js/plugins/icheck/icheck.min.js'></script>
-<script type="text/javascript" src="alpha/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
+<script type='text/javascript' src='<?=Url::to('@web/alpha/js/plugins/icheck/icheck.min.js')?>'></script>
+<script type="text/javascript" src="<?=Url::to('@web/alpha/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js')?>"></script>
 <!-- END PAGE PLUGINS -->
 <!-- START TEMPLATE -->
-<script type="text/javascript" src="alpha/js/plugins.js"></script>
-<script type="text/javascript" src="alpha/js/actions.js"></script>
+<script type="text/javascript" src="<?=Url::to('@web/alpha/js/plugins.js')?>"></script>
+<script type="text/javascript" src="<?=Url::to('@web/alpha/js/actions.js')?>"></script>
 </body>
 </html>

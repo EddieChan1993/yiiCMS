@@ -1,4 +1,5 @@
 <?php
+use yii\helpers\Url;
 ?>
 <br/>
 <div class="row">
@@ -80,5 +81,5 @@
 
     </div>
 </div>
-<script type="text/javascript" src="alpha/js/demo_charts_morris.js"></script>
+<script type="text/javascript" src="<?=Url::to('@web/alpha/js/demo_charts_morris.js')?>"></script>
 

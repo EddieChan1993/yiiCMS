@@ -13,7 +13,7 @@
 
     <!-- CSS INCLUDE -->
     <!--<link rel="stylesheet" type="text/css" id="theme" href="./css/theme-default.css"/>-->
-    <link rel="stylesheet" type="text/css" href="/alpha/css/theme-default.css"/>
+    <link rel="stylesheet" type="text/css" href="<?=\yii\helpers\Url::to('@web/alpha/css/theme-default.css')?>"/>
     <!-- EOF CSS INCLUDE -->
 </head>
 <body>

@@ -1,4 +1,6 @@
 <?php
+
+use yii\helpers\Html;
 use yii\helpers\Url;
 
 $cms = Yii::$app->params['cms'];
@@ -13,20 +15,20 @@ $title = Yii::$app->params['title'];
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" href="upload/admin/common/logo.png" type="image/x-icon" />
+    <link rel="icon" href="<?=Url::to('@web/upload/admin/common/logo.png')?>" type="image/x-icon" />
     <!-- END META SECTION -->
     <!-- CSS INCLUDE -->
-    <link rel="stylesheet" type="text/css" id="theme" href="alpha/css/theme-default.css"/>
+    <?= Html::cssFile('@web/alpha/css/theme-default.css') ?>
     <!-- EOF CSS INCLUDE -->
     <!--<script src="http://static.geetest.com/static/tools/gt.js"></script>-->
     <script src="//captcha.luosimao.com/static/js/api.js"></script>
-    <link rel="stylesheet" href="alpha/plugins/message_alert/css/m_css.css">
-    <script src="alpha/plugins/message_alert/js/m_js.js"></script>
-    <script type="text/javascript" src="alpha/js/jquery-2.2.4.min.js"></script>
-    <script src="alpha/plugins/ajax-form/ajax-form.js"></script>
+    <?= Html::cssFile('@web/alpha/plugins/message_alert/css/m_css.css') ?>
+    <?= Html::jsFile('@web/alpha/plugins/message_alert/js/m_js.js') ?>
+    <?= Html::jsFile('@web/alpha/js/jquery-2.2.4.min.js') ?>
+    <?= Html::jsFile('@web/alpha/plugins/ajax-form/ajax-form.js') ?>
     <style>
         .login-container{
-            background: url(upload/admin/common/bg.jpg);
+            background: url(<?=Url::to('@web/upload/admin/common/bg.jpg')?>);
             background-size: cover;
         }
         /*  .login-container .login-box .login-logo {
@@ -72,7 +74,7 @@ $title = Yii::$app->params['title'];
         </div>
     </div>
 </div>
-<script src="controller/login.js"></script>
+<?= Html::jsFile('@web/controller/login.js') ?>
 </body>
 </html>
 

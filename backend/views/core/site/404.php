@@ -11,7 +11,7 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <!-- END META SECTION -->
     <!-- CSS INCLUDE -->
-    <link rel="stylesheet" type="text/css" href="/alpha/css/theme-default.css"/>
+    <link rel="stylesheet" type="text/css" href="<?=\yii\helpers\Url::to('@web/alpha/css/theme-default.css')?>"/>
     <!-- EOF CSS INCLUDE -->
 </head>
 <body>
