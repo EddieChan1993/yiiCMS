@@ -23,10 +23,7 @@ function delete_row(dom){
                 parent.destory();
                 if(res.error==0) {
                     parent.m_success(res.msg,{time:500})
-                    del_tr=$(dom).parents('.del_tr');
-                    del_tr.hide("slow",function(){
-                        $(this).remove();
-                    });
+                    window.location.reload()
                 }else{
                     parent.m_error(res.msg)
                 }
