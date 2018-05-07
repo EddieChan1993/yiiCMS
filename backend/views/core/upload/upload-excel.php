@@ -15,11 +15,12 @@ use yii\helpers\Url;
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Page form example - Fileuploader</title>
     <!-- styles -->
-    <link href="alpha/plugins/edd-upload-sdk/src/jquery.fileuploader.css" media="all" rel="stylesheet">
-    <link href="alpha/plugins/edd-upload-sdk/examples/single_file/css/jquery.fileuploader-theme-thumbnails.css" media="all" rel="stylesheet">
+    <!-- styles -->
+    <link href="<?=Url::to('@web/alpha/plugins/edd-upload-sdk/src/jquery.fileuploader.css')?>" media="all" rel="stylesheet">
+    <link href="<?=Url::to('@web/alpha/plugins/edd-upload-sdk/examples/single_file/css/jquery.fileuploader-theme-thumbnails.css')?>" media="all" rel="stylesheet">
     <!-- js -->
-    <script src="alpha/plugins/edd-upload-sdk/src/jquery.fileuploader.min.js" type="text/javascript"></script>
-    <script src="alpha/plugins/edd-upload-sdk/examples/single_file/js/custom.js" type="text/javascript"></script>
+    <script src="<?=Url::to('@web/alpha/plugins/edd-upload-sdk/src/jquery.fileuploader.min.js')?>" type="text/javascript"></script>
+    <script src="<?=Url::to('@web/alpha/plugins/edd-upload-sdk/examples/single_file/js/custom.js')?>" type="text/javascript"></script>
     <style>
         body {
             font-family: 'Roboto', sans-serif;
@@ -58,7 +59,7 @@ use yii\helpers\Url;
         <button class="btn btn-info btn-block" type="submit">上传</button>
     </div>
 </form>
-<script src="alpha/plugins/edd-upload-sdk/ajaxForm.js" crossorigin="anonymous"></script>
+<script src="<?=Url::to('@web/alpha/plugins/edd-upload-sdk/ajaxForm.js')?>" crossorigin="anonymous"></script>
 <script type="text/javascript">
     var index = parent.layer.getFrameIndex(window.name); //获取窗口索引
     var type = "{$type}";//文件类型

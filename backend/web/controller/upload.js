@@ -18,7 +18,7 @@ var domain, img_url,url;
 function upload_single(dom,path,type) {
     type=type||'img';
     domain = getRootPath();
-    url = domain + '/index.php?r=core/upload/show-upload-single&dom='+dom+'&type='+type+'&path='+path;
+    url = domain + '/core/upload/show-upload-single?dom='+dom+'&type='+type+'&path='+path;
     layer.open({
         title:'单文件上传',
         type: 2,
@@ -61,7 +61,7 @@ function del_pic(dom) {
 //path=上传的文件处理地址
 function upload_excel(path) {
     domain = getRootPath();
-    url = domain + '/index.php?r=core/upload/show-upload-excel&path='+path;
+    url = domain + '/core/upload/show-upload-excel?path='+path;
     layer.open({
         title:'Excel上传',
         type: 2,

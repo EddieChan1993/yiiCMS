@@ -30,7 +30,6 @@ return [
         ],
         'urlManager' => [
             'enablePrettyUrl' => true,
-            'enableStrictParsing' => false,  //不启用严格解析
             'showScriptName' => false,
             'rules' => [
             ],
