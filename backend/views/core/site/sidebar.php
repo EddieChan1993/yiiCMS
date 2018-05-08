@@ -54,7 +54,7 @@ $role_name = $this->params['role_name'];
     </ul>
     <!-- END X-NAVIGATION -->
 </div>
-<script src="controller/silder.js"></script>
+<script src="<?=Url::to('@web/controller/silder.js')?>"></script>
 <script type="text/javascript">
 
 </script>
