@@ -5,7 +5,7 @@ use \yii\helpers\Url;
 
 ?>
 <div class="panel panel-default">
-    <form id="edit_form" action="<?= Url::to(['core/admin/edit-self']) ?>" method="post" class="form-horizontal">
+    <form id="edit_form_self" action="<?= Url::to(['core/admin/edit-self']) ?>" method="post" class="form-horizontal">
         <div class="panel-body">
             <input type="hidden" name="id" value="<?= $id ?>">
             <div class="row">
@@ -42,3 +42,32 @@ use \yii\helpers\Url;
         </div>
     </form>
 </div>
+
+<script>
+    //编辑提交处理
+    $('#edit_form_self').ajaxForm({
+        beforeSubmit: editRequest1,
+        success: editResponse1
+    });
+
+    function editRequest1() {
+        m_loading('数据提交中，请耐心等待...',{
+            time:-1
+        });
+    }
+
+    function editResponse1(res) {
+        var index = parent.layer.getFrameIndex(window.name); //获取窗口索引
+        destory();
+        if(res.error==0) {
+            m_success(res.msg,{
+                time:500
+            },function () {
+                parent.layer.close(index);
+            })
+        }else{
+            m_error(res.msg);
+        }
+    }
+
+</script>

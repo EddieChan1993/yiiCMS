@@ -66,7 +66,7 @@ class AdminController extends BaseController
     {
         $req = \Yii::$app->request;
         if ($req->isPost) {
-            $res = AdminService::editSelf($req->post());
+            $res = AdminService::edit($req->post());
             if (!$res) {
                 self::warning(AdminService::getErr());
             }

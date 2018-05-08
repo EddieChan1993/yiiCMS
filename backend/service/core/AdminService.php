@@ -114,7 +114,6 @@ class AdminService extends AuthService
         try {
             $userPass = $postData['AlphaUsers']['user_pass'];
             $userLogin = $postData['AlphaUsers']['user_login'];
-
             if (empty($userLogin)) {
                 throw new \Exception("账号不能为空");
             }
@@ -123,13 +122,15 @@ class AdminService extends AuthService
                 throw new \Exception("两次密码填写不一致");
             }
             $model = AlphaUsers::findOne($postData['id']);
-            $model->load($postData);
 
             if (!empty($userPass)) {
                 $randNums = random();
-                $model->user_pass = encrypt_password($userPass, $randNums);
-                $model->user_pass_salt = $randNums;
+                $postData['AlphaUsers']['user_pass'] = encrypt_password($userPass, $randNums);
+                $postData['AlphaUsers']['user_pass_salt'] = $randNums;
+            }else{
+                unset($postData['AlphaUsers']['user_pass']);
             }
+            $model->load($postData);
 
             $model->user_nicename = $userLogin;
             $model->user_status = !empty($postData['status']) ? $postData['status'] : AlphaUsers::STOP;
@@ -165,6 +166,8 @@ class AdminService extends AuthService
     public static function editSelf($postData):bool
     {
         $flag = false;
+        $db = \Yii::$app->db;
+        $trans = $db->beginTransaction();
         try {
             $userPass = $postData['AlphaUsers']['user_pass'];
             $userLogin = $postData['AlphaUsers']['user_login'];
@@ -176,13 +179,15 @@ class AdminService extends AuthService
                 throw new \Exception("两次密码填写不一致");
             }
             $model = AlphaUsers::findOne($postData['id']);
-            $model->load($postData);
 
             if (!empty($userPass)) {
                 $randNums = random();
-                $model->user_pass = encrypt_password($userPass, $randNums);
-                $model->user_pass_salt = $randNums;
+                $postData['AlphaUsers']['user_pass'] = encrypt_password($userPass, $randNums);
+                $postData['AlphaUsers']['user_pass_salt'] = $randNums;
+            }else{
+                unset($postData['AlphaUsers']['user_pass']);
             }
+            $model->load($postData);
 
             $model->user_nicename = $userLogin;
             $model->update_time = time();
@@ -191,7 +196,9 @@ class AdminService extends AuthService
             }
 
             $flag = true;
+            $trans->commit();
         } catch (\Exception $e) {
+            $trans->rollBack();
             self::setErr($e);
         }
         return $flag;
