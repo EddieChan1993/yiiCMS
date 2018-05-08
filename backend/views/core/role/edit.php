@@ -2,8 +2,8 @@
 use common\helps\FormW;
 use \yii\helpers\Url;
 ?>
-<link rel="stylesheet" type="text/css" href="alpha/plugins/check-tree/checktree.css" xmlns: xmlns:/>
-<script type="text/javascript" src="alpha/plugins/check-tree/tree.js"></script>
+<link rel="stylesheet" type="text/css" href="<?=Url::to('@web/alpha/plugins/check-tree/checktree.css')?>" xmlns: xmlns:/>
+<script type="text/javascript" src="<?=Url::to('@web/alpha/plugins/check-tree/tree.js')?>"></script>
 <div class="panel panel-default">
     <form id="edit_form" action="<?=Url::to(['core/role/edit'])?>" method="post" class="form-horizontal">
         <div class="panel-body">
