@@ -142,10 +142,10 @@ class CurdService extends AuthService
             }
         } else {
             if (!empty($data['s_date'])) {
-                $query->andFilterCompare($c_time_key, strtotime($data['s_date']), '>=');
+                $query->andFilterCompare($c_time_key, $data['s_date'], '>=');
             }
             if (!empty($data['e_date'])) {
-                $query->andFilterCompare($c_time_key, strtotime($data['e_date']), '<=');
+                $query->andFilterCompare($c_time_key, $data['e_date'], '<=');
             }
         }
 
