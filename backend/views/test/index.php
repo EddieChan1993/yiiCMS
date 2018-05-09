@@ -1,4 +1,7 @@
 <?php
+
+use yii\helpers\Url;
+
 $panel_title = $this->params['panel_title'];
 $id = $get['condition']['id'];
 $type =$get['condition']['type'];
@@ -12,8 +15,8 @@ $type =$get['condition']['type'];
             </ul>
         </div>
         <div class="panel-body">
-            <form class="form-inline" action="" method="get">
-                <input type="hidden" value="test/index" name="r">
+            <form class="form-inline" action="<?= Url::to('index')?>" method="get">
+<!--                <input type="hidden" value="test/index" name="r">-->
                 <div class="form-group">
                     <input class="form-control" value="<?= $id ?>" placeholder="Id" type="text" name="id">
                 </div>
