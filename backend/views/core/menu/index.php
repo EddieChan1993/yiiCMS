@@ -40,18 +40,18 @@ $tab_2 = $this->params['tab_2'];
                             </thead>
                             <tbody>
                             <?php foreach ($menu_list as $k=>$v){ ?>
-                            <tr class="del_tr">
-                                <td><?=$v['lefthtml']?><?=menu_type($v['name'],$v['type'])?></td>
-                                <td>@<?=$v['controller']?>/<?=$v['method']?></td>
-                                <td><?=is_stop($v['status'])?></td>
-                                <td><i class="<?=$v['icon']?>"></i></td>
-                                <td><input onchange="change_order(this)" style="width: 70px" type="number" class="order_change form-control" data-url="<?= Url::to(['core/menu/update-order'])?>" pk-id="<?=$v['id']?>" value="<?=$v['listorder']?>"></td>
-                                <td>
-                                    <a href="<?=Url::to(['core/menu/index','id'=>$v['id']])?>" class="btn btn-primary btn-rounded btn-sm"><span class="fa fa-plus"></span></a>
-                                    <a title="<?=$v['name']?>【编辑】" data-url="<?=Url::to(['core/menu/edit-page','id'=>$v['id']])?>" onclick="edit_row(this)" class="btn btn-default btn-rounded btn-sm"><span class="fa fa-pencil"></span></a>
-                                    <button onClick="delete_row(this);" data-url="<?=Url::to(['core/menu/del','id'=>$v['id']])?>" class="btn btn-danger btn-rounded btn-sm" ><span class="fa fa-trash-o"></span></button>
-                                </td>
-                            </tr>
+                                <tr class="del_tr">
+                                    <td><?=$v['lefthtml']?><?=menu_type($v['name'],$v['type'])?></td>
+                                    <td>@<?=$v['controller']?>/<?=$v['method']?></td>
+                                    <td><?=is_stop($v['status'])?></td>
+                                    <td><i class="<?=$v['icon']?>"></i></td>
+                                    <td><input onchange="change_order(this)" style="width: 70px" type="number" class="order_change form-control" data-url="<?= Url::to(['core/menu/update-order'])?>" pk-id="<?=$v['id']?>" value="<?=$v['listorder']?>"></td>
+                                    <td>
+                                        <a href="<?=Url::to(['core/menu/index','id'=>$v['id']])?>" class="btn btn-primary btn-rounded btn-sm"><span class="fa fa-plus"></span></a>
+                                        <a title="<?=$v['name']?>【编辑】" data-url="<?=Url::to(['core/menu/edit-page','id'=>$v['id']])?>" onclick="edit_row(this)" class="btn btn-default btn-rounded btn-sm"><span class="fa fa-pencil"></span></a>
+                                        <button onClick="delete_row(this);" data-url="<?=Url::to(['core/menu/del','id'=>$v['id']])?>" class="btn btn-danger btn-rounded btn-sm" ><span class="fa fa-trash-o"></span></button>
+                                    </td>
+                                </tr>
                             <?php } ?>
                             </tbody>
                         </table>
@@ -72,10 +72,10 @@ $tab_2 = $this->params['tab_2'];
                                                     <option  value="0">作为父级</option>
                                                     <?php foreach ($menu_list as $k=>$v){ ?>
                                                         <?php if(!empty($menuChild)){?>
-                                                             <option <?=is_selected($menuChild,$v['id'])?> value="<?=$v['id']?>"><?=$v['lefthtml']?><?=$v['name']?></option>
-                                                            <?php }else{?>
-                                                              <option  value="<?=$v['id']?>"><?=$v['lefthtml']?><?=$v['name']?></option>
-                                                            <?php }?>
+                                                            <option <?=is_selected($menuChild,$v['id'])?> value="<?=$v['id']?>"><?=$v['lefthtml']?><?=$v['name']?></option>
+                                                        <?php }else{?>
+                                                            <option  value="<?=$v['id']?>"><?=$v['lefthtml']?><?=$v['name']?></option>
+                                                        <?php }?>
                                                     <?php } ?>
                                                 </select>
                                             </div>
@@ -88,20 +88,18 @@ $tab_2 = $this->params['tab_2'];
                                         </div>
                                         <div class="form-group">
                                             <label class="col-md-3 control-label">@控制器/方法</label>
-                                            <div class="col-xs-3">
+                                            <div class="col-md-9">
                                                 <?=FormW::Input('controller')?>
-                                                <span class="help-block">控制器,若有子级菜单，则选择Default</span>
-                                            </div>
-                                            <div class="col-md-3">
+                                                <span class="help-block">【控制器】,若有子级菜单，则填default</span>
                                                 <?=FormW::Input('method')?>
-                                                <span class="help-block">若有子级菜单，填写default</span>
+                                                <span class="help-block">【方法】，若有子级菜单，填写default</span>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <div class="col-md-3 control-label">菜单徽标</div>
                                             <div class="col-md-9">
                                                 <?=FormW::Input('icon')?>
-                                                <span class="help-block">格式:fa fa-users</span>
+                                                <span class="help-block">格式:<a target="_blank" class="label label-warning" href="http://www.bootcss.com/p/font-awesome/">地址</a></span>
                                             </div>
                                         </div>
                                         <div class="form-group">
