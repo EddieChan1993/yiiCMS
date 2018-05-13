@@ -29,9 +29,9 @@ use \yii\helpers\Url;
                     <div class="form-group">
                         <label class="col-xs-3 control-label">@控制器/方法</label>
                         <div class="col-xs-9">
-                            <?=FormW::Input('controller')?>
+                            <?=FormW::Input('controller',$controller)?>
                             <span class="help-block">【控制器】,若有子级菜单，则填default</span>
-                            <?=FormW::Input('method')?>
+                            <?=FormW::Input('method',$method)?>
                             <span class="help-block">【方法】，若有子级菜单，填写default</span>
                         </div>
                     </div>
