@@ -136,12 +136,12 @@ class BaseController extends Controller
         echo "OK";
     }
 
-    function actionUpdate()
+    function actionUpdate($id=null)
     {
         echo "OK";
     }
 
-    function actionDel()
+    function actionDelete($id=null)
     {
         echo "Ok";
     }
