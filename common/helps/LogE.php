@@ -38,21 +38,21 @@ class LogE
     public  function infoLog($message,$fileName)
     {
         $this->logApi->logFile = Yii::$app->getRuntimePath() . '/logs/' . $fileName . '.log';
-        $this->logApi->messages[] = [PHP_EOL."$message", self::INFO_LEVEL, '', time()];
+        $this->logApi->messages[] = ["$message", self::INFO_LEVEL, '', time()];
         $this->logApi->export();
     }
 
     public  function errorLog($message,$fileName)
     {
         $this->logApi->logFile = Yii::$app->getRuntimePath() . '/logs/' . $fileName . '.log';
-        $this->logApi->messages[] = [PHP_EOL."$message", self::ERROR_LEVEL, '', time()];
+        $this->logApi->messages[] = ["$message", self::ERROR_LEVEL, '', time()];
         $this->logApi->export();
     }
 
     public  function waringLog($message,$fileName)
     {
         $this->logApi->logFile = Yii::$app->getRuntimePath() . '/logs/' . $fileName . '.log';
-        $this->logApi->messages[] = [PHP_EOL."$message", self::WARING_LEVEL, '', time()];
+        $this->logApi->messages[] = ["$message", self::WARING_LEVEL, '', time()];
         $this->logApi->export();
     }
 }
