@@ -39,20 +39,26 @@ class LogE
     {
         $this->logApi->logFile = Yii::$app->getRuntimePath() . '/logs/' . $fileName . '.log';
         $this->logApi->messages[] = ["$message", self::INFO_LEVEL, '', time()];
-        $this->logApi->export();
     }
 
     public  function errorLog($message,$fileName)
     {
         $this->logApi->logFile = Yii::$app->getRuntimePath() . '/logs/' . $fileName . '.log';
         $this->logApi->messages[] = ["$message", self::ERROR_LEVEL, '', time()];
-        $this->logApi->export();
     }
 
     public  function waringLog($message,$fileName)
     {
         $this->logApi->logFile = Yii::$app->getRuntimePath() . '/logs/' . $fileName . '.log';
         $this->logApi->messages[] = ["$message", self::WARING_LEVEL, '', time()];
+    }
+
+    /**
+     * @throws \yii\base\InvalidConfigException
+     * @throws \yii\log\LogRuntimeException
+     */
+    public function export()
+    {
         $this->logApi->export();
     }
 }
