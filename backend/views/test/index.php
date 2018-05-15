@@ -52,16 +52,19 @@ $type =$get['condition']['type'];
                 <thead>
                 <tr>
                     <th>Id</th>
+                    <th>Name</th>
                     <th>时间</th>
                     <th>类型</th>
+                    <th>操作</th>
                 </tr>
                 </thead>
                 <tbody>
-                <?php foreach ($dataArr as $k => $v) { ?>
+                <?php foreach ($dataArr as $obj) { ?>
                     <tr class="del_tr">
-                        <td><?= $v['id'] ?></td>
-                        <td><?= date("Y-m-d H:i:s", $v['c_time']) ?></td>
-                        <td><?= $v['type'] ?></td>
+                        <td><?= $obj['id'] ?></td>
+                        <td><?= $obj['name'] ?></td>
+                        <td><?= date("Y-m-d H:i:s", $obj['c_time']) ?></td>
+                        <td><?= $obj['type'] ?></td>
                     </tr>
                 <?php } ?>
                 </tbody>
@@ -73,5 +76,4 @@ $type =$get['condition']['type'];
     </div>
 </div>
 <script type="text/javascript">
-
 </script>

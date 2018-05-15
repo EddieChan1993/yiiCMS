@@ -15,7 +15,7 @@ use \yii\helpers\Url;
                             <select name="parentid" class="form-control select">
                                 <option  value="0">作为父级</option>
                                 <?php foreach ($menu_list as $k=>$v){?>
-                                <option <?=is_selected($parentid,$v['id'])?> value="<?=$v['id']?>"><?=$v['lefthtml']?><?=$v['name']?></option>
+                                    <option <?=is_selected($parentid,$v['id'])?> value="<?=$v['id']?>"><?=$v['lefthtml']?><?=$v['name']?></option>
                                 <?php }?>
                             </select>
                         </div>
@@ -28,20 +28,18 @@ use \yii\helpers\Url;
                     </div>
                     <div class="form-group">
                         <label class="col-xs-3 control-label">@控制器/方法</label>
-                        <div class="col-xs-3">
+                        <div class="col-xs-9">
                             <?=FormW::Input('controller',$controller)?>
-                            <span class="help-block">控制器</span>
-                        </div>
-                        <div class="col-xs-3">
+                            <span class="help-block">【控制器】,若有子级菜单，则填default</span>
                             <?=FormW::Input('method',$method)?>
-                            <span class="help-block">若有子级菜单，填写default</span>
+                            <span class="help-block">【方法】，若有子级菜单，填写default</span>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-xs-3 control-label">菜单徽标</div>
                         <div class="col-xs-9">
                             <?=FormW::Input('icon',$icon)?>
-                            <span class="help-block">格式:fa fa-users</span>
+                            <span class="help-block">格式:<a target="_blank" class="label label-warning" href="http://www.bootcss.com/p/font-awesome/">地址</a></span>
                         </div>
                     </div>
                     <div class="form-group">
