@@ -24,6 +24,7 @@ class InitService extends AuthService
         self::authMenu();
         self::menuNavList();
         self::adminUserInfo();
+        NewsService::getNews();
         return self::getNowMenuContent();
     }
 

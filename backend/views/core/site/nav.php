@@ -1,5 +1,6 @@
 <?php
 use \yii\helpers\Url;
+$newsInfo = $this->params['newsInfo'];
 ?>
 <ul class="x-navigation x-navigation-horizontal x-navigation-panel">
     <!-- TOGGLE NAVIGATION -->
@@ -26,32 +27,27 @@ use \yii\helpers\Url;
     </li>
     <li class="xn-icon-button pull-right">
     </li>
-    <!--&lt;!&ndash; END MESSAGES &ndash;&gt;-->
-    <!--&lt;!&ndash; TASKS &ndash;&gt;-->
-    <!--<li class="xn-icon-button pull-right">-->
-    <!--<a href="#"><span class="fa fa-tasks"></span></a>-->
-    <!--<div class="informer informer-warning">3</div>-->
-    <!--<div class="panel panel-primary animated zoomIn xn-drop-left xn-panel-dragging">-->
-    <!--<div class="panel-heading">-->
-    <!--<h3 class="panel-title"><span class="fa fa-tasks"></span> Tasks</h3>-->
-    <!--<div class="pull-right">-->
-    <!--<span class="label label-warning">3 active</span>-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--<div class="panel-body list-group scroll" style="height: 200px;">-->
-    <!--<a class="list-group-item" href="#">-->
-    <!--<strong>Phasellus augue arcu, elementum</strong>-->
-    <!--<div class="progress progress-small progress-striped active">-->
-    <!--<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%;">50%</div>-->
-    <!--</div>-->
-    <!--<small class="text-muted">John Doe, 25 Sep 2014 / 50%</small>-->
-    <!--</a>-->
-
-    <!--</div>-->
-    <!--<div class="panel-footer text-center">-->
-    <!--<a href="pages-tasks.html">Show all tasks</a>-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--</li>-->
-    <!-- END TASKS -->
+    <li class="xn-icon-button pull-right">
+        <a href="javascript:void(0)" title="小喇叭"><span class="fa fa-bullhorn"></span></a>
+        <?php if (!empty($newsInfo)){?>
+            <div class="informer informer-danger"><?=count($newsInfo)?></div>
+        <?php }?>
+        <div class="panel panel-primary animated zoomInDown xn-drop-left xn-panel-dragging">
+            <div class="panel-heading">
+                <h3 class="panel-title"><span class="fa fa-bullhorn"></span>警告</h3>
+                <div class="pull-right">
+                    <span class="label label-danger"><?=!empty(count($newsInfo))?count($newsInfo):0?></span>
+                </div>
+            </div>
+            <div class="panel-body list-group scroll" style="height: 200px;">
+                <?php foreach ($newsInfo as $obj){?>
+                    <a class="list-group-item" href="#">
+                        <strong><?=$obj?></strong>
+                        <br/>
+                        <small class="text-muted"><?=date('Y-m-d H:i:s')?></small>
+                    </a>
+                <?php }?>
+            </div>
+        </div>
+    </li>
 </ul>
