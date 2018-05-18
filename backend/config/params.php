@@ -7,4 +7,8 @@ return [
         'auth_on' => true,           // 认证开关
         'auth_open_id' => [1]            //不需要验证的管理员id
     ],
+
+    //快捷导航url
+    'link' => [
+    ],
 ];
