@@ -1,6 +1,7 @@
 <?php
 use \yii\helpers\Url;
 $newsInfo = $this->params['newsInfo'];
+$urlArr = Yii::$app->params['link'];
 ?>
 <ul class="x-navigation x-navigation-horizontal x-navigation-panel">
     <!-- TOGGLE NAVIGATION -->
@@ -25,13 +26,20 @@ $newsInfo = $this->params['newsInfo'];
         <a href="javascript:void(0)" title="【编辑】个人资料" data-url="<?=Url::to(['core/admin/edit-self-page'])?>" onclick="edit_row(this)"><span class="fa fa-user"></span></a>
         <div class="informer informer-danger"></div>
     </li>
+    <?php if (!empty($urlArr)){?>
     <li class="xn-icon-button pull-right">
+        <a title="快速导航" href="javascript:void(0)"><span class="fa fa-link"></span></a>
+        <ul class="xn-drop-left xn-drop-white animated zoomInDown">
+            <?php foreach ($urlArr as $k=>$v){?>
+                <li><a target="_blank" href="<?=$v?>"><span class="fa fa-map-marker"></span><?=$k?></a></li>
+            <?php }?>
+        </ul>
     </li>
+    <?php }?>
+    <?php if (!empty($newsInfo)){?>
     <li class="xn-icon-button pull-right">
         <a href="javascript:void(0)" title="小喇叭"><span class="fa fa-bullhorn"></span></a>
-        <?php if (!empty($newsInfo)){?>
             <div class="informer informer-danger"><?=count($newsInfo)?></div>
-        <?php }?>
         <div class="panel panel-primary animated zoomInDown xn-drop-left xn-panel-dragging">
             <div class="panel-heading">
                 <h3 class="panel-title"><span class="fa fa-bullhorn"></span>警告</h3>
@@ -50,4 +58,5 @@ $newsInfo = $this->params['newsInfo'];
             </div>
         </div>
     </li>
+    <?php }?>
 </ul>
