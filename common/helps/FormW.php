@@ -50,7 +50,7 @@ class FormW
         $formModelName=CurdService::getModelNameForm();
         $formModelName = sprintf("%s[%s]", $formModelName, $name);
         $str = '<div class="gallery">';
-        $str .= '<a class="gallery-item"  href="javascript:void(\'\')" title="Space picture 2" data-gallery>';
+        $str .= '<a class="gallery-item"  href="javascript:void(\'\')" title="点击上传" data-gallery>';
         $str .= '<div style="width: 120px" class="image">';
         $str .= sprintf('<input value="%s" hidden name="%s" type="text" id="%s">', $value,$formModelName,$key);
         $str .= sprintf('<img src="%s" alt="Space picture 2"/>', is_img($value));
