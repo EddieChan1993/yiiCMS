@@ -44,7 +44,7 @@ $urlArr = Yii::$app->params['link'];
             <div class="panel-heading">
                 <h3 class="panel-title"><span class="fa fa-bullhorn"></span>警告</h3>
                 <div class="pull-right">
-                    <span class="label label-danger"><?=!empty(count($newsInfo))?count($newsInfo):0?></span>
+                    <span class="label label-danger"><?=count($newsInfo)?></span>
                 </div>
             </div>
             <div class="panel-body list-group scroll" style="height: 200px;">
