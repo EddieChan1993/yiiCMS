@@ -22,6 +22,14 @@ use yii\helpers\ArrayHelper;
 class NewsService extends AuthService
 {
     private static $newsArr = [];
+
+    private static function getmessArr($message,$time=null)
+    {
+        return [
+            'message'=>$message,
+            'time' => !empty($time) ? $time:date("Y-m-d H:i:s")  ,
+        ];
+    }
     public static function getNews()
     {
         self::cdkInfo();
@@ -30,6 +38,8 @@ class NewsService extends AuthService
     //获取cdk信息
     private static function cdkInfo()
     {
-        array_push(self::$newsArr, "message");
+        array_push(self::$newsArr, self::getmessArr("hi"));
+        array_push(self::$newsArr, self::getmessArr("two"));
+        array_push(self::$newsArr, self::getmessArr("three"));
     }
 }

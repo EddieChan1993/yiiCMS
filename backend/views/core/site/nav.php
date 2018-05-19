@@ -50,9 +50,9 @@ $urlArr = Yii::$app->params['link'];
             <div class="panel-body list-group scroll" style="height: 200px;">
                 <?php foreach ($newsInfo as $obj){?>
                     <a class="list-group-item" href="#">
-                        <strong><?=$obj?></strong>
+                        <strong><?=$obj['message']?></strong>
                         <br/>
-                        <small class="text-muted"><?=date('Y-m-d H:i:s')?></small>
+                        <small class="text-muted"><?=$obj['time']?></small>
                     </a>
                 <?php }?>
             </div>
