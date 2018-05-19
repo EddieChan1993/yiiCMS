@@ -122,6 +122,5 @@ $tab_2 = $this->params['tab_2'];
         </div>
     </div>
 </div>
-
 <script type="text/javascript">
 </script>
