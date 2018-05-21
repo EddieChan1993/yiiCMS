@@ -18,8 +18,10 @@ class LoginService extends BaseService
             if (empty($postData['username']) || empty($postData['password'])) {
                 throw new \Exception("用户名或密码不能为空");
             }
-            if (YII_ENV == 'prod') {
+            $luosimaoOpen = Yii::$app->params['open_luosimao'];
+            if ($luosimaoOpen&&YII_ENV == 'prod') {
                 //生产模式
+                self::authLuosimao($postData['luotest_response']);
             }
             $userInfo = AlphaUsers::find()
                 ->where(['user_login'=>$postData['username']])
@@ -60,6 +62,29 @@ class LoginService extends BaseService
         $userInfoModel->user_hits = $userInfoModel->user_hits + 1;
         if (!$userInfoModel->save()) {
             throw new \Exception(current($userInfoModel->getFirstErrors()));
+        }
+    }
+
+
+    /**
+     * @throws \Exception
+     */
+    private static function authLuosimao($luotestRes)
+    {
+        $luosimao = Yii::$app->params['luosimao'];
+        if (empty($luosimao)) {
+            throw new \Exception("螺丝帽验证没有配置");
+        }
+        $api_key=ArrayHelper::getValue($luosimao, 'API_KEY');
+
+        $data = [
+            'response' => $luotestRes,
+            'api_key' => $api_key
+        ];
+
+        $res = http_curl("https://captcha.luosimao.com/api/site_verify", 'post', 'json', $data);
+        if (!empty($res['error'])) {
+            throw new \Exception("验证无效,请重试");
         }
     }
 }

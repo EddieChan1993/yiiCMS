@@ -1,5 +1,6 @@
 <?php
 
+use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\helpers\Url;
 
@@ -47,7 +48,8 @@ $title = Yii::$app->params['title'];
         <div  class="login-logo animated bounceIn"></div>
         <div  class="login-body ">
             <div class="login-title animated fadeIn"><strong>欢迎使用</strong>, 请登录</div>
-            <form open_verify="<?=YII_ENV?>" id="login_in_form" action="<?=Url::to(['login-think'])?>" class="form-horizontal" method="post">
+            <?php $is_open_verify=Yii::$app->params['open_luosimao']?>
+            <form open_verify="<?=YII_ENV?>" is_open_verify="<?=$is_open_verify?>" id="login_in_form" action="<?=Url::to(['login-think'])?>" class="form-horizontal" method="post">
                 <div class="form-group">
                     <div class="col-md-12">
                         <input name="username" type="text" class="form-control" placeholder="用户名"/>
@@ -58,6 +60,14 @@ $title = Yii::$app->params['title'];
                         <input name="password" type="password" class="form-control" placeholder="密码"/>
                     </div>
                 </div>
+                <?php if (YII_ENV=='prod'){?>
+                    <?php $params=Yii::$app->params['luosimao']?>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <div class="l-captcha" data-width='100%' data-site-key="<?= ArrayHelper::getValue($params,'SITE_KEY')?>"></div>
+                        </div>
+                    </div>
+                <?php }?>
                 <div class="form-group">
                     <div class="col-md-12">
                         <button id="embed-submit" class="btn btn-info btn-block">登陆</button>

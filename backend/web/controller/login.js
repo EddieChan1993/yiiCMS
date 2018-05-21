@@ -19,9 +19,10 @@ function showResponse(res) {
         })
     }else{
         var open_verify=$("#login_in_form").attr('open_verify');
-        // if (open_verify=="prod") {
-        //     LUOCAPTCHA.reset();
-        // }
+        var is_open_verify=$("#login_in_form").attr('is_open_verify');
+        if (is_open_verify==true&&open_verify=="prod") {
+            LUOCAPTCHA.reset();
+        }
         m_error(res.msg,{
             time:1500
         });
