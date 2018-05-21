@@ -23,18 +23,18 @@ $type =$get['condition']['type'];
                 <div class="form-group">
                     <div class="input-group">
                         <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
-                        <input class="form-control datepicker"
+                        <input class="form-control"
                                value="<?=$get['s_date']?>" placeholder="开始时间"
-                               type="text" name="s_date">
+                               type="date" name="s_date">
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="form-group">
                         <div class="input-group">
                             <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
-                            <input class="form-control datepicker"
+                            <input class="form-control"
                                    value="<?=$get['e_date'] ?>" placeholder="截至时间"
-                                   type="text" name="e_date">
+                                   type="date" name="e_date">
                         </div>
                     </div>
                 </div>
@@ -55,7 +55,6 @@ $type =$get['condition']['type'];
                     <th>Name</th>
                     <th>时间</th>
                     <th>类型</th>
-                    <th>操作</th>
                 </tr>
                 </thead>
                 <tbody>

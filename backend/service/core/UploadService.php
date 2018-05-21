@@ -11,6 +11,7 @@ namespace backend\service\core;
 
 use app\models\AlphaImgs;
 use common\extend\TencentCos;
+use yii\db\Exception;
 
 class UploadService extends AuthService
 {
@@ -25,6 +26,9 @@ class UploadService extends AuthService
         $trans = $db->beginTransaction();
         $flag = "";
         try {
+            if (empty($fileData)) {
+                throw new Exception("请先选择文件");
+            }
             $forder = \Yii::$app->params['tencent_cos']['folder'];
 
             $keyHead = $postData['path'];

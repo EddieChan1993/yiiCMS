@@ -35,6 +35,10 @@ class AdminService extends AuthService
                 throw new \Exception("账号不能为空");
             }
 
+            if (empty($userPass)) {
+                throw new \Exception("密码不能为空");
+            }
+
             if ($postData['confirm_pass'] != $userPass) {
                 throw new \Exception("两次密码填写不一致");
             }
@@ -46,7 +50,6 @@ class AdminService extends AuthService
             $randNums = random();
             $model->user_pass = encrypt_password($userPass, $randNums);
             $model->user_pass_salt = $randNums;
-
 
             $model->user_nicename = $userLogin;
             $model->user_status = !empty($postData['status']) ? $postData['status'] : AlphaUsers::STOP;

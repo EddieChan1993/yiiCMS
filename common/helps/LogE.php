@@ -1,5 +1,7 @@
 <?php
+
 namespace common\helps;
+
 use \Yii;
 
 /**
@@ -12,53 +14,51 @@ class LogE
 {
     const ERROR_LEVEL = 1;
     const WARING_LEVEL = 2;
-    const INFO_LEVEL =4;
+    const INFO_LEVEL = 4;
 
     private $logApi;
     private static $instance;
+    private static $fileName;
 
     /**
      * LogE constructor.
      */
     private function __construct()
     {
-        $this->logApi=new \yii\log\FileTarget();
+        $this->logApi = new \yii\log\FileTarget();
     }
 
 
-    public static function getInstance()
+    public static function getNewInstance($fileName)
     {
-        if (empty(self::$instance)) {
-           self::$instance= new LogE();
-        }
+        self::$instance = new LogE();
+        self::$fileName = $fileName;
 
         return self::$instance;
     }
 
-    public  function infoLog($message,$fileName)
+    public function info($message)
     {
-        $this->logApi->logFile = Yii::$app->getRuntimePath() . '/logs/' . $fileName . '.log';
+        $this->logApi->logFile = Yii::$app->getRuntimePath() . '/logs/' . self::$fileName . '.log';
         $this->logApi->messages[] = ["$message", self::INFO_LEVEL, '', time()];
     }
 
-    public  function errorLog($message,$fileName)
+    public function error($message)
     {
-        $this->logApi->logFile = Yii::$app->getRuntimePath() . '/logs/' . $fileName . '.log';
+        $this->logApi->logFile = Yii::$app->getRuntimePath() . '/logs/' . self::$fileName . '.log';
         $this->logApi->messages[] = ["$message", self::ERROR_LEVEL, '', time()];
     }
 
-    public  function waringLog($message,$fileName)
+    public function waring($message)
     {
-        $this->logApi->logFile = Yii::$app->getRuntimePath() . '/logs/' . $fileName . '.log';
+        $this->logApi->logFile = Yii::$app->getRuntimePath() . '/logs/' . self::$fileName . '.log';
         $this->logApi->messages[] = ["$message", self::WARING_LEVEL, '', time()];
     }
 
-    /**
-     * @throws \yii\base\InvalidConfigException
-     * @throws \yii\log\LogRuntimeException
-     */
-    public function export()
+    public function __destruct()
     {
+        //当前实例被销毁调用
+        // TODO: Implement __destruct() method.
         $this->logApi->export();
     }
 }

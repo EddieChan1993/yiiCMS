@@ -53,6 +53,9 @@ class UploadController extends BaseController
     function actionUploadExcel()
     {
         $file = $_FILES;
+        if (empty($file)) {
+            self::warning("请先添加文件");
+        }
         $post = \Yii::$app->request->post();
         //请求指定控制器处理excel
         Yii::$app->runAction($post['path'],['tmp_name'=>$file['files']['tmp_name']]);

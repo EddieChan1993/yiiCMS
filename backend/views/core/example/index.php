@@ -27,59 +27,5 @@ use yii\helpers\Url;
         </div>
     </div>
 </div>
-<div class="row">
-    <div class="col-md-6">
-        <!-- START LINE CHART -->
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title">Line Chart</h3>
-            </div>
-            <div class="panel-body">
-                <div id="morris-line-example" style="height: 300px;"></div>
-            </div>
-        </div>
-        <!-- END LINE CHART -->
-    </div>
-    <div class="col-md-6">
-        <!-- START Area CHART -->
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title">Area Chart</h3>
-            </div>
-            <div class="panel-body">
-                <div id="morris-area-example" style="height: 300px;"></div>
-            </div>
-        </div>
-        <!-- END Area CHART -->
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-md-6">
-        <!-- START BAR CHART -->
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title">Bar Chart</h3>
-            </div>
-            <div class="panel-body">
-                <div id="morris-bar-example" style="height: 300px;"></div>
-            </div>
-        </div>
-        <!-- END BAR CHART -->
-    </div>
-    <div class="col-md-6">
-        <!-- START DONUT CHART -->
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title">Donut Chart</h3>
-            </div>
-            <div class="panel-body">
-                <div id="morris-donut-example" style="height: 300px;"></div>
-            </div>
-        </div>
-        <!-- END DONUT CHART -->
-
-    </div>
-</div>
 <script type="text/javascript" src="<?=Url::to('@web/alpha/js/demo_charts_morris.js')?>"></script>
 
