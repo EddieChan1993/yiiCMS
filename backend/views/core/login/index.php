@@ -12,11 +12,11 @@ $title = Yii::$app->params['title'];
 <html lang="en" class="body-full-height">
 <head>
     <!-- META SECTION -->
-    <title><?=$title?>|<?=$cms?></title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" href="<?=Url::to('@web/upload/admin/common/logo.png')?>" type="image/x-icon" />
+    <title><?= $title ?>|<?= $cms ?></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="icon" href="<?= Url::to('@web/upload/admin/common/logo.png') ?>" type="image/x-icon"/>
     <!-- END META SECTION -->
     <!-- CSS INCLUDE -->
     <?= Html::cssFile('@web/alpha/css/theme-default.css') ?>
@@ -28,28 +28,30 @@ $title = Yii::$app->params['title'];
     <?= Html::jsFile('@web/alpha/js/jquery-2.2.4.min.js') ?>
     <?= Html::jsFile('@web/alpha/plugins/ajax-form/ajax-form.js') ?>
     <style>
-        .login-container{
+        .login-container {
             background: url(<?=Url::to('@web/upload/admin/common/bg.jpg')?>);
             background-size: cover;
         }
+
         /*  .login-container .login-box .login-logo {
               background: url({:get_options('site_logo')}) top center no-repeat;
                background-size: 130px;
           }*/
-        .login-container .login-box .login-body{
+        .login-container .login-box .login-body {
             background: #334163
         }
     </style>
 </head>
 <body>
-<?=$this->render('../../layouts/alert')?>
+<?= $this->render('../../layouts/alert') ?>
 <div class="login-container">
     <div class="login-box animated bounceInDown">
-        <div  class="login-logo animated bounceIn"></div>
-        <div  class="login-body ">
+        <div class="login-logo animated bounceIn"></div>
+        <div class="login-body ">
             <div class="login-title animated fadeIn"><strong>欢迎使用</strong>, 请登录</div>
-            <?php $is_open_verify=Yii::$app->params['open_luosimao']?>
-            <form open_verify="<?=YII_ENV?>" is_open_verify="<?=$is_open_verify?>" id="login_in_form" action="<?=Url::to(['login-think'])?>" class="form-horizontal" method="post">
+            <?php $is_open_verify = Yii::$app->params['open_luosimao'] ?>
+            <form open_verify="<?= YII_ENV ?>" is_open_verify="<?= $is_open_verify ?>" id="login_in_form"
+                  action="<?= Url::to(['login-think']) ?>" class="form-horizontal" method="post">
                 <div class="form-group">
                     <div class="col-md-12">
                         <input name="username" type="text" class="form-control" placeholder="用户名"/>
@@ -60,14 +62,15 @@ $title = Yii::$app->params['title'];
                         <input name="password" type="password" class="form-control" placeholder="密码"/>
                     </div>
                 </div>
-                <?php if (YII_ENV=='prod'){?>
-                    <?php $params=Yii::$app->params['luosimao']?>
+                <?php if (YII_ENV == 'prod' && $is_open_verify) { ?>
+                    <?php $params = Yii::$app->params['luosimao'] ?>
                     <div class="form-group">
                         <div class="col-md-12">
-                            <div class="l-captcha" data-width='100%' data-site-key="<?= ArrayHelper::getValue($params,'SITE_KEY')?>"></div>
+                            <div class="l-captcha" data-width='100%'
+                                 data-site-key="<?= ArrayHelper::getValue($params, 'SITE_KEY') ?>"></div>
                         </div>
                     </div>
-                <?php }?>
+                <?php } ?>
                 <div class="form-group">
                     <div class="col-md-12">
                         <button id="embed-submit" class="btn btn-info btn-block">登陆</button>
@@ -79,7 +82,7 @@ $title = Yii::$app->params['title'];
             <div class="pull-left">
             </div>
             <div class="pull-right animated bounceIn">
-                &copy;2016-<?=date("Y")?>&nbsp;<?=$cms?>
+                &copy;2016-<?= date("Y") ?>&nbsp;<?= $cms ?>
             </div>
         </div>
     </div>
