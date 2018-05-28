@@ -31,28 +31,36 @@
 return [
     'Development' => [
         'path' => 'dev',
+        //设置可写（权限0777）目录
         'setWritable' => [
             'backend/runtime',
             'backend/web/assets',
             'frontend/runtime',
             'frontend/web/assets',
+            'api/runtime',
+            'api/web/assets',
         ],
         'setExecutable' => [
             'yii',
             'yii_test',
         ],
+        //下列文件包含cookie验证码，需要生产随机串将cookie验证码包含进去
         'setCookieValidationKey' => [
             'backend/config/main-local.php',
             'frontend/config/main-local.php',
+            'api/config/main-local.php',
         ],
     ],
     'Production' => [
+        // 生产环境
         'path' => 'prod',
         'setWritable' => [
             'backend/runtime',
             'backend/web/assets',
             'frontend/runtime',
             'frontend/web/assets',
+            'api/runtime',
+            'api/web/assets',
         ],
         'setExecutable' => [
             'yii',
@@ -60,6 +68,7 @@ return [
         'setCookieValidationKey' => [
             'backend/config/main-local.php',
             'frontend/config/main-local.php',
+            'api/config/main-local.php',
         ],
     ],
 ];
