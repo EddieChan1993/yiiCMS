@@ -19,6 +19,8 @@ class LogE
     private $logApi;
     private static $instance;
     private static $fileName;
+    private static $maxFileSize = 2048;
+
 
     /**
      * LogE constructor.
@@ -26,6 +28,7 @@ class LogE
     private function __construct()
     {
         $this->logApi = new \yii\log\FileTarget();
+        $this->logApi->maxFileSize = self::$maxFileSize;
     }
 
 
