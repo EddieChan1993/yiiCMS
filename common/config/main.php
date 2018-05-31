@@ -19,8 +19,8 @@ return [
                     'levels' => ['error', 'warning'],
                     'logFile' => '@app/runtime/logs/'.date('Ym').'/'.date('d').'.log',
                     'logVars' => ['_GET','_POST' ,'_FILES','_COOKIE','_SESSION'],
-                    'maxFileSize' => 1024 * 2,  //KB
-                    'maxLogFiles' => 4,        //最大文件数
+                    'maxFileSize' => 1024,  //KB
+                    'maxLogFiles' => 1,        //最大文件数
                 ],
             ],
         ],

@@ -20,6 +20,7 @@ class LogE
     private static $instance;
     private static $fileName;
     private static $maxFileSize = 2048;
+    private static $maxLogFiles = 1;
 
 
     /**
@@ -29,6 +30,7 @@ class LogE
     {
         $this->logApi = new \yii\log\FileTarget();
         $this->logApi->maxFileSize = self::$maxFileSize;
+        $this->logApi->maxLogFiles = self::$maxLogFiles;
     }
 
 
