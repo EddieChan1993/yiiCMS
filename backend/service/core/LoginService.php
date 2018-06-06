@@ -5,6 +5,7 @@ use common\helps\CookieE;
 use common\helps\Validate;
 use common\service\BaseService;
 use Yii;
+use yii\helpers\ArrayHelper;
 use yii\web\Cookie;
 
 class LoginService extends BaseService
