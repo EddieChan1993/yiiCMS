@@ -8,7 +8,7 @@ function delete_row(dom){
     del_url = $(dom).attr('data-url');
     layer.confirm('是否删除该条数据？', {
         btn: ['确认','取消'],//按钮
-        icon:2
+        icon:3
     }, function(index){
         //调取服务器
         $.ajax({
