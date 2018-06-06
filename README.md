@@ -1,1 +1,1 @@
-# yii2实战开发封装集成
+# yii2实战开发封装集成&copy;Eddie Chan
