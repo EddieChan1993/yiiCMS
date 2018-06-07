@@ -38,11 +38,11 @@ $urlArr = Yii::$app->params['link'];
     <?php }?>
     <?php if (!empty($newsInfo)){?>
     <li class="xn-icon-button pull-right">
-        <a href="javascript:void(0)" title="小喇叭"><span class="fa fa-bullhorn"></span></a>
+        <a href="javascript:void(0)" title="通告"><span class="fa fa-bullhorn"></span></a>
             <div class="informer informer-danger"><?=count($newsInfo)?></div>
         <div class="panel panel-primary animated zoomInDown xn-drop-left xn-panel-dragging">
             <div class="panel-heading">
-                <h3 class="panel-title"><span class="fa fa-bullhorn"></span>警告</h3>
+                <h3 class="panel-title"><span class="fa fa-bullhorn"></span>通告</h3>
                 <div class="pull-right">
                     <span class="label label-danger"><?=count($newsInfo)?></span>
                 </div>

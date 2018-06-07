@@ -90,7 +90,7 @@ class InitService extends AuthService
         Yii::$app->view->params['user_login'] = $adminUserInfo->user_login;
         $img = $adminUserInfo->avatar;
         if (empty($img)) {
-            $img = Yii::getAlias("@web").'/upload/admin/common/upload.svg';
+            $img = Yii::getAlias("@web").'/upload/admin/common/avatar-beard-shades-cool.svg';
         }
         Yii::$app->view->params['avatar'] = $img;
 

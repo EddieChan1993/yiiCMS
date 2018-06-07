@@ -1,8 +1,7 @@
 <?php
 use yii\helpers\Url;
-
 ?>
-<link rel="icon" href="<?=Url::to('@web/upload/admin/common/logo.png')?>" type="image/x-icon" />
+<link rel="icon" href="<?=Url::to('@web/upload/admin/common/iron_man_2.png')?>" type="image/x-icon" />
 <!-- END META SECTION -->
 <!-- CSS INCLUDE -->
 <link rel="stylesheet" type="text/css" id="theme" href="<?=Url::to('@web/alpha/css/theme-default.css')?>"/>

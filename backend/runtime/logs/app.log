@@ -1,0 +1,21 @@
+2018-06-06 17:51:54 [127.0.0.1][-][-][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "upload/admin/common/logo.png". in D:\project\yiiCMS\vendor\yiisoft\yii2\base\Module.php:537
+Stack trace:
+#0 D:\project\yiiCMS\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('upload/admin/co...', Array)
+#1 D:\project\yiiCMS\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\project\yiiCMS\backend\web\index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: 页面未找到。 in D:\project\yiiCMS\vendor\yiisoft\yii2\web\Application.php:115
+Stack trace:
+#0 D:\project\yiiCMS\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\project\yiiCMS\backend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2018-06-06 17:51:54 [127.0.0.1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'UID' => 'd16e8a3d75664288f92e08e3bfd65e64530e857c1cc920c0872bcc866f73568da:2:{i:0;s:3:\"UID\";i:1;s:5:\"O=2Gm\";}'
+]

@@ -116,7 +116,7 @@ class CurdService extends AuthService
      * @return array
      * @throws \Exception
      */
-    public static function getDataList($data, $filed = "*")
+    public static function getDataList($data=null, $filed = "*")
     {
         if (empty(self::$model)) {
             throw new \Exception("模型没有指定");

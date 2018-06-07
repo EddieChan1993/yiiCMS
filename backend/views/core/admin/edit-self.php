@@ -13,7 +13,7 @@ use \yii\helpers\Url;
                     <div class="form-group">
                         <label class="col-xs-3 control-label">头像</label>
                         <div class="col-xs-6">
-                            <?= FormW::SingleUpload('avatar', $avatar, 'inp1') ?>
+                            <?= FormW::SingleUpload('avatar', $avatar) ?>
                         </div>
                     </div>
                     <div class="form-group">

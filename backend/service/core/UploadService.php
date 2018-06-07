@@ -34,7 +34,7 @@ class UploadService extends AuthService
             $keyHead = $postData['path'];
             $fileType=get_extension($fileData['files']['name']);
             $fileSize = $fileData['files']['size'];
-            $key = sprintf("%s/%s%d%d.%s", $forder,$keyHead,time(),rand(1000,9999), $fileType);
+            $key = sprintf("%s/%s/%d%d.%s", $forder,$keyHead,time(),rand(1000,9999), $fileType);
             $temp_name = $fileData['files']['tmp_name'];
 
             $instance = TencentCos::getInstance();

@@ -45,7 +45,7 @@ class FormW
      * @return string
      * @throws \Exception
      */
-    public static function SingleUpload($name,$value,$key='inp',$pathName='avatar')
+    public static function SingleUpload($name,$value=null,$pathName='avatar',$key='inp')
     {
         $formModelName=CurdService::getModelNameForm();
         $formModelName = sprintf("%s[%s]", $formModelName, $name);

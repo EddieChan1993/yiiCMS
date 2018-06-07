@@ -80,7 +80,7 @@ $tab_2 = $this->params['tab_2'];
                                         <div class="form-group">
                                             <label class="col-md-3 control-label">头像</label>
                                             <div class="col-md-9">
-                                                <?=FormW::SingleUpload('avatar',null,'inp1')?>
+                                                <?=FormW::SingleUpload('avatar')?>
                                             </div>
                                         </div>
                                         <div class="form-group">
