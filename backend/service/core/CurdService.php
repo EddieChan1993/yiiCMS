@@ -52,24 +52,12 @@ class CurdService extends AuthService
      */
     public static function getModelNameForm()
     {
-        if (empty(self::$modelNameForm)) {
-            throw new Exception("模型对象未定义,无法使用表单插件");
+        if (empty(self::$model)) {
+            throw new Exception("没有实例化模型,无法使用表单插件");
         }
-        return self::$modelNameForm;
-    }
-
-    /**
-     * @param $object
-     * @throws Exception
-     * @internal param mixed $modelNameForm
-     */
-    public static function setModelNameForm($object = null)
-    {
-        if (empty($object)) {
-            throw new Exception("模型对象未定义,无法使用表单插件");
-        }
-        $arr = explode("\\", get_class($object));
+        $arr = explode("\\", get_class(self::$model));
         self::$modelNameForm = end($arr);
+        return self::$modelNameForm;
     }
 
     /**
@@ -78,9 +66,6 @@ class CurdService extends AuthService
      */
     public static function getModel()
     {
-        if (empty(self::$model)) {
-            throw new \Exception("model模型未定义,无法使用多功能列表查询");
-        }
         return self::$model;
     }
 
@@ -102,7 +87,6 @@ class CurdService extends AuthService
 
     /**
      * @param string $c_time_key
-     * @throws \Exception
      */
     public static function setCTimeKey($c_time_key)
     {
@@ -111,8 +95,7 @@ class CurdService extends AuthService
 
     /**
      * @param $data
-     * @param null $filed 需要显示的字段
-     * @param string $c_time_key 创建时间key
+     * @param string $filed 需要显示的字段
      * @return array
      * @throws \Exception
      */
@@ -121,8 +104,7 @@ class CurdService extends AuthService
         if (empty(self::$model)) {
             throw new \Exception("模型没有指定");
         }
-
-        $query = (new Query())->from(self::$model);
+        $query = self::$model->find()->asArray();
         if (!empty($data['condition']) && is_array($data['condition'])) {
             foreach ($data['condition'] as $key => $val) {
                 if (!empty($val) || $val === "0") {
@@ -155,6 +137,7 @@ class CurdService extends AuthService
             'totalCount' => $countNums,
         ]);
         $lists = $query->orderBy("$c_time_key desc")
+            ->asArray()
             ->offset($pagination->offset)
             ->limit($pagination->limit)
             ->select($filed)

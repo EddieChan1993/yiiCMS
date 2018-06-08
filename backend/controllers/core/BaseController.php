@@ -20,7 +20,7 @@ use yii\helpers\Url;
 use yii\web\Controller;
 use yii\web\Response;
 
-class BaseController extends Controller
+abstract class BaseController extends Controller
 {
     //总标题
     private $title="标题内容";
