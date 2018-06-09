@@ -20,7 +20,7 @@ return [
 //                    'logFile' => '@app/runtime/logs/'.date('Ym').'/'.date('d').'.log',
                     'logVars' => ['_GET','_POST' ,'_FILES','_COOKIE','_SESSION'],
                     'maxFileSize' => 1024,  //KB
-                    'maxLogFiles' => 1,        //最大文件数
+                    'maxLogFiles' => 3,        //最大文件数
                 ],
             ],
         ],

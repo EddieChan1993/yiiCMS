@@ -1,0 +1,292 @@
+2018-04-23 12:10:20 [127.0.0.1][-][-][error][yii\db\Exception] yii\db\Exception: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'c_time' in 'order clause'
+The SQL being executed was: SELECT * FROM `alpha_users` ORDER BY `c_time` DESC LIMIT 13 in C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\db\Schema.php:664
+Stack trace:
+#0 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\db\Command.php(1263): yii\db\Schema->convertException(Object(PDOException), 'SELECT * FROM `...')
+#1 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\db\Command.php(1148): yii\db\Command->internalExecute('SELECT * FROM `...')
+#2 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\db\Command.php(399): yii\db\Command->queryInternal('fetchAll', NULL)
+#3 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\db\Query.php(237): yii\db\Command->queryAll()
+#4 C:\code_edd\201804\yiicms\backend\service\core\CurdService.php(151): yii\db\Query->all()
+#5 C:\code_edd\201804\yiicms\backend\controllers\core\AdminController.php(39): backend\service\core\CurdService::getDataList(Array, '*', 'create_time')
+#6 [internal function]: backend\controllers\core\AdminController->actionIndex()
+#7 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#8 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#9 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('index', Array)
+#10 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('core/admin/inde...', Array)
+#11 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 C:\code_edd\201804\yiicms\backend\web\index.php(18): yii\base\Application->run()
+#13 {main}
+Additional Information:
+Array
+(
+    [0] => 42S22
+    [1] => 1054
+    [2] => Unknown column 'c_time' in 'order clause'
+)
+
+2018-04-23 12:10:19 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'core/admin/index'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'UID' => '4bcdfb0dab116410d98c245c394aef2098e42c961cb32bbb7a5dd8a31556db60a:2:{i:0;s:3:\"UID\";i:1;s:5:\"C2P8u\";}'
+]
+2018-04-23 12:41:13 [127.0.0.1][-][-][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "gii". in C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Module.php:537
+Stack trace:
+#0 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('gii', Array)
+#1 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 C:\code_edd\201804\yiicms\backend\web\index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: 页面未找到。 in C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\web\Application.php:115
+Stack trace:
+#0 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\code_edd\201804\yiicms\backend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2018-04-23 12:41:13 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'gii'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'UID' => '54c706b4e18c7b42f2acedba8a0373675a49c652b3b343f87950025197378441a:2:{i:0;s:3:\"UID\";i:1;s:5:\"mtVaW\";}'
+    '_csrf-backend' => '59bca0e9c0a62f4a7901e97b1b5cf49fd3f7e4d831749c64a455a6b6de657ebaa:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"zo68f0ZMCS_J88gQcfc6WeADX5Z1biaV\";}'
+]
+2018-04-23 12:41:21 [127.0.0.1][-][-][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "gii". in C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Module.php:537
+Stack trace:
+#0 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('gii', Array)
+#1 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 C:\code_edd\201804\yiicms\backend\web\index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: 页面未找到。 in C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\web\Application.php:115
+Stack trace:
+#0 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\code_edd\201804\yiicms\backend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2018-04-23 12:41:21 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'gii'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'UID' => '54c706b4e18c7b42f2acedba8a0373675a49c652b3b343f87950025197378441a:2:{i:0;s:3:\"UID\";i:1;s:5:\"mtVaW\";}'
+    '_csrf-backend' => '59bca0e9c0a62f4a7901e97b1b5cf49fd3f7e4d831749c64a455a6b6de657ebaa:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"zo68f0ZMCS_J88gQcfc6WeADX5Z1biaV\";}'
+]
+2018-04-23 12:41:39 [127.0.0.1][-][-][error][yii\db\Exception] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'c_time' in 'order clause' in C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\db\Command.php:1258
+Stack trace:
+#0 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\db\Command.php(1258): PDOStatement->execute()
+#1 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\db\Command.php(1148): yii\db\Command->internalExecute('SELECT * FROM `...')
+#2 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\db\Command.php(399): yii\db\Command->queryInternal('fetchAll', NULL)
+#3 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\db\Query.php(237): yii\db\Command->queryAll()
+#4 C:\code_edd\201804\yiicms\backend\service\core\CurdService.php(151): yii\db\Query->all()
+#5 C:\code_edd\201804\yiicms\backend\controllers\core\AdminController.php(39): backend\service\core\CurdService::getDataList(Array, '*', 'create_time')
+#6 [internal function]: backend\controllers\core\AdminController->actionIndex()
+#7 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#8 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#9 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('index', Array)
+#10 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('core/admin/inde...', Array)
+#11 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 C:\code_edd\201804\yiicms\backend\web\index.php(18): yii\base\Application->run()
+#13 {main}
+
+Next yii\db\Exception: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'c_time' in 'order clause'
+The SQL being executed was: SELECT * FROM `alpha_users` ORDER BY `c_time` DESC LIMIT 13 in C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\db\Schema.php:664
+Stack trace:
+#0 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\db\Command.php(1263): yii\db\Schema->convertException(Object(PDOException), 'SELECT * FROM `...')
+#1 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\db\Command.php(1148): yii\db\Command->internalExecute('SELECT * FROM `...')
+#2 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\db\Command.php(399): yii\db\Command->queryInternal('fetchAll', NULL)
+#3 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\db\Query.php(237): yii\db\Command->queryAll()
+#4 C:\code_edd\201804\yiicms\backend\service\core\CurdService.php(151): yii\db\Query->all()
+#5 C:\code_edd\201804\yiicms\backend\controllers\core\AdminController.php(39): backend\service\core\CurdService::getDataList(Array, '*', 'create_time')
+#6 [internal function]: backend\controllers\core\AdminController->actionIndex()
+#7 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#8 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#9 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('index', Array)
+#10 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('core/admin/inde...', Array)
+#11 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 C:\code_edd\201804\yiicms\backend\web\index.php(18): yii\base\Application->run()
+#13 {main}
+Additional Information:
+Array
+(
+    [0] => 42S22
+    [1] => 1054
+    [2] => Unknown column 'c_time' in 'order clause'
+)
+
+2018-04-23 12:41:38 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'core/admin/index'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf-backend' => '59bca0e9c0a62f4a7901e97b1b5cf49fd3f7e4d831749c64a455a6b6de657ebaa:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"zo68f0ZMCS_J88gQcfc6WeADX5Z1biaV\";}'
+    'UID' => 'bf49031e0b98f7248548e4b2130c0aea26a5fa3c807c27e6a458097ef1dfc259a:2:{i:0;s:3:\"UID\";i:1;s:5:\"Um7Ks\";}'
+]
+2018-04-23 12:41:45 [127.0.0.1][-][-][error][yii\db\Exception] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'c_time' in 'order clause' in C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\db\Command.php:1258
+Stack trace:
+#0 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\db\Command.php(1258): PDOStatement->execute()
+#1 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\db\Command.php(1148): yii\db\Command->internalExecute('SELECT * FROM `...')
+#2 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\db\Command.php(399): yii\db\Command->queryInternal('fetchAll', NULL)
+#3 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\db\Query.php(237): yii\db\Command->queryAll()
+#4 C:\code_edd\201804\yiicms\backend\service\core\CurdService.php(151): yii\db\Query->all()
+#5 C:\code_edd\201804\yiicms\backend\controllers\core\AdminController.php(39): backend\service\core\CurdService::getDataList(Array, '*', 'create_time')
+#6 [internal function]: backend\controllers\core\AdminController->actionIndex()
+#7 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#8 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#9 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('index', Array)
+#10 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('core/admin/inde...', Array)
+#11 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 C:\code_edd\201804\yiicms\backend\web\index.php(18): yii\base\Application->run()
+#13 {main}
+
+Next yii\db\Exception: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'c_time' in 'order clause'
+The SQL being executed was: SELECT * FROM `alpha_users` ORDER BY `c_time` DESC LIMIT 13 in C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\db\Schema.php:664
+Stack trace:
+#0 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\db\Command.php(1263): yii\db\Schema->convertException(Object(PDOException), 'SELECT * FROM `...')
+#1 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\db\Command.php(1148): yii\db\Command->internalExecute('SELECT * FROM `...')
+#2 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\db\Command.php(399): yii\db\Command->queryInternal('fetchAll', NULL)
+#3 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\db\Query.php(237): yii\db\Command->queryAll()
+#4 C:\code_edd\201804\yiicms\backend\service\core\CurdService.php(151): yii\db\Query->all()
+#5 C:\code_edd\201804\yiicms\backend\controllers\core\AdminController.php(39): backend\service\core\CurdService::getDataList(Array, '*', 'create_time')
+#6 [internal function]: backend\controllers\core\AdminController->actionIndex()
+#7 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#8 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#9 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('index', Array)
+#10 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('core/admin/inde...', Array)
+#11 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 C:\code_edd\201804\yiicms\backend\web\index.php(18): yii\base\Application->run()
+#13 {main}
+Additional Information:
+Array
+(
+    [0] => 42S22
+    [1] => 1054
+    [2] => Unknown column 'c_time' in 'order clause'
+)
+
+2018-04-23 12:41:44 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'core/admin/index'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf-backend' => '59bca0e9c0a62f4a7901e97b1b5cf49fd3f7e4d831749c64a455a6b6de657ebaa:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"zo68f0ZMCS_J88gQcfc6WeADX5Z1biaV\";}'
+    'UID' => 'da9e85b19b5ff2302112d1996caa3fd8ac58cf31def73fd2e9a53e602c2eecd7a:2:{i:0;s:3:\"UID\";i:1;s:5:\"juy=Q\";}'
+]
+2018-04-23 12:48:03 [127.0.0.1][-][-][error][yii\base\ErrorException:2] yii\base\ErrorException: Missing argument 1 for backend\service\core\CurdService::setCTimeKey(), called in C:\code_edd\201804\yiicms\backend\service\core\CurdService.php on line 112 and defined in C:\code_edd\201804\yiicms\backend\service\core\CurdService.php:94
+Stack trace:
+#0 C:\code_edd\201804\yiicms\backend\service\core\CurdService.php(94): yii\base\ErrorHandler->handleError(2, 'Missing argumen...', 'C:\\code_edd\\201...', 94, Array)
+#1 C:\code_edd\201804\yiicms\backend\service\core\CurdService.php(112): backend\service\core\CurdService::setCTimeKey()
+#2 C:\code_edd\201804\yiicms\backend\controllers\core\AdminController.php(40): backend\service\core\CurdService::getDataList(Array, '*', 'create_time')
+#3 [internal function]: backend\controllers\core\AdminController->actionIndex()
+#4 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#5 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#6 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('index', Array)
+#7 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('core/admin/inde...', Array)
+#8 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 C:\code_edd\201804\yiicms\backend\web\index.php(18): yii\base\Application->run()
+#10 {main}
+2018-04-23 12:48:02 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'core/admin/index'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf-backend' => '59bca0e9c0a62f4a7901e97b1b5cf49fd3f7e4d831749c64a455a6b6de657ebaa:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"zo68f0ZMCS_J88gQcfc6WeADX5Z1biaV\";}'
+    'UID' => '79ffd173d3a476c8cb207562bfd267490f9979f52c98f16b8913bb7682725bb7a:2:{i:0;s:3:\"UID\";i:1;s:5:\"C2P8u\";}'
+]
+2018-04-23 12:48:05 [127.0.0.1][-][-][error][yii\base\ErrorException:2] yii\base\ErrorException: Missing argument 1 for backend\service\core\CurdService::setCTimeKey(), called in C:\code_edd\201804\yiicms\backend\service\core\CurdService.php on line 112 and defined in C:\code_edd\201804\yiicms\backend\service\core\CurdService.php:94
+Stack trace:
+#0 C:\code_edd\201804\yiicms\backend\service\core\CurdService.php(94): yii\base\ErrorHandler->handleError(2, 'Missing argumen...', 'C:\\code_edd\\201...', 94, Array)
+#1 C:\code_edd\201804\yiicms\backend\service\core\CurdService.php(112): backend\service\core\CurdService::setCTimeKey()
+#2 C:\code_edd\201804\yiicms\backend\controllers\core\AdminController.php(40): backend\service\core\CurdService::getDataList(Array, '*', 'create_time')
+#3 [internal function]: backend\controllers\core\AdminController->actionIndex()
+#4 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#5 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#6 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('index', Array)
+#7 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('core/admin/inde...', Array)
+#8 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 C:\code_edd\201804\yiicms\backend\web\index.php(18): yii\base\Application->run()
+#10 {main}
+2018-04-23 12:48:04 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'core/admin/index'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf-backend' => '59bca0e9c0a62f4a7901e97b1b5cf49fd3f7e4d831749c64a455a6b6de657ebaa:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"zo68f0ZMCS_J88gQcfc6WeADX5Z1biaV\";}'
+    'UID' => '6d80eb23ebe9e909915a49ad7f3f01a9f9ee220a1f1fbd41640cd92d08777f7aa:2:{i:0;s:3:\"UID\";i:1;s:5:\"RdgEC\";}'
+]
+2018-04-23 12:48:17 [127.0.0.1][-][-][error][yii\base\ErrorException:2] yii\base\ErrorException: Missing argument 1 for backend\service\core\CurdService::setCTimeKey(), called in C:\code_edd\201804\yiicms\backend\service\core\CurdService.php on line 112 and defined in C:\code_edd\201804\yiicms\backend\service\core\CurdService.php:94
+Stack trace:
+#0 C:\code_edd\201804\yiicms\backend\service\core\CurdService.php(94): yii\base\ErrorHandler->handleError(2, 'Missing argumen...', 'C:\\code_edd\\201...', 94, Array)
+#1 C:\code_edd\201804\yiicms\backend\service\core\CurdService.php(112): backend\service\core\CurdService::setCTimeKey()
+#2 C:\code_edd\201804\yiicms\backend\controllers\core\AdminController.php(40): backend\service\core\CurdService::getDataList(Array, '*')
+#3 [internal function]: backend\controllers\core\AdminController->actionIndex()
+#4 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#5 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#6 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('index', Array)
+#7 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('core/admin/inde...', Array)
+#8 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 C:\code_edd\201804\yiicms\backend\web\index.php(18): yii\base\Application->run()
+#10 {main}
+2018-04-23 12:48:16 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'core/admin/index'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf-backend' => '59bca0e9c0a62f4a7901e97b1b5cf49fd3f7e4d831749c64a455a6b6de657ebaa:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"zo68f0ZMCS_J88gQcfc6WeADX5Z1biaV\";}'
+    'UID' => 'fde4a0cd0c55a27a1dcbfd7af910b5ce8d86fc7f370294ab30009df3b1d88faca:2:{i:0;s:3:\"UID\";i:1;s:5:\"4oizz\";}'
+]
+2018-04-23 12:48:19 [127.0.0.1][-][-][error][yii\base\ErrorException:2] yii\base\ErrorException: Missing argument 1 for backend\service\core\CurdService::setCTimeKey(), called in C:\code_edd\201804\yiicms\backend\service\core\CurdService.php on line 112 and defined in C:\code_edd\201804\yiicms\backend\service\core\CurdService.php:94
+Stack trace:
+#0 C:\code_edd\201804\yiicms\backend\service\core\CurdService.php(94): yii\base\ErrorHandler->handleError(2, 'Missing argumen...', 'C:\\code_edd\\201...', 94, Array)
+#1 C:\code_edd\201804\yiicms\backend\service\core\CurdService.php(112): backend\service\core\CurdService::setCTimeKey()
+#2 C:\code_edd\201804\yiicms\backend\controllers\core\AdminController.php(40): backend\service\core\CurdService::getDataList(Array, '*')
+#3 [internal function]: backend\controllers\core\AdminController->actionIndex()
+#4 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#5 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#6 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('index', Array)
+#7 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('core/admin/inde...', Array)
+#8 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 C:\code_edd\201804\yiicms\backend\web\index.php(18): yii\base\Application->run()
+#10 {main}
+2018-04-23 12:48:17 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'core/admin/index'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf-backend' => '59bca0e9c0a62f4a7901e97b1b5cf49fd3f7e4d831749c64a455a6b6de657ebaa:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"zo68f0ZMCS_J88gQcfc6WeADX5Z1biaV\";}'
+    'UID' => 'c39c015976027f87cdd4856bba33b73a183378c6692bcf563a123909b06c1678a:2:{i:0;s:3:\"UID\";i:1;s:5:\"SilGG\";}'
+]

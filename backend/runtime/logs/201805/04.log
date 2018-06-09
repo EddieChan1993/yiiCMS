@@ -1,0 +1,515 @@
+2018-05-05 00:09:03 [127.0.0.1][-][-][error][yii\base\InvalidConfigException] yii\base\InvalidConfigException: The directory does not exist: C:/code_edd/201804/yiicms/backend/web/assets in C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\web\AssetManager.php:213
+Stack trace:
+#0 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\web\AssetManager->init()
+#1 [internal function]: yii\base\BaseObject->__construct(Array)
+#2 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\di\Container.php(375): ReflectionClass->newInstanceArgs(Array)
+#3 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\di\Container.php(156): yii\di\Container->build('yii\\web\\AssetMa...', Array, Array)
+#4 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\BaseYii.php(349): yii\di\Container->get('yii\\web\\AssetMa...', Array, Array)
+#5 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\di\ServiceLocator.php(137): yii\BaseYii::createObject(Array)
+#6 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Module.php(742): yii\di\ServiceLocator->get('assetManager', true)
+#7 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Application.php(608): yii\base\Module->get('assetManager')
+#8 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\web\View.php(225): yii\base\Application->getAssetManager()
+#9 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\web\View.php(285): yii\web\View->getAssetManager()
+#10 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\web\AssetBundle.php(125): yii\web\View->registerAssetBundle('backend\\assets\\...')
+#11 C:\code_edd\201804\yiicms\backend\views\layouts\main.php(5): yii\web\AssetBundle::register(Object(yii\web\View))
+#12 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\View.php(336): require('C:\\code_edd\\201...')
+#13 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\View.php(254): yii\base\View->renderPhpFile('C:\\code_edd\\201...', Array)
+#14 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Controller.php(399): yii\base\View->renderFile('C:\\code_edd\\201...', Array, Object(backend\controllers\core\AdminController))
+#15 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Controller.php(385): yii\base\Controller->renderContent('<div class="pan...')
+#16 C:\code_edd\201804\yiicms\backend\controllers\core\AdminController.php(62): yii\base\Controller->render('edit', Array)
+#17 [internal function]: backend\controllers\core\AdminController->actionEditPage()
+#18 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#19 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#20 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('edit-page', Array)
+#21 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('core/admin/edit...', Array)
+#22 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#23 C:\code_edd\201804\yiicms\backend\web\index.php(18): yii\base\Application->run()
+#24 {main}
+2018-05-05 00:09:02 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'core/admin/edit-page'
+    'id' => '2'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'UID' => '0cfb7440867b186657abec1fa81395c167b2d6ae87026ac297192113d61b8ae4a:2:{i:0;s:3:\"UID\";i:1;s:5:\"IPWch\";}'
+]
+2018-05-05 00:10:34 [127.0.0.1][-][-][error][yii\base\InvalidConfigException] yii\base\InvalidConfigException: The directory does not exist: C:/code_edd/201804/yiicms/backend/web/assets in C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\web\AssetManager.php:213
+Stack trace:
+#0 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\web\AssetManager->init()
+#1 [internal function]: yii\base\BaseObject->__construct(Array)
+#2 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\di\Container.php(375): ReflectionClass->newInstanceArgs(Array)
+#3 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\di\Container.php(156): yii\di\Container->build('yii\\web\\AssetMa...', Array, Array)
+#4 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\BaseYii.php(349): yii\di\Container->get('yii\\web\\AssetMa...', Array, Array)
+#5 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\di\ServiceLocator.php(137): yii\BaseYii::createObject(Array)
+#6 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Module.php(742): yii\di\ServiceLocator->get('assetManager', true)
+#7 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Application.php(608): yii\base\Module->get('assetManager')
+#8 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\web\View.php(225): yii\base\Application->getAssetManager()
+#9 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\web\View.php(285): yii\web\View->getAssetManager()
+#10 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\web\AssetBundle.php(125): yii\web\View->registerAssetBundle('backend\\assets\\...')
+#11 C:\code_edd\201804\yiicms\backend\views\layouts\main.php(5): yii\web\AssetBundle::register(Object(yii\web\View))
+#12 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\View.php(336): require('C:\\code_edd\\201...')
+#13 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\View.php(254): yii\base\View->renderPhpFile('C:\\code_edd\\201...', Array)
+#14 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Controller.php(399): yii\base\View->renderFile('C:\\code_edd\\201...', Array, Object(backend\controllers\core\AdminController))
+#15 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Controller.php(385): yii\base\Controller->renderContent('<div class="pag...')
+#16 C:\code_edd\201804\yiicms\backend\controllers\core\AdminController.php(44): yii\base\Controller->render('index', Array)
+#17 [internal function]: backend\controllers\core\AdminController->actionIndex()
+#18 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#19 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#20 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('index', Array)
+#21 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('core/admin/inde...', Array)
+#22 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#23 C:\code_edd\201804\yiicms\backend\web\index.php(18): yii\base\Application->run()
+#24 {main}
+2018-05-05 00:10:33 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'core/admin/index'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'UID' => '3dd547c44bea80e41fcbc707a8106838b8e4d1ceb92afcc777ea75cacb33ccc9a:2:{i:0;s:3:\"UID\";i:1;s:5:\"5viWV\";}'
+]
+2018-05-05 00:10:37 [127.0.0.1][-][-][error][yii\base\InvalidConfigException] yii\base\InvalidConfigException: The directory does not exist: C:/code_edd/201804/yiicms/backend/web/assets in C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\web\AssetManager.php:213
+Stack trace:
+#0 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\web\AssetManager->init()
+#1 [internal function]: yii\base\BaseObject->__construct(Array)
+#2 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\di\Container.php(375): ReflectionClass->newInstanceArgs(Array)
+#3 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\di\Container.php(156): yii\di\Container->build('yii\\web\\AssetMa...', Array, Array)
+#4 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\BaseYii.php(349): yii\di\Container->get('yii\\web\\AssetMa...', Array, Array)
+#5 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\di\ServiceLocator.php(137): yii\BaseYii::createObject(Array)
+#6 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Module.php(742): yii\di\ServiceLocator->get('assetManager', true)
+#7 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Application.php(608): yii\base\Module->get('assetManager')
+#8 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\web\View.php(225): yii\base\Application->getAssetManager()
+#9 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\web\View.php(285): yii\web\View->getAssetManager()
+#10 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\web\AssetBundle.php(125): yii\web\View->registerAssetBundle('backend\\assets\\...')
+#11 C:\code_edd\201804\yiicms\backend\views\layouts\main.php(5): yii\web\AssetBundle::register(Object(yii\web\View))
+#12 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\View.php(336): require('C:\\code_edd\\201...')
+#13 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\View.php(254): yii\base\View->renderPhpFile('C:\\code_edd\\201...', Array)
+#14 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Controller.php(399): yii\base\View->renderFile('C:\\code_edd\\201...', Array, Object(backend\controllers\core\AdminController))
+#15 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Controller.php(385): yii\base\Controller->renderContent('<div class="pag...')
+#16 C:\code_edd\201804\yiicms\backend\controllers\core\AdminController.php(44): yii\base\Controller->render('index', Array)
+#17 [internal function]: backend\controllers\core\AdminController->actionIndex()
+#18 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#19 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#20 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('index', Array)
+#21 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('core/admin/inde...', Array)
+#22 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#23 C:\code_edd\201804\yiicms\backend\web\index.php(18): yii\base\Application->run()
+#24 {main}
+2018-05-05 00:10:36 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'core/admin/index'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'UID' => 'bf49031e0b98f7248548e4b2130c0aea26a5fa3c807c27e6a458097ef1dfc259a:2:{i:0;s:3:\"UID\";i:1;s:5:\"Um7Ks\";}'
+]
+2018-05-05 00:10:47 [127.0.0.1][-][-][error][yii\base\InvalidConfigException] yii\base\InvalidConfigException: The directory does not exist: C:/code_edd/201804/yiicms/backend/web/assets in C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\web\AssetManager.php:213
+Stack trace:
+#0 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\web\AssetManager->init()
+#1 [internal function]: yii\base\BaseObject->__construct(Array)
+#2 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\di\Container.php(375): ReflectionClass->newInstanceArgs(Array)
+#3 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\di\Container.php(156): yii\di\Container->build('yii\\web\\AssetMa...', Array, Array)
+#4 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\BaseYii.php(349): yii\di\Container->get('yii\\web\\AssetMa...', Array, Array)
+#5 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\di\ServiceLocator.php(137): yii\BaseYii::createObject(Array)
+#6 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Module.php(742): yii\di\ServiceLocator->get('assetManager', true)
+#7 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Application.php(608): yii\base\Module->get('assetManager')
+#8 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\web\View.php(225): yii\base\Application->getAssetManager()
+#9 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\web\View.php(285): yii\web\View->getAssetManager()
+#10 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\web\AssetBundle.php(125): yii\web\View->registerAssetBundle('backend\\assets\\...')
+#11 C:\code_edd\201804\yiicms\backend\views\layouts\main.php(5): yii\web\AssetBundle::register(Object(yii\web\View))
+#12 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\View.php(336): require('C:\\code_edd\\201...')
+#13 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\View.php(254): yii\base\View->renderPhpFile('C:\\code_edd\\201...', Array)
+#14 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Controller.php(399): yii\base\View->renderFile('C:\\code_edd\\201...', Array, Object(backend\controllers\core\AdminController))
+#15 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Controller.php(385): yii\base\Controller->renderContent('<div class="pag...')
+#16 C:\code_edd\201804\yiicms\backend\controllers\core\AdminController.php(44): yii\base\Controller->render('index', Array)
+#17 [internal function]: backend\controllers\core\AdminController->actionIndex()
+#18 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#19 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#20 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('index', Array)
+#21 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('core/admin/inde...', Array)
+#22 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#23 C:\code_edd\201804\yiicms\backend\web\index.php(18): yii\base\Application->run()
+#24 {main}
+2018-05-05 00:10:46 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'core/admin/index'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'UID' => 'e7d3c8aff42b69f00764a549813ac47c130a22799a90cba06e9c0721437312b8a:2:{i:0;s:3:\"UID\";i:1;s:5:\"xE68j\";}'
+]
+2018-05-05 00:22:23 [127.0.0.1][-][-][error][yii\db\Exception] yii\db\Exception: Redis error: NOAUTH Authentication required.
+Redis command was: SELECT 0 in C:\code_edd\201804\yiicms\vendor\yiisoft\yii2-redis\src\Connection.php:729
+Stack trace:
+#0 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2-redis\src\Connection.php(706): yii\redis\Connection->parseResponse('SELECT 0')
+#1 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2-redis\src\Connection.php(690): yii\redis\Connection->sendCommandInternal('*2\r\n$6\r\nSELECT\r...', Array)
+#2 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2-redis\src\Connection.php(559): yii\redis\Connection->executeCommand('SELECT', Array)
+#3 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2-redis\src\Connection.php(665): yii\redis\Connection->open()
+#4 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2-redis\src\Connection.php(630): yii\redis\Connection->executeCommand('SET', Array)
+#5 C:\code_edd\201804\yiicms\backend\service\core\MenuService.php(27): yii\redis\Connection->__call('set', Array)
+#6 C:\code_edd\201804\yiicms\backend\controllers\core\MenuController.php(31): backend\service\core\MenuService::lists(Array)
+#7 [internal function]: backend\controllers\core\MenuController->actionIndex()
+#8 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#9 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#10 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('index', Array)
+#11 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('core/menu/index', Array)
+#12 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#13 C:\code_edd\201804\yiicms\backend\web\index.php(18): yii\base\Application->run()
+#14 {main}
+Additional Information:
+Array
+(
+)
+
+2018-05-05 00:22:22 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'core/menu/index'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'UID' => 'a9e527f8b908c04103a09829f00b350d3526be93dfce33be4cd28d99e8ab5bbfa:2:{i:0;s:3:\"UID\";i:1;s:5:\"4oizz\";}'
+]
+2018-05-05 00:32:51 [127.0.0.1][-][-][error][ReflectionException] ReflectionException: Class yii\redis\Connection does not exist in C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\di\Container.php:428
+Stack trace:
+#0 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\di\Container.php(428): ReflectionClass->__construct('yii\\redis\\Conne...')
+#1 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\di\Container.php(364): yii\di\Container->getDependencies('yii\\redis\\Conne...')
+#2 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\di\Container.php(156): yii\di\Container->build('yii\\redis\\Conne...', Array, Array)
+#3 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\BaseYii.php(349): yii\di\Container->get('yii\\redis\\Conne...', Array, Array)
+#4 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\di\ServiceLocator.php(137): yii\BaseYii::createObject(Array)
+#5 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Module.php(742): yii\di\ServiceLocator->get('redis', true)
+#6 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\di\ServiceLocator.php(74): yii\base\Module->get('redis')
+#7 C:\code_edd\201804\yiicms\backend\service\core\MenuService.php(26): yii\di\ServiceLocator->__get('redis')
+#8 C:\code_edd\201804\yiicms\backend\controllers\core\MenuController.php(31): backend\service\core\MenuService::lists(Array)
+#9 [internal function]: backend\controllers\core\MenuController->actionIndex()
+#10 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#11 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#12 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('index', Array)
+#13 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('core/menu/index', Array)
+#14 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#15 C:\code_edd\201804\yiicms\backend\web\index.php(18): yii\base\Application->run()
+#16 {main}
+2018-05-05 00:32:50 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'core/menu/index'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'UID' => '32d27bf07ffcc31bcdde73d6047d21a3230f33080b0e201d3084f1a1d6133374a:2:{i:0;s:3:\"UID\";i:1;s:5:\"cCn41\";}'
+]
+2018-05-05 00:35:24 [127.0.0.1][-][-][error][yii\db\Exception] yii\db\Exception: Redis error: ERR wrong number of arguments for 'get' command
+Redis command was: GET aa 23 in C:\code_edd\201804\yiicms\vendor\yiisoft\yii2-redis\src\Connection.php:729
+Stack trace:
+#0 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2-redis\src\Connection.php(706): yii\redis\Connection->parseResponse('GET aa 23')
+#1 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2-redis\src\Connection.php(690): yii\redis\Connection->sendCommandInternal('*3\r\n$3\r\nGET\r\n$2...', Array)
+#2 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2-redis\src\Connection.php(630): yii\redis\Connection->executeCommand('GET', Array)
+#3 C:\code_edd\201804\yiicms\backend\service\core\MenuService.php(28): yii\redis\Connection->__call('get', Array)
+#4 C:\code_edd\201804\yiicms\backend\controllers\core\MenuController.php(31): backend\service\core\MenuService::lists(Array)
+#5 [internal function]: backend\controllers\core\MenuController->actionIndex()
+#6 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#7 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#8 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('index', Array)
+#9 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('core/menu/index', Array)
+#10 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 C:\code_edd\201804\yiicms\backend\web\index.php(18): yii\base\Application->run()
+#12 {main}
+Additional Information:
+Array
+(
+)
+
+2018-05-05 00:35:23 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'core/menu/index'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'UID' => 'd999924a61952f35dfe71c131fd29f433744c9f0c94bd45494a9e2fa4eb82748a:2:{i:0;s:3:\"UID\";i:1;s:5:\"-inTX\";}'
+]
+2018-05-05 00:35:26 [127.0.0.1][-][-][error][yii\db\Exception] yii\db\Exception: Redis error: ERR wrong number of arguments for 'get' command
+Redis command was: GET aa 23 in C:\code_edd\201804\yiicms\vendor\yiisoft\yii2-redis\src\Connection.php:729
+Stack trace:
+#0 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2-redis\src\Connection.php(706): yii\redis\Connection->parseResponse('GET aa 23')
+#1 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2-redis\src\Connection.php(690): yii\redis\Connection->sendCommandInternal('*3\r\n$3\r\nGET\r\n$2...', Array)
+#2 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2-redis\src\Connection.php(630): yii\redis\Connection->executeCommand('GET', Array)
+#3 C:\code_edd\201804\yiicms\backend\service\core\MenuService.php(28): yii\redis\Connection->__call('get', Array)
+#4 C:\code_edd\201804\yiicms\backend\controllers\core\MenuController.php(31): backend\service\core\MenuService::lists(Array)
+#5 [internal function]: backend\controllers\core\MenuController->actionIndex()
+#6 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#7 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#8 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('index', Array)
+#9 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('core/menu/index', Array)
+#10 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 C:\code_edd\201804\yiicms\backend\web\index.php(18): yii\base\Application->run()
+#12 {main}
+Additional Information:
+Array
+(
+)
+
+2018-05-05 00:35:25 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'core/menu/index'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'UID' => 'ef28bd70986074706bd56b264187170d3337c494ad90c2d776b998447aa922b4a:2:{i:0;s:3:\"UID\";i:1;s:5:\"5viWV\";}'
+]
+2018-05-05 00:42:42 [127.0.0.1][-][-][error][yii\base\ErrorException:2] yii\base\ErrorException: mb_strlen() expects parameter 1 to be string, array given in C:\code_edd\201804\yiicms\vendor\yiisoft\yii2-redis\src\Connection.php:670
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(2, 'mb_strlen() exp...', 'C:\\code_edd\\201...', 670, Array)
+#1 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2-redis\src\Connection.php(670): mb_strlen(Array, '8bit')
+#2 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2-redis\src\Connection.php(630): yii\redis\Connection->executeCommand('SET', Array)
+#3 C:\code_edd\201804\yiicms\backend\service\core\MenuService.php(28): yii\redis\Connection->__call('set', Array)
+#4 C:\code_edd\201804\yiicms\backend\controllers\core\MenuController.php(31): backend\service\core\MenuService::lists(Array)
+#5 [internal function]: backend\controllers\core\MenuController->actionIndex()
+#6 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#7 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#8 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('index', Array)
+#9 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('core/menu/index', Array)
+#10 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 C:\code_edd\201804\yiicms\backend\web\index.php(18): yii\base\Application->run()
+#12 {main}
+2018-05-05 00:42:41 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'core/menu/index'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'UID' => 'fd8009d96c53555acf8b2ecb60b40eca20c7ba145ab9af45b1e1c42e56c4bd5fa:2:{i:0;s:3:\"UID\";i:1;s:5:\"luy=V\";}'
+]
+2018-05-05 00:43:10 [127.0.0.1][-][-][error][yii\base\ErrorException:2] yii\base\ErrorException: mb_strlen() expects parameter 1 to be string, array given in C:\code_edd\201804\yiicms\vendor\yiisoft\yii2-redis\src\Connection.php:670
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(2, 'mb_strlen() exp...', 'C:\\code_edd\\201...', 670, Array)
+#1 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2-redis\src\Connection.php(670): mb_strlen(Array, '8bit')
+#2 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2-redis\src\Connection.php(630): yii\redis\Connection->executeCommand('SET', Array)
+#3 C:\code_edd\201804\yiicms\backend\service\core\MenuService.php(28): yii\redis\Connection->__call('set', Array)
+#4 C:\code_edd\201804\yiicms\backend\controllers\core\MenuController.php(31): backend\service\core\MenuService::lists(Array)
+#5 [internal function]: backend\controllers\core\MenuController->actionIndex()
+#6 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#7 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#8 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('index', Array)
+#9 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('core/menu/index', Array)
+#10 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 C:\code_edd\201804\yiicms\backend\web\index.php(18): yii\base\Application->run()
+#12 {main}
+2018-05-05 00:43:09 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'core/menu/index'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'UID' => '0904ec96723afddf6e41aad1079a7588b7b36512bc5dc79d763d3eea7e148f16a:2:{i:0;s:3:\"UID\";i:1;s:5:\"IPWch\";}'
+]
+2018-05-05 00:43:12 [127.0.0.1][-][-][error][yii\base\ErrorException:2] yii\base\ErrorException: mb_strlen() expects parameter 1 to be string, array given in C:\code_edd\201804\yiicms\vendor\yiisoft\yii2-redis\src\Connection.php:670
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(2, 'mb_strlen() exp...', 'C:\\code_edd\\201...', 670, Array)
+#1 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2-redis\src\Connection.php(670): mb_strlen(Array, '8bit')
+#2 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2-redis\src\Connection.php(630): yii\redis\Connection->executeCommand('SET', Array)
+#3 C:\code_edd\201804\yiicms\backend\service\core\MenuService.php(28): yii\redis\Connection->__call('set', Array)
+#4 C:\code_edd\201804\yiicms\backend\controllers\core\MenuController.php(31): backend\service\core\MenuService::lists(Array)
+#5 [internal function]: backend\controllers\core\MenuController->actionIndex()
+#6 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#7 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#8 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('index', Array)
+#9 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('core/menu/index', Array)
+#10 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 C:\code_edd\201804\yiicms\backend\web\index.php(18): yii\base\Application->run()
+#12 {main}
+2018-05-05 00:43:10 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'core/menu/index'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'UID' => '757ca37939eb039214f304be0b1d8bded5d3c7faa06699ed4450a135cdcf772ca:2:{i:0;s:3:\"UID\";i:1;s:5:\"aEp2X\";}'
+]
+2018-05-05 00:44:02 [127.0.0.1][-][-][error][yii\base\ErrorException:2] yii\base\ErrorException: mb_strlen() expects parameter 1 to be string, array given in C:\code_edd\201804\yiicms\vendor\yiisoft\yii2-redis\src\Connection.php:670
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(2, 'mb_strlen() exp...', 'C:\\code_edd\\201...', 670, Array)
+#1 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2-redis\src\Connection.php(670): mb_strlen(Array, '8bit')
+#2 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2-redis\src\Connection.php(630): yii\redis\Connection->executeCommand('SET', Array)
+#3 C:\code_edd\201804\yiicms\backend\service\core\MenuService.php(28): yii\redis\Connection->__call('set', Array)
+#4 C:\code_edd\201804\yiicms\backend\controllers\core\MenuController.php(31): backend\service\core\MenuService::lists(Array)
+#5 [internal function]: backend\controllers\core\MenuController->actionIndex()
+#6 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#7 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#8 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('index', Array)
+#9 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('core/menu/index', Array)
+#10 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 C:\code_edd\201804\yiicms\backend\web\index.php(18): yii\base\Application->run()
+#12 {main}
+2018-05-05 00:44:00 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'core/menu/index'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'UID' => '93e29e02cce8823967df5edfb51bbb1bb878c454956ac7e209da4e66bcd51b4da:2:{i:0;s:3:\"UID\";i:1;s:5:\"ksM99\";}'
+]
+2018-05-05 00:45:10 [127.0.0.1][-][-][error][yii\base\ErrorException:2] yii\base\ErrorException: mb_strlen() expects parameter 1 to be string, array given in C:\code_edd\201804\yiicms\vendor\yiisoft\yii2-redis\src\Connection.php:670
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(2, 'mb_strlen() exp...', 'C:\\code_edd\\201...', 670, Array)
+#1 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2-redis\src\Connection.php(670): mb_strlen(Array, '8bit')
+#2 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2-redis\src\Connection.php(630): yii\redis\Connection->executeCommand('SET', Array)
+#3 C:\code_edd\201804\yiicms\backend\service\core\MenuService.php(28): yii\redis\Connection->__call('set', Array)
+#4 C:\code_edd\201804\yiicms\backend\controllers\core\MenuController.php(31): backend\service\core\MenuService::lists(Array)
+#5 [internal function]: backend\controllers\core\MenuController->actionIndex()
+#6 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#7 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#8 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('index', Array)
+#9 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('core/menu/index', Array)
+#10 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 C:\code_edd\201804\yiicms\backend\web\index.php(18): yii\base\Application->run()
+#12 {main}
+2018-05-05 00:45:09 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'core/menu/index'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'UID' => '6fff3681d1f2a70a14c9edd840ba23443c31facef92a989db4f32275ed4369d2a:2:{i:0;s:3:\"UID\";i:1;s:5:\"nxVVd\";}'
+]
+2018-05-05 00:45:42 [127.0.0.1][-][-][error][Error] Error: Cannot use object of type stdClass as array in C:\code_edd\201804\yiicms\backend\views\core\menu\index.php:44
+Stack trace:
+#0 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\View.php(336): require()
+#1 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\View.php(254): yii\base\View->renderPhpFile('C:\\code_edd\\201...', Array)
+#2 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('C:\\code_edd\\201...', Array, Object(backend\controllers\core\MenuController))
+#3 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Controller.php(384): yii\base\View->render('index', Array, Object(backend\controllers\core\MenuController))
+#4 C:\code_edd\201804\yiicms\backend\controllers\core\MenuController.php(32): yii\base\Controller->render('index', Array)
+#5 [internal function]: backend\controllers\core\MenuController->actionIndex()
+#6 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#7 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#8 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('index', Array)
+#9 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('core/menu/index', Array)
+#10 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 C:\code_edd\201804\yiicms\backend\web\index.php(18): yii\base\Application->run()
+#12 {main}
+2018-05-05 00:45:41 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'core/menu/index'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'UID' => 'c21c23498be25e130969e5543fd66e353637ac16075e46d3271db4d0e6a1bb6aa:2:{i:0;s:3:\"UID\";i:1;s:5:\"_BoXX\";}'
+]
+2018-05-05 00:45:55 [127.0.0.1][-][-][error][Error] Error: Cannot use object of type stdClass as array in C:\code_edd\201804\yiicms\backend\views\core\menu\index.php:44
+Stack trace:
+#0 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\View.php(336): require()
+#1 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\View.php(254): yii\base\View->renderPhpFile('C:\\code_edd\\201...', Array)
+#2 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('C:\\code_edd\\201...', Array, Object(backend\controllers\core\MenuController))
+#3 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Controller.php(384): yii\base\View->render('index', Array, Object(backend\controllers\core\MenuController))
+#4 C:\code_edd\201804\yiicms\backend\controllers\core\MenuController.php(32): yii\base\Controller->render('index', Array)
+#5 [internal function]: backend\controllers\core\MenuController->actionIndex()
+#6 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#7 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#8 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('index', Array)
+#9 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('core/menu/index', Array)
+#10 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 C:\code_edd\201804\yiicms\backend\web\index.php(18): yii\base\Application->run()
+#12 {main}
+2018-05-05 00:45:54 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'core/menu/index'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'UID' => 'd999924a61952f35dfe71c131fd29f433744c9f0c94bd45494a9e2fa4eb82748a:2:{i:0;s:3:\"UID\";i:1;s:5:\"-inTX\";}'
+]
+2018-05-05 00:45:58 [127.0.0.1][-][-][error][Error] Error: Cannot use object of type stdClass as array in C:\code_edd\201804\yiicms\backend\views\core\menu\index.php:44
+Stack trace:
+#0 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\View.php(336): require()
+#1 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\View.php(254): yii\base\View->renderPhpFile('C:\\code_edd\\201...', Array)
+#2 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('C:\\code_edd\\201...', Array, Object(backend\controllers\core\MenuController))
+#3 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Controller.php(384): yii\base\View->render('index', Array, Object(backend\controllers\core\MenuController))
+#4 C:\code_edd\201804\yiicms\backend\controllers\core\MenuController.php(32): yii\base\Controller->render('index', Array)
+#5 [internal function]: backend\controllers\core\MenuController->actionIndex()
+#6 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#7 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#8 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('index', Array)
+#9 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('core/menu/index', Array)
+#10 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 C:\code_edd\201804\yiicms\backend\web\index.php(18): yii\base\Application->run()
+#12 {main}
+2018-05-05 00:45:57 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'core/menu/index'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'UID' => '93e29e02cce8823967df5edfb51bbb1bb878c454956ac7e209da4e66bcd51b4da:2:{i:0;s:3:\"UID\";i:1;s:5:\"ksM99\";}'
+]
+2018-05-05 00:46:08 [127.0.0.1][-][-][error][Error] Error: Cannot use object of type stdClass as array in C:\code_edd\201804\yiicms\backend\views\core\menu\index.php:44
+Stack trace:
+#0 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\View.php(336): require()
+#1 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\View.php(254): yii\base\View->renderPhpFile('C:\\code_edd\\201...', Array)
+#2 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('C:\\code_edd\\201...', Array, Object(backend\controllers\core\MenuController))
+#3 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Controller.php(384): yii\base\View->render('index', Array, Object(backend\controllers\core\MenuController))
+#4 C:\code_edd\201804\yiicms\backend\controllers\core\MenuController.php(32): yii\base\Controller->render('index', Array)
+#5 [internal function]: backend\controllers\core\MenuController->actionIndex()
+#6 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#7 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#8 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('index', Array)
+#9 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('core/menu/index', Array)
+#10 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 C:\code_edd\201804\yiicms\backend\web\index.php(18): yii\base\Application->run()
+#12 {main}
+2018-05-05 00:46:07 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'core/menu/index'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'UID' => '8f5c327524671c9436db3868c0dc7a0b60cd7cd36a6ed1639c4e60ee89a03b06a:2:{i:0;s:3:\"UID\";i:1;s:5:\"Z8ryu\";}'
+]
