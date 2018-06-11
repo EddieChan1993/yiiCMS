@@ -75,7 +75,7 @@ function edit_row(dom) {
         offset: '40px',
         // closeBtn: 0,
         area:'869px',
-        // shadeClose: true,
+        shadeClose: true,
         content: $(dom).attr('data-url'),
         success: function(layero, index) {
             layer.iframeAuto(index);
