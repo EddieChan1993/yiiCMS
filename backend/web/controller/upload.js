@@ -22,7 +22,7 @@ function upload_single(dom,path,type) {
     layer.open({
         title:'单文件上传',
         type: 2,
-        closeBtn: 0,
+        // closeBtn: 0,
         shadeClose: true,
         area: '480px',
         content: url,
@@ -65,7 +65,7 @@ function upload_excel(path) {
     layer.open({
         title:'Excel上传',
         type: 2,
-        closeBtn: 0,
+        // closeBtn: 0,
         shadeClose: true,
         area: '480px',
         content: url,
