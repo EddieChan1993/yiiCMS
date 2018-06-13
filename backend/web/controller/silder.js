@@ -17,7 +17,7 @@ function edit_row(dom) {
         title:$(dom).attr('title'),
         type: 2,
         offset: '100px',
-        closeBtn: 0,
+        // closeBtn: 0,
         area:'869px',
         shadeClose: true,
         content: $(dom).attr('data-url'),

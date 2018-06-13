@@ -89,9 +89,9 @@ $tab_2 = $this->params['tab_2'];
                                         <div class="form-group">
                                             <label class="col-md-3 control-label">@控制器/方法</label>
                                             <div class="col-md-9">
-                                                <?=FormW::Input('controller')?>
+                                                <?=FormW::Input('controller','default')?>
                                                 <span class="help-block">【控制器】,若有子级菜单，则填default</span>
-                                                <?=FormW::Input('method')?>
+                                                <?=FormW::Input('method','default')?>
                                                 <span class="help-block">【方法】，若有子级菜单，填写default</span>
                                             </div>
                                         </div>
