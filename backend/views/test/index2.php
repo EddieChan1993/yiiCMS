@@ -71,8 +71,8 @@ $tab_2 = $this->params['tab_2'];
                             <tr>
                                 <th>Id</th>
                                 <th>Name</th>
-                                <th>时间</th>
                                 <th>类型</th>
+                                <th>时间</th>
                                 <th>操作</th>
                             </tr>
                             </thead>
@@ -84,7 +84,7 @@ $tab_2 = $this->params['tab_2'];
                                     <td><?= date("Y-m-d H:i:s", $obj['c_time']) ?></td>
                                     <td><?= $obj['type'] ?></td>
                                     <td>
-                                        <a title="<?=$obj['name']?>【编辑】" data-url="<?= Url::to(['update','id'=>$obj['id']])?>" onclick="edit_row(this)" class="btn btn-default btn-rounded btn-sm"><span class="fa fa-pencil"></span></a>
+                                        <a title="<?=$obj['name']?>【编辑】" data-url="<?= Url::to(['edit-page','id'=>$obj['id']])?>" onclick="edit_row(this)" class="btn btn-default btn-rounded btn-sm"><span class="fa fa-pencil"></span></a>
                                         <button title="<?=$obj['name']?>【删除】" data-url="<?=Url::to(['delete','id'=>$obj['id']])?>" onClick="delete_row(this);" class="btn btn-danger btn-rounded btn-sm" ><span class="fa fa-trash-o"></span></button>
                                     </td>
                                 </tr>
