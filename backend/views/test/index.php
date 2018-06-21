@@ -70,7 +70,9 @@ $type =$get['condition']['type'];
                 </tbody>
             </table>
         </div>
+        <div class="panel-footer">
             <?= $pages ?>
+        </div>
     </div>
 </div>
 <script type="text/javascript">
