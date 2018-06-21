@@ -43,7 +43,6 @@ class FormW
      * @param string $key 标识区分其他同类
      * @param string $pathName 保存地址前缀
      * @return string
-     * @throws \Exception
      */
     public static function SingleUpload($name,$value=null,$pathName='avatar',$key='inp')
     {

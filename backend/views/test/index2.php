@@ -91,7 +91,9 @@ $tab_2 = $this->params['tab_2'];
                             <?php } ?>
                             </tbody>
                         </table>
-                        <?=$pages?>
+                        <div class="panel-footer">
+                            <?= $pages ?>
+                        </div>
                     </div>
                     <div class="tab-pane" id="tab-second">
                         <form id="add_form" action="<?=Url::to(['add'])?>" method="post" class="form-horizontal">

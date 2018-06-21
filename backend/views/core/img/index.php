@@ -37,7 +37,9 @@ $panel_title = $this->params['panel_title'];
                         <?php }?>
                         </tbody>
                     </table>
-                    <?=$pages?>
+                    <div class="panel-footer">
+                        <?= $pages ?>
+                    </div>
                 </div>
             </div>
         </div>
