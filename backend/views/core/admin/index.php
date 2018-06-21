@@ -70,9 +70,8 @@ $tab_2 = $this->params['tab_2'];
                             <?php }?>
                             </tbody>
                         </table>
-                        <div class="panel-footer">
                             <?= $pages ?>
-                        </div>                    </div>
+                 </div>
                     <div class="tab-pane" id="tab-second">
                         <form id="add_form" action="<?=Url::to(['core/admin/add'])?>" method="post" class="form-horizontal">
                             <div class="panel-body">
