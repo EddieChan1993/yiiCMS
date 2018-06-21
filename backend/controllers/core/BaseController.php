@@ -136,7 +136,7 @@ abstract class BaseController extends Controller
         echo "OK";
     }
 
-    function actionEditPage($id = null)
+    function actionEditP($id = null)
     {
         echo "OK";
     }

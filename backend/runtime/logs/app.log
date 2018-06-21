@@ -1,0 +1,210 @@
+2018-06-21 16:49:02 [127.0.0.1][-][-][warning][application] 密码不正确[D:\project\yiiCMS\backend\service\core\LoginService.php:42]
+    in D:\project\yiiCMS\common\service\BaseService.php:22
+    in D:\project\yiiCMS\backend\service\core\LoginService.php:49
+    in D:\project\yiiCMS\backend\controllers\core\LoginController.php:42
+2018-06-21 16:49:01 [127.0.0.1][-][-][info][application] $_GET = []
+
+$_POST = [
+    'username' => 'admin'
+    'password' => '6666666'
+]
+
+$_FILES = []
+
+$_COOKIE = []
+2018-06-21 16:49:12 [127.0.0.1][-][-][error][yii\base\ErrorException:2] yii\base\ErrorException: Declaration of backend\controllers\core\AdminController::actionEditPage() should be compatible with backend\controllers\core\BaseController::actionEditPage($id = NULL) in D:\project\yiiCMS\backend\controllers\core\AdminController.php:22
+Stack trace:
+#0 D:\project\yiiCMS\backend\controllers\core\AdminController.php(22): yii\base\ErrorHandler->handleError(2, 'Declaration of ...', 'D:\\project\\yiiC...', 22, Array)
+#1 D:\project\yiiCMS\vendor\yiisoft\yii2\BaseYii.php(293): include('D:\\project\\yiiC...')
+#2 [internal function]: yii\BaseYii::autoload('backend\\control...')
+#3 [internal function]: spl_autoload_call('backend\\control...')
+#4 D:\project\yiiCMS\vendor\yiisoft\yii2\base\Module.php(637): class_exists('backend\\control...')
+#5 D:\project\yiiCMS\vendor\yiisoft\yii2\base\Module.php(596): yii\base\Module->createControllerByID('core/admin')
+#6 D:\project\yiiCMS\vendor\yiisoft\yii2\base\Module.php(522): yii\base\Module->createController('index')
+#7 D:\project\yiiCMS\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('core/admin/inde...', Array)
+#8 D:\project\yiiCMS\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 D:\project\yiiCMS\backend\web\index.php(18): yii\base\Application->run()
+#10 {main}
+2018-06-21 16:49:12 [127.0.0.1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'UID' => '8a2df59982e3c56cdfc106b37c552c86df910c28d2f3eec5f1e7402a6581f9cda:2:{i:0;s:3:\"UID\";i:1;s:5:\"TdmCs\";}'
+]
+2018-06-21 16:49:20 [127.0.0.1][-][-][error][yii\base\ErrorException:2] yii\base\ErrorException: Declaration of backend\controllers\core\AdminController::actionEditPage() should be compatible with backend\controllers\core\BaseController::actionEditPage($id = NULL) in D:\project\yiiCMS\backend\controllers\core\AdminController.php:22
+Stack trace:
+#0 D:\project\yiiCMS\backend\controllers\core\AdminController.php(22): yii\base\ErrorHandler->handleError(2, 'Declaration of ...', 'D:\\project\\yiiC...', 22, Array)
+#1 D:\project\yiiCMS\vendor\yiisoft\yii2\BaseYii.php(293): include('D:\\project\\yiiC...')
+#2 [internal function]: yii\BaseYii::autoload('backend\\control...')
+#3 [internal function]: spl_autoload_call('backend\\control...')
+#4 D:\project\yiiCMS\vendor\yiisoft\yii2\base\Module.php(637): class_exists('backend\\control...')
+#5 D:\project\yiiCMS\vendor\yiisoft\yii2\base\Module.php(596): yii\base\Module->createControllerByID('core/admin')
+#6 D:\project\yiiCMS\vendor\yiisoft\yii2\base\Module.php(522): yii\base\Module->createController('index')
+#7 D:\project\yiiCMS\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('core/admin/inde...', Array)
+#8 D:\project\yiiCMS\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 D:\project\yiiCMS\backend\web\index.php(18): yii\base\Application->run()
+#10 {main}
+2018-06-21 16:49:20 [127.0.0.1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'UID' => '8a2df59982e3c56cdfc106b37c552c86df910c28d2f3eec5f1e7402a6581f9cda:2:{i:0;s:3:\"UID\";i:1;s:5:\"TdmCs\";}'
+]
+2018-06-21 16:49:21 [127.0.0.1][-][-][error][yii\base\ErrorException:2] yii\base\ErrorException: Declaration of backend\controllers\core\RoleController::actionEditPage() should be compatible with backend\controllers\core\BaseController::actionEditPage($id = NULL) in D:\project\yiiCMS\backend\controllers\core\RoleController.php:18
+Stack trace:
+#0 D:\project\yiiCMS\backend\controllers\core\RoleController.php(18): yii\base\ErrorHandler->handleError(2, 'Declaration of ...', 'D:\\project\\yiiC...', 18, Array)
+#1 D:\project\yiiCMS\vendor\yiisoft\yii2\BaseYii.php(293): include('D:\\project\\yiiC...')
+#2 [internal function]: yii\BaseYii::autoload('backend\\control...')
+#3 [internal function]: spl_autoload_call('backend\\control...')
+#4 D:\project\yiiCMS\vendor\yiisoft\yii2\base\Module.php(637): class_exists('backend\\control...')
+#5 D:\project\yiiCMS\vendor\yiisoft\yii2\base\Module.php(596): yii\base\Module->createControllerByID('core/role')
+#6 D:\project\yiiCMS\vendor\yiisoft\yii2\base\Module.php(522): yii\base\Module->createController('index')
+#7 D:\project\yiiCMS\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('core/role/index', Array)
+#8 D:\project\yiiCMS\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 D:\project\yiiCMS\backend\web\index.php(18): yii\base\Application->run()
+#10 {main}
+2018-06-21 16:49:21 [127.0.0.1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'UID' => '8a2df59982e3c56cdfc106b37c552c86df910c28d2f3eec5f1e7402a6581f9cda:2:{i:0;s:3:\"UID\";i:1;s:5:\"TdmCs\";}'
+]
+2018-06-21 16:49:22 [127.0.0.1][-][-][error][yii\base\ErrorException:2] yii\base\ErrorException: Declaration of backend\controllers\core\AdminController::actionEditPage() should be compatible with backend\controllers\core\BaseController::actionEditPage($id = NULL) in D:\project\yiiCMS\backend\controllers\core\AdminController.php:22
+Stack trace:
+#0 D:\project\yiiCMS\backend\controllers\core\AdminController.php(22): yii\base\ErrorHandler->handleError(2, 'Declaration of ...', 'D:\\project\\yiiC...', 22, Array)
+#1 D:\project\yiiCMS\vendor\yiisoft\yii2\BaseYii.php(293): include('D:\\project\\yiiC...')
+#2 [internal function]: yii\BaseYii::autoload('backend\\control...')
+#3 [internal function]: spl_autoload_call('backend\\control...')
+#4 D:\project\yiiCMS\vendor\yiisoft\yii2\base\Module.php(637): class_exists('backend\\control...')
+#5 D:\project\yiiCMS\vendor\yiisoft\yii2\base\Module.php(596): yii\base\Module->createControllerByID('core/admin')
+#6 D:\project\yiiCMS\vendor\yiisoft\yii2\base\Module.php(522): yii\base\Module->createController('index')
+#7 D:\project\yiiCMS\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('core/admin/inde...', Array)
+#8 D:\project\yiiCMS\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 D:\project\yiiCMS\backend\web\index.php(18): yii\base\Application->run()
+#10 {main}
+2018-06-21 16:49:22 [127.0.0.1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'UID' => '8a2df59982e3c56cdfc106b37c552c86df910c28d2f3eec5f1e7402a6581f9cda:2:{i:0;s:3:\"UID\";i:1;s:5:\"TdmCs\";}'
+]
+2018-06-21 16:49:22 [127.0.0.1][-][-][error][yii\base\ErrorException:2] yii\base\ErrorException: Declaration of backend\controllers\core\RoleController::actionEditPage() should be compatible with backend\controllers\core\BaseController::actionEditPage($id = NULL) in D:\project\yiiCMS\backend\controllers\core\RoleController.php:18
+Stack trace:
+#0 D:\project\yiiCMS\backend\controllers\core\RoleController.php(18): yii\base\ErrorHandler->handleError(2, 'Declaration of ...', 'D:\\project\\yiiC...', 18, Array)
+#1 D:\project\yiiCMS\vendor\yiisoft\yii2\BaseYii.php(293): include('D:\\project\\yiiC...')
+#2 [internal function]: yii\BaseYii::autoload('backend\\control...')
+#3 [internal function]: spl_autoload_call('backend\\control...')
+#4 D:\project\yiiCMS\vendor\yiisoft\yii2\base\Module.php(637): class_exists('backend\\control...')
+#5 D:\project\yiiCMS\vendor\yiisoft\yii2\base\Module.php(596): yii\base\Module->createControllerByID('core/role')
+#6 D:\project\yiiCMS\vendor\yiisoft\yii2\base\Module.php(522): yii\base\Module->createController('index')
+#7 D:\project\yiiCMS\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('core/role/index', Array)
+#8 D:\project\yiiCMS\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 D:\project\yiiCMS\backend\web\index.php(18): yii\base\Application->run()
+#10 {main}
+2018-06-21 16:49:22 [127.0.0.1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'UID' => '8a2df59982e3c56cdfc106b37c552c86df910c28d2f3eec5f1e7402a6581f9cda:2:{i:0;s:3:\"UID\";i:1;s:5:\"TdmCs\";}'
+]
+2018-06-21 16:49:24 [127.0.0.1][-][-][error][yii\base\ErrorException:2] yii\base\ErrorException: Declaration of backend\controllers\core\AdminController::actionEditPage() should be compatible with backend\controllers\core\BaseController::actionEditPage($id = NULL) in D:\project\yiiCMS\backend\controllers\core\AdminController.php:22
+Stack trace:
+#0 D:\project\yiiCMS\backend\controllers\core\AdminController.php(22): yii\base\ErrorHandler->handleError(2, 'Declaration of ...', 'D:\\project\\yiiC...', 22, Array)
+#1 D:\project\yiiCMS\vendor\yiisoft\yii2\BaseYii.php(293): include('D:\\project\\yiiC...')
+#2 [internal function]: yii\BaseYii::autoload('backend\\control...')
+#3 [internal function]: spl_autoload_call('backend\\control...')
+#4 D:\project\yiiCMS\vendor\yiisoft\yii2\base\Module.php(637): class_exists('backend\\control...')
+#5 D:\project\yiiCMS\vendor\yiisoft\yii2\base\Module.php(596): yii\base\Module->createControllerByID('core/admin')
+#6 D:\project\yiiCMS\vendor\yiisoft\yii2\base\Module.php(522): yii\base\Module->createController('index')
+#7 D:\project\yiiCMS\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('core/admin/inde...', Array)
+#8 D:\project\yiiCMS\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 D:\project\yiiCMS\backend\web\index.php(18): yii\base\Application->run()
+#10 {main}
+2018-06-21 16:49:24 [127.0.0.1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'UID' => '8a2df59982e3c56cdfc106b37c552c86df910c28d2f3eec5f1e7402a6581f9cda:2:{i:0;s:3:\"UID\";i:1;s:5:\"TdmCs\";}'
+]
+2018-06-21 16:49:41 [127.0.0.1][-][-][error][yii\base\ErrorException:2] yii\base\ErrorException: Declaration of backend\controllers\core\MenuController::actionEditPage() should be compatible with backend\controllers\core\BaseController::actionEditPage($id = NULL) in D:\project\yiiCMS\backend\controllers\core\MenuController.php:17
+Stack trace:
+#0 D:\project\yiiCMS\backend\controllers\core\MenuController.php(17): yii\base\ErrorHandler->handleError(2, 'Declaration of ...', 'D:\\project\\yiiC...', 17, Array)
+#1 D:\project\yiiCMS\vendor\yiisoft\yii2\BaseYii.php(293): include('D:\\project\\yiiC...')
+#2 [internal function]: yii\BaseYii::autoload('backend\\control...')
+#3 [internal function]: spl_autoload_call('backend\\control...')
+#4 D:\project\yiiCMS\vendor\yiisoft\yii2\base\Module.php(637): class_exists('backend\\control...')
+#5 D:\project\yiiCMS\vendor\yiisoft\yii2\base\Module.php(596): yii\base\Module->createControllerByID('core/menu')
+#6 D:\project\yiiCMS\vendor\yiisoft\yii2\base\Module.php(522): yii\base\Module->createController('index')
+#7 D:\project\yiiCMS\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('core/menu/index', Array)
+#8 D:\project\yiiCMS\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 D:\project\yiiCMS\backend\web\index.php(18): yii\base\Application->run()
+#10 {main}
+2018-06-21 16:49:41 [127.0.0.1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'UID' => 'cff0fd10615aeaabca0cf3784e752700667475a6f7f5404116878c17d5807d42a:2:{i:0;s:3:\"UID\";i:1;s:5:\"wDI7f\";}'
+]
+2018-06-21 16:50:42 [127.0.0.1][-][-][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "123/213". in D:\project\yiiCMS\vendor\yiisoft\yii2\base\Module.php:537
+Stack trace:
+#0 D:\project\yiiCMS\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('123/213', Array)
+#1 D:\project\yiiCMS\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\project\yiiCMS\backend\web\index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: 页面未找到。 in D:\project\yiiCMS\vendor\yiisoft\yii2\web\Application.php:115
+Stack trace:
+#0 D:\project\yiiCMS\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\project\yiiCMS\backend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2018-06-21 16:50:42 [127.0.0.1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'UID' => '6e8bd84d4c9274abf84c953cf78f8f0bf76c261c901f2af14bfa4481e299fa3fa:2:{i:0;s:3:\"UID\";i:1;s:5:\"tEFfe\";}'
+]
+2018-06-21 16:50:44 [127.0.0.1][-][-][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "123/213". in D:\project\yiiCMS\vendor\yiisoft\yii2\base\Module.php:537
+Stack trace:
+#0 D:\project\yiiCMS\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('123/213', Array)
+#1 D:\project\yiiCMS\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\project\yiiCMS\backend\web\index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: 页面未找到。 in D:\project\yiiCMS\vendor\yiisoft\yii2\web\Application.php:115
+Stack trace:
+#0 D:\project\yiiCMS\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\project\yiiCMS\backend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2018-06-21 16:50:44 [127.0.0.1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'UID' => '6e8bd84d4c9274abf84c953cf78f8f0bf76c261c901f2af14bfa4481e299fa3fa:2:{i:0;s:3:\"UID\";i:1;s:5:\"tEFfe\";}'
+]

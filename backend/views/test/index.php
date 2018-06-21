@@ -6,6 +6,7 @@ $panel_title = $this->params['panel_title'];
 $id = $get['condition']['id'];
 $type =$get['condition']['type'];
 ?>
+<br/>
 <div class="animated fadeIn col-md-9">
     <div class="panel panel-default">
         <div class="panel-heading">
