@@ -208,3 +208,45 @@ $_FILES = []
 $_COOKIE = [
     'UID' => '6e8bd84d4c9274abf84c953cf78f8f0bf76c261c901f2af14bfa4481e299fa3fa:2:{i:0;s:3:\"UID\";i:1;s:5:\"tEFfe\";}'
 ]
+2018-06-22 08:24:00 [127.0.0.1][-][-][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "upload/admin/common/logo.png". in C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Module.php:537
+Stack trace:
+#0 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('upload/admin/co...', Array)
+#1 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 C:\code_edd\201804\yiicms\backend\web\index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: 页面未找到。 in C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\web\Application.php:115
+Stack trace:
+#0 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\code_edd\201804\yiicms\backend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2018-06-22 08:24:00 [127.0.0.1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'UID' => 'b8893debbda8b42398b5f5aa2aabf801c8c1a2415e3c20aaeec5a7e6f23fa11ba:2:{i:0;s:3:\"UID\";i:1;s:5:\"xE68j\";}'
+]
+2018-06-22 08:24:01 [127.0.0.1][-][-][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "alpha/img/logo-small.png". in C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Module.php:537
+Stack trace:
+#0 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('alpha/img/logo-...', Array)
+#1 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 C:\code_edd\201804\yiicms\backend\web\index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: 页面未找到。 in C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\web\Application.php:115
+Stack trace:
+#0 C:\code_edd\201804\yiicms\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\code_edd\201804\yiicms\backend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2018-06-22 08:24:01 [127.0.0.1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'UID' => 'b8893debbda8b42398b5f5aa2aabf801c8c1a2415e3c20aaeec5a7e6f23fa11ba:2:{i:0;s:3:\"UID\";i:1;s:5:\"xE68j\";}'
+]

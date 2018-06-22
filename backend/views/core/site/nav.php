@@ -18,7 +18,7 @@ $urlArr = Yii::$app->params['link'];
     <!-- END SEARCH -->
     <!-- SIGN OUT -->
     <li class="xn-icon-button pull-right">
-        <a href="#" class="mb-control" data-box="#mb-signout"><span class="fa fa-sign-out"></span></a>
+        <a href="javascript:void(0)" title="离开" class="mb-control" data-box="#mb-signout"><span class="fa fa-power-off"></span></a>
     </li>
     <!-- END SIGN OUT -->
     <!-- MESSAGES -->
