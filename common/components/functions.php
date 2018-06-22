@@ -507,26 +507,31 @@ function userTextDecode($str)
     }, $text); //将两条斜杠变成一条，其他不动
     return json_decode($text);
 }
-
 /**
  * curl的post和get请求
  * @param $url （请求地址）
+ * @param $data
+ * @param string $headerStr
  * @param string $type (请求类型，post，get，默认为get)
- * @param string $res （返回json格式）
- * @param string $arr （传入参数）
+ * @param string $dataType
  * @return mixed
  */
-function http_curl($url, $type = 'get', $res = 'json', $arr = '')
+function http_curl($url, $data, $headerStr = "", $type = 'post',$dataType='json')
 {
     //1.初始化curl
     $ch = curl_init();
     //2.设置curl的参数
+
     curl_setopt($ch, CURLOPT_URL, $url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 
     if ($type == 'post') {
         curl_setopt($ch, CURLOPT_POST, 1);//不自动输出要开启
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $arr);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+    }
+    if (!empty($headerStr)) {
+        $header[] = $headerStr;
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
     }
     //有些api接口需要证书，如果需要就开启
     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); // 跳过证书检查
@@ -535,11 +540,10 @@ function http_curl($url, $type = 'get', $res = 'json', $arr = '')
     $output = curl_exec($ch);
     //4.关闭
     curl_close($ch);
-    if ($res == 'json') {
-        return json_decode($output, true);
-    } else {
-        return $output;
+    if ($dataType == 'json') {
+        $output= json_decode($output,true);
     }
+    return $output;
 }
 
 /**

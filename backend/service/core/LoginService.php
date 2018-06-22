@@ -83,7 +83,7 @@ class LoginService extends BaseService
             'api_key' => $api_key
         ];
 
-        $res = http_curl("https://captcha.luosimao.com/api/site_verify", 'post', 'json', $data);
+        $res = http_curl("https://captcha.luosimao.com/api/site_verify", $data);
         if (!empty($res['error'])) {
             throw new \Exception("验证无效,请重试");
         }
