@@ -2,6 +2,12 @@
  * Created by Administrator on 2017/6/30.
  */
 /*==========================================================删除指定行==================================================*/
+window.onload = function () {
+    $.mpb('destroy');
+    setTimeout(function () {
+        parent.$.mpb('destroy');
+    },260)
+};
 var del_tr;
 var del_url;
 function delete_row(dom){

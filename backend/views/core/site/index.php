@@ -34,6 +34,7 @@ $cms = Yii::$app->params['cms'];
     </div>
 </div>
 <?=$this->render('alert')?>
+
 <script type="text/javascript" src="<?=Url::to('@web/alpha/js/plugins/jquery/jquery.min.js')?>"></script>
 <script type="text/javascript" src="<?=Url::to('@web/alpha/js/plugins/jquery/jquery-ui.min.js')?>"></script>
 <script type="text/javascript" src="<?=Url::to('@web/alpha/js/plugins/bootstrap/bootstrap.min.js')?>"></script>

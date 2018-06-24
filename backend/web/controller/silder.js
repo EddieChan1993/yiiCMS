@@ -4,6 +4,19 @@
 //菜单跳转地址
 function turn_url(dom) {
     $('#frame').attr('src', $(dom).attr('data-url'));
+    $.mpb('show',{value: [0,83],speed: 1,state:'info'});
+    var iframe = document.getElementById("frame");
+    if (iframe.attachEvent) {
+        iframe.attachEvent("onload", function() {
+            //iframe加载完成后你需要进行的操作
+            $.mpb('update',{value: [85,100],speed: 1});
+        });
+    } else {
+        iframe.onload = function() {
+            //iframe加载完成后你需要进行的操作
+            $.mpb('update',{value: [83,100],speed: 1});
+        };
+    }
 }
 
 //导航菜单选中事件
