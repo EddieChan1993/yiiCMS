@@ -16,6 +16,7 @@ use yii\helpers\Url;
 <script type="text/javascript" src="<?=Url::to('@web/alpha/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js')?>"></script>
 
 <script type="text/javascript" src="<?=Url::to('@web/alpha/js/plugins/bootstrap/bootstrap-datepicker.js')?>"></script>
+<script type="text/javascript" src="<?=Url::to('@web/alpha/js/plugins/bootstrap/datepicker_CN.js')?>"></script>
 <script type="text/javascript" src="<?=Url::to('@web/alpha/js/plugins/bootstrap/bootstrap-file-input.js')?>"></script>
 <script type="text/javascript" src="<?=Url::to('@web/alpha/js/plugins/bootstrap/bootstrap-select.js')?>"></script>
 <script type="text/javascript" src="<?=Url::to('@web/alpha/js/plugins/tagsinput/jquery.tagsinput.min.js')?>"></script>

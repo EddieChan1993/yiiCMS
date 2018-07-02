@@ -4,7 +4,7 @@ $(function() {
         // Bootstrap datepicker
         var feDatepicker = function(){                        
             if($(".datepicker").length > 0){
-                $(".datepicker").datepicker({format: 'yyyy-mm-dd'});                
+                $(".datepicker").datepicker({language:"zh-CN",format: 'yyyy-mm-dd'});
                 $("#dp-2,#dp-3,#dp-4").datepicker(); // Sample
             }           
             
