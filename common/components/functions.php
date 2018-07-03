@@ -516,7 +516,7 @@ function userTextDecode($str)
  * @param string $dataType
  * @return mixed
  */
-function http_curl($url, $data, $headerStr = "", $type = 'post',$dataType='json')
+function http_curl($url, $data=null, $headerStr = "", $type = 'post',$dataType='json')
 {
     //1.初始化curl
     $ch = curl_init();
