@@ -63,20 +63,20 @@ use yii\helpers\Url;
     var index = parent.layer.getFrameIndex(window.name); //获取窗口索引
     var type = "{$type}";//文件类型
     var src = '';
-
+    var loadingDom;
     $('form').ajaxForm({
         beforeSubmit: showRequest,
         success:showResponse2
     });
     function showRequest() {
-        m_loading('图片上传中,请稍后...',{
-            time:-1
+        loadingDom=_topTip.loading('图片上传中,请稍后...',{
+            auto:false
         })
     }
     function showResponse2(res) {
-        destory();
+        _topTip.destory(loadingDom);
         if (res.error==0) {
-            m_success('图片上传成功^_^', {
+            _topTip.success('图片上传成功^_^', {
                 time: 500,
             },function () {
                 parent.$('#<?=$dom?>').val(res.msg);
@@ -91,7 +91,7 @@ use yii\helpers\Url;
                 parent.layer.close(index);
             })
         } else {
-            m_error(res.msg);
+            _topTip.warning(res.msg);
         }
     }
 </script>
