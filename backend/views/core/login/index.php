@@ -23,8 +23,7 @@ $title = Yii::$app->params['title'];
     <!-- EOF CSS INCLUDE -->
     <!--<script src="http://static.geetest.com/static/tools/gt.js"></script>-->
     <script src="//captcha.luosimao.com/static/js/api.js"></script>
-    <?= Html::cssFile('@web/alpha/plugins/message_alert/css/m_css.css') ?>
-    <?= Html::jsFile('@web/alpha/plugins/message_alert/js/m_js.js') ?>
+    <?= Html::jsFile('@web/alpha/plugins/_toptip/top-tip.js') ?>
     <?= Html::jsFile('@web/alpha/js/jquery-2.2.4.min.js') ?>
     <?= Html::jsFile('@web/alpha/plugins/ajax-form/ajax-form.js') ?>
     <style>
@@ -43,7 +42,6 @@ $title = Yii::$app->params['title'];
     </style>
 </head>
 <body>
-<?= $this->render('../../layouts/alert') ?>
 <div class="login-container">
     <div class="login-box animated bounceInDown">
         <div class="login-logo animated bounceIn"></div>

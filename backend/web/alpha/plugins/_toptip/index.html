@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>顶部提示框示例</title>
+    <style>
+        button {
+            margin: 100px 10px;
+        }
+    </style>
+</head>
+<body>
+<button onclick="tips(1)">成功</button>
+<button onclick="tips(2)">失败</button>
+<button onclick="tips(3)">普通</button>
+<button onclick="tips(4)">等待</button>
+<button onclick="tips(5)">警告</button>
+<button onclick="madeTip()">手动关闭的提示</button>
+<button onclick="callbackTip()">有回调的提示</button>
+<script src="top-tip.js"></script>
+<script>
+    function tips (type) {
+        switch (type) {
+            case 1:
+                _topTip.success('这是一条成功的提示')
+                break
+            case 2:
+                _topTip.error('这是一条错误提示')
+                break
+            case 3:
+                _topTip.info('这是一条普通提示')
+                break
+            case 4:
+                _topTip.loading('这是一条等待提示')
+                break
+            case 5:
+                _topTip.warning('这是一条警告提示',function(){
+                    alert("回调")
+                })
+                break
+        }
+    }
+    function madeTip () {
+        _topTip({auto: false, text: '等着你来点我噢！'})
+    }
+    function callbackTip () {
+        var dom =  _topTip({auto: false, text: '我可是被主动销毁的噢！'})
+        setTimeout(function () {
+            _topTip.destory(dom, function () {
+                alert('已主动销毁该实例')
+            })
+        }, 5000)
+    }
+</script>
+</body>
+</html>

@@ -8,8 +8,8 @@ window.onload = function () {
         parent.$.mpb('destroy');
     },260)
 };
-var del_tr;
 var del_url;
+var loadingDom;
 function delete_row(dom){
     del_url = $(dom).attr('data-url');
     layer.confirm('是否删除该条数据？', {
@@ -21,23 +21,23 @@ function delete_row(dom){
             url: del_url,
             type:"JSON",
             beforeSend: function () {
-                parent.m_loading('数据提交中，耐心等待...', {
-                    time: -1
+                loadingDom=parent._topTip.loading('数据提交中，耐心等待...', {
+                    auto: false
                 })
             },
             success:function (res) {
-                parent.destory();
+                parent._topTip.destory(loadingDom);
                 if(res.error==0) {
-                    parent.m_success(res.msg,{time:500})
+                    parent._topTip.success(res.msg,{time:500})
                     window.location.reload()
                 }else{
-                    parent.m_error(res.msg)
+                    parent._topTip.warning(res.msg)
                 }
                 layer.close(index);
             }
         });
     }, function(){
-        parent.m_warning('您已取消该操作');
+        parent._topTip.warning('您已取消该操作');
     });
 }
 /*========================================================表单添加=====================================================*/
@@ -47,15 +47,15 @@ $('#add_form').ajaxForm({
 });
 
 function showRequest() {
-    parent.m_loading('数据提交中，耐心等待...',{
-        time:-1
+    loadingDom=parent._topTip.loading('数据提交中，耐心等待...',{
+        auto:false
     })
 }
 
 function showResponse(res) {
-    parent.destory();
+    parent._topTip.destory(loadingDom);
     if(res.error==0) {
-        parent.m_success(res.msg,{
+        parent._topTip.success(res.msg,{
             time:500,
         },function () {
             layer.confirm('是否继续添加？', {
@@ -68,7 +68,7 @@ function showResponse(res) {
             });
         })
     }else{
-        parent.m_error(res.msg);
+        parent._topTip.warning(res.msg);
     }
 }
 
@@ -96,23 +96,23 @@ $('#edit_form').ajaxForm({
 });
 
 function editRequest() {
-    m_loading('数据提交中，请耐心等待...',{
-        time:-1
+    loadingDom=_topTip.loading('数据提交中，请耐心等待...',{
+        auto:false
     });
 }
 
 function editResponse(res) {
     var index = parent.layer.getFrameIndex(window.name); //获取窗口索引
-    destory();
+    _topTip.destory(loadingDom);
     if(res.error==0) {
-        m_success(res.msg,{
+        _topTip.success(res.msg,{
             time:500
         },function () {
             parent.layer.close(index);
             parent.window.location.reload()
         })
     }else{
-        m_error(res.msg);
+        _topTip.warning(res.msg);
     }
 }
 
@@ -124,21 +124,21 @@ $('#edit_menu_form').ajaxForm({
 });
 
 function editRequest1() {
-    m_loading('数据提交中，请耐心等待...',{
-        time:-1
+    loadingDom=_topTip.loading('数据提交中，请耐心等待...',{
+        time:false
     });
 }
 
 function editResponse1(res) {
     var index = parent.layer.getFrameIndex(window.name); //获取窗口索引
-    destory();
+    _topTip.destory(loadingDom);
     if(res.error==0) {
-        m_success(res.msg,{
+        _topTip.success(res.msg,{
             time:500
         },function () {
             parent.layer.close(index);
         })
     }else{
-        m_error(res.msg);
+        _topTip.warning(res.msg);
     }
 }

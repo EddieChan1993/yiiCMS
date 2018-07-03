@@ -2,17 +2,19 @@ $('#login_in_form').ajaxForm({
     beforeSubmit: showRequest,
     success: showResponse
 });
-
+var loadingDom
 function showRequest() {
-    m_loading('用户验证中...',{
-        time:-1
+    loadingDom=_topTip.loading(
+        '用户验证中...',
+        {
+        auto: false
     })
 }
 
 function showResponse(res) {
-    destory();
+    _topTip.destory(loadingDom);
     if(res.error==0) {
-        m_loading(res.msg,{
+        _topTip.loading(res.msg,{
             time:500
         },function () {
             window.location.reload()
@@ -23,7 +25,7 @@ function showResponse(res) {
         if (is_open_verify==true&&open_verify=="prod") {
             LUOCAPTCHA.reset();
         }
-        m_error(res.msg,{
+        _topTip.warning(res.msg,{
             time:1500
         });
     }

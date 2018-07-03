@@ -20,14 +20,3 @@ use \yii\helpers\Url;
     </div>
 </div>
 <!--自定义弹出提示-->
-<div class="m_tip">
-    <div>
-        <img class="m_icon m_normal" src="<?=Url::to('@web/alpha/plugins/message_alert/img/tip.svg')?>">
-        <img class="m_icon m_error" src="<?=Url::to('@web/alpha/plugins/message_alert/img/error.svg')?>">
-        <img class="m_icon m_success" src="<?=Url::to('@web/alpha/plugins/message_alert/img/success.svg')?>">
-        <img class="m_icon m_warning" src="<?=Url::to('@web/alpha/plugins/message_alert/img/warning.svg')?>">
-        <img class="m_icon m_loading" src="<?=Url::to('@web/alpha/plugins/message_alert/img/loading.svg')?>">
-        <span>提示内容</span>
-    </div>
-    <img class="m_icon m_close" src="<?=Url::to('@web/alpha/plugins/message_alert/img/close.svg')?>" onclick=close_tip(this)>
-</div>

@@ -42,7 +42,6 @@ use \yii\helpers\Url;
         </div>
     </form>
 </div>
-
 <script>
     //编辑提交处理
     $('#edit_form_self').ajaxForm({
@@ -50,23 +49,24 @@ use \yii\helpers\Url;
         success: editResponse1
     });
 
+    var loadingDom;
     function editRequest1() {
-        m_loading('数据提交中，请耐心等待...',{
-            time:-1
+        loadingDom=_topTip.loading('数据提交中，请耐心等待...',{
+            auto:false
         });
     }
 
     function editResponse1(res) {
         var index = parent.layer.getFrameIndex(window.name); //获取窗口索引
-        destory();
+        _topTip.destory(loadingDom);
         if(res.error==0) {
-            m_success(res.msg,{
-                time:500
+            _topTip.success(res.msg,{
+                time:1000
             },function () {
                 parent.layer.close(index);
             })
         }else{
-            m_error(res.msg);
+            _topTip.warning(res.msg);
         }
     }
 

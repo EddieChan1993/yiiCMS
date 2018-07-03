@@ -5,8 +5,7 @@ use yii\helpers\Url;
 <!-- END META SECTION -->
 <!-- CSS INCLUDE -->
 <link rel="stylesheet" type="text/css" id="theme" href="<?=Url::to('@web/alpha/css/theme-default.css')?>"/>
-<link rel="stylesheet" href="<?=Url::to('@web/alpha/plugins/message_alert/css/m_css.css')?>">
-<script src="<?=Url::to('@web/alpha/plugins/message_alert/js/m_js.js')?>"></script>
+<script type="text/javascript" src="<?=Url::to('@web/alpha/plugins/_toptip/top-tip.js')?>"></script>
 <!-- EOF CSS INCLUDE -->
 <script type="text/javascript" src="<?=Url::to('@web/alpha/js/plugins/jquery/jquery.min.js')?>"></script>
 <script src="<?=Url::to('@web/alpha/plugins/layer-v3.0.1/layer/layer.js')?>"></script>
