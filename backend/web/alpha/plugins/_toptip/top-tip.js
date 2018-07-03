@@ -52,7 +52,7 @@
                 fc = '#e6a23c';
                 break;
         }
-        dom.style.cssText = 'position: fixed;top:-30px;font-size:14px;padding:5px 10px;box-shadow: #d0d0d0 0px 3px 2px;border-radius:6px;transition: ease-out 300ms;opacity:0.1';
+        dom.style.cssText = 'position: fixed;top:-30px;font-size:14px;padding:5px 10px;box-shadow: 0 1px 6px rgba(0,0,0,.2);border-radius:6px;transition: ease-out 300ms;opacity:0.1';
         dom.style.backgroundColor = bgc;
         dom.style.color = fc;
         var span = document.createElement('span');
