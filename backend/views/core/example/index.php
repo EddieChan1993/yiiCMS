@@ -113,9 +113,20 @@ use yii\helpers\Url;
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-xs-3 control-label">Select</label>
+                            <label class="col-xs-3 control-label" data-style="btn-success">有颜色的select</label>
                             <div class="col-xs-9">
-                                <select class="form-control select">
+                                <select class="form-control select ">
+                                    <option value="1">Option 1</option>
+                                    <option value="2">Option 2</option>
+                                    <option value="5">Option 5</option>
+                                </select>
+                                <span class="help-block">Select box example</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-xs-3 control-label">带搜索的select</label>
+                            <div class="col-xs-9">
+                                <select class="form-control select"  data-live-search="true">
                                     <option value="1">Option 1</option>
                                     <option value="2">Option 2</option>
                                     <option value="5">Option 5</option>
