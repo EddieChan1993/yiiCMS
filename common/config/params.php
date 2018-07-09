@@ -1,5 +1,6 @@
 <?php
 return [
+    'oss_host'=>"https://oss.qaqgame.com",
     'tencent_cos'=>[
         "region"=>"ap-shanghai",
         "secretId" => "AKIDqcDgCf3YyHPNbgnQm2CB3y3ymPrPerNh",

@@ -39,6 +39,7 @@ class UploadService extends AuthService
 
             $instance = TencentCos::getInstance();
             $res = $instance::upload($key, $temp_name);
+            $res=self::changeHost($res);
             self::addImgLog(AlphaImgs::TencentCosType, $res,$fileSize);
 
             $flag = $res;
@@ -63,5 +64,17 @@ class UploadService extends AuthService
         if (!$model->save()) {
             throw new \Exception(current($model->getFirstErrors()));
         }
+    }
+
+    /**
+     * 改变oss的host地址
+     * @param $url
+     * @return string
+     */
+    private static function changeHost($url)
+    {
+        $hostNew = \Yii::$app->params['oss_host'];
+        $path=get_url_param($url, 'path');
+        return sprintf("%s%s", $hostNew, $path);
     }
 }
