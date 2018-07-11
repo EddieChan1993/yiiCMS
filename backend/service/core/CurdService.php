@@ -152,5 +152,4 @@ class CurdService extends AuthService
         ];
         return $res;
     }
-
 }
