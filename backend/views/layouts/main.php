@@ -41,6 +41,7 @@ AppAsset::register($this);
         <!-- END CONTENT FRAME -->
     </div>
 </div>
+<?php $this->endBody()?>
 </body>
 </html>
 <?php $this->endPage() ?>
