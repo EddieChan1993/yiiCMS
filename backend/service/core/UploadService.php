@@ -19,6 +19,7 @@ class UploadService extends AuthService
      * @param $fileData
      * @param $postData
      * @return string
+     * @throws Exception
      */
     public static function tencentCos($fileData, $postData):string
     {
@@ -52,7 +53,14 @@ class UploadService extends AuthService
     }
 
     //添加到数据库
-    private static function addImgLog($type, $url,$size)
+
+    /**
+     * @param $type
+     * @param $url
+     * @param $size
+     * @throws \Exception
+     */
+    private static function addImgLog($type, $url, $size)
     {
         $model=new AlphaImgs();
         $model->img_size = getFileSize($size);
