@@ -111,7 +111,7 @@ $(document).ready(function(){
             var sound = box.data("sound");
             
             if(sound === 'alert')
-                playAudio('alert');
+                // playAudio('alert');
             
             if(sound === 'fail')
                 playAudio('fail');
