@@ -11,6 +11,7 @@ namespace backend\controllers\core;
 
 use app\models\AlphaImgs;
 use backend\service\core\CurdService;
+use Yii;
 
 class ImgController extends BaseController
 {
