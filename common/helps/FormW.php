@@ -23,11 +23,11 @@ class FormW
     }
 
     //select插件
-    public static function Select($key,$keyMapValue=[],$selected=null)
+    public static function Select($key,$keyMapValue=[],$selected=null,$dataStyle="btn-success",$isSearch=false)
     {
         $formModelName=CurdService::getModelNameForm();
         $formModelName = sprintf("%s[%s]", $formModelName, $key);
-        $str = sprintf('<select name="%s" class="form-control select">',$formModelName);
+        $str = sprintf('<select name="%s" class="form-control select" data-style="%s" data-live-search="%b">',$formModelName,$dataStyle,$isSearch);
         foreach ($keyMapValue as $k=>$v){
             $is_selected = is_selected($selected, $k);
             $str .= '<option '.$is_selected.' value="' . $k . '">'.$v.'</option>';

@@ -13,6 +13,8 @@ use yii\widgets\LinkPager;
 $title = $this->params['title'];
 $tab_1 = $this->params['tab_1'];
 $tab_2 = $this->params['tab_2'];
+$id = $get['condition']['id'];
+$type =$get['condition']['type'];
 ?>
 <div class="page-title">
     <h2><span class="fa fa-arrow-circle-o-left"><?=$title?></span></h2>
