@@ -122,13 +122,16 @@ abstract class BaseController extends Controller
      */
     function actionIndex()
     {
+        self::setTitle("TEST");
+        self::setTab1("T1");
+        self::setTab2("T2");
         $req = Yii::$app->request;
         $where['condition']['id'] = $req->get("id");
         $where['condition']['type'] = $req->get("type");
         $where['s_date'] = $req->get("s_date");
         $where['e_date'] = $req->get('e_date');
         $res=CurdService::getDataList($where,'*');
-        return $this->render('index', $res);
+        return $this->render('index2', $res);
     }
 
     function actionAdd()
