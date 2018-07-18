@@ -2,11 +2,14 @@
 
 use yii\helpers\Url;
 
+$title = $this->params['title'];
 $panel_title = $this->params['panel_title'];
 $id = $get['condition']['id'];
 $type =$get['condition']['type'];
 ?>
-<br/>
+<div class="page-title">
+    <h2><span class="fa fa-arrow-circle-o-left"><?=$title?></span></h2>
+</div>
 <div class="animated fadeIn col-md-9">
     <div class="panel panel-default">
         <div class="panel-heading">
@@ -17,7 +20,7 @@ $type =$get['condition']['type'];
         </div>
         <div class="panel-body">
             <form class="form-inline" action="<?= Url::to('index')?>" method="get">
-<!--                <input type="hidden" value="test/index" name="r">-->
+                <!--                <input type="hidden" value="test/index" name="r">-->
                 <div class="form-group">
                     <input class="form-control" value="<?= $id ?>" placeholder="Id" type="text" name="id">
                 </div>
