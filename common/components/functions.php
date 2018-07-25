@@ -530,6 +530,7 @@ function http_curl($url, $data=null, $headerStr = "", $type = 'post',$dataType='
         curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
     }
     if (!empty($headerStr)) {
+        //        $headerStr = "Content-type: application/json";
         $header[] = $headerStr;
         curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
     }

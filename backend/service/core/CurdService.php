@@ -109,7 +109,10 @@ class CurdService extends AuthService
             foreach ($data['condition'] as $key => $val) {
                 if (!empty($val) || $val === "0") {
                     //排除为空的字段
-                    $query->andFilterCompare($key, trim($val));
+                    if (is_string($val)) {
+                        $val = trim($val);
+                    }
+                    $query->andWhere([$key => $val]);
                 }
             }
         }
