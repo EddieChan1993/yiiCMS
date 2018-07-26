@@ -15,7 +15,7 @@ class FormW
     }
 
     //textarea插件
-    public static function TextArea($name, $rows=5, $value=null)
+    public static function TextArea($name, $value=null,$rows=5)
     {
         $formModelName=CurdService::getModelNameForm();
         $formModelName = sprintf("%s[%s]", $formModelName, $name);

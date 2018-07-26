@@ -9,7 +9,9 @@
 namespace backend\service;
 
 
+use app\models\AlphaTest;
 use backend\service\core\AuthService;
+use backend\service\core\CurdService;
 
 class TestService extends AuthService
 {
@@ -33,8 +35,8 @@ class TestService extends AuthService
 
     public static function getOne($id)
     {
-        $categoryOne= Test::find()
-            ->where(['tid'=>$id])
+        $categoryOne= AlphaTest::find()
+            ->where([CurdService::$pk_id=>$id])
             ->asArray()
             ->one();
         return $categoryOne;
@@ -44,7 +46,7 @@ class TestService extends AuthService
     {
         $flag = false;
         try {
-            $model = Test::findOne(['tid'=>$postData['id']]);
+            $model = AlphaTest::findOne([CurdService::$pk_id=>$postData['id']]);
             $model->load($postData);
             $model->updated_time = date("Y-m-d H:i:s");
             $model->updated_by = self::$uid;
@@ -62,7 +64,7 @@ class TestService extends AuthService
     {
         $flag = false;
         try {
-            Test::deleteAll(['tid' => $id]);
+            AlphaTest::deleteAll([CurdService::$pk_id => $id]);
             $flag = true;
         } catch (\Exception $e) {
             self::setErr($e);
