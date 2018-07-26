@@ -7,6 +7,7 @@ use app\models\AlphaTest;
 use app\models\AlphaUsers;
 use backend\controllers\core\BaseController;
 use backend\service\core\CurdService;
+use backend\service\TestService;
 use Yii;
 
 class TestController extends BaseController
@@ -28,5 +29,30 @@ class TestController extends BaseController
         $where['e_date'] = $req->get('e_date');
         $res=CurdService::getDataList($where,'*');
         return $this->render('index2', $res);
+    }
+
+    function actionEditP($id = null)
+    {
+        $res = TestService::getOne($id);
+        return $this->render('edit', $res);
+    }
+
+    function actionUpdate()
+    {
+        $req = \Yii::$app->request;
+        $res = TestService::edit($req->post());
+        if (!$res) {
+            self::warning(TestService::getErr());
+        }
+        self::output("编辑成功");
+    }
+
+    function actionDelete($id = null)
+    {
+        $res = TestService::del($id);
+        if (!$res) {
+            self::warning(TestService::getErr());
+        }
+        self::output("删除成功");
     }
 }
