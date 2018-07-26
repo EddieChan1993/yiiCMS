@@ -6,6 +6,7 @@
  * Time: 15:35
  */
 
+use backend\service\core\CurdService;
 use common\helps\FormW;
 use common\models\GamesInfo;
 use yii\helpers\Url;
@@ -86,8 +87,8 @@ $type =$get['condition']['type'];
                                     <td><?= date("Y-m-d H:i:s", $obj['c_time']) ?></td>
                                     <td><?= $obj['type'] ?></td>
                                     <td>
-                                        <a title="<?=$obj['name']?>【编辑】" data-url="<?= Url::to(['edit-p','id'=>$obj['id']])?>" onclick="edit_row(this)" class="btn btn-default btn-rounded btn-sm"><span class="fa fa-pencil"></span></a>
-                                        <button title="<?=$obj['name']?>【删除】" data-url="<?=Url::to(['delete','id'=>$obj['id']])?>" onClick="delete_row(this);" class="btn btn-danger btn-rounded btn-sm" ><span class="fa fa-trash-o"></span></button>
+                                        <a title="<?=$obj['name']?>【编辑】" data-url="<?= Url::to(['edit-p','id'=>$obj[CurdService::$pk_id]])?>" onclick="edit_row(this)" class="btn btn-default btn-rounded btn-sm"><span class="fa fa-pencil"></span></a>
+                                        <button title="<?=$obj['name']?>【删除】" data-url="<?=Url::to(['delete','id'=>$obj[CurdService::$pk_id]])?>" onClick="delete_row(this);" class="btn btn-danger btn-rounded btn-sm" ><span class="fa fa-trash-o"></span></button>
                                     </td>
                                 </tr>
                             <?php } ?>
