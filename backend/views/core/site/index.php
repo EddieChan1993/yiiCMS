@@ -30,7 +30,7 @@ $cms = Yii::$app->params['cms'];
     <?=$this->render('sidebar')?>
     <div class="page-content">
         <?=$this->render('nav')?>
-        <iframe id="frame" width="100%" height="99%" src="<?= Url::to([$controller.'/'.$method])?>" frameborder="0"></iframe>
+        <iframe id="frame" width="100%" height="100%" src="<?= Url::to([$controller.'/'.$method])?>" frameborder="0"></iframe>
     </div>
 </div>
 <?=$this->render('alert')?>

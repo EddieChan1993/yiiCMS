@@ -516,7 +516,7 @@ function userTextDecode($str)
  * @param string $dataType
  * @return mixed
  */
-function http_curl($url, $data, $headerStr = "", $type = 'post',$dataType='json')
+function http_curl($url, $data=null, $headerStr = "", $type = 'post',$dataType='json')
 {
     //1.初始化curl
     $ch = curl_init();
@@ -530,6 +530,7 @@ function http_curl($url, $data, $headerStr = "", $type = 'post',$dataType='json'
         curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
     }
     if (!empty($headerStr)) {
+        //        $headerStr = "Content-type: application/json";
         $header[] = $headerStr;
         curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
     }

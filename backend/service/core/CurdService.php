@@ -21,12 +21,22 @@ class CurdService extends AuthService
     private static $model;
     //表数据的时间创建字段，如果调用getDataList，需要设置
     private static $c_time_key = "c_time";
-
     //创建时间是否为时间戳
-    private static $isTimestrap=true;
-
+    private static $isTimestrap = true;
     //每页显示条数
-    private static $pageLimit = 13;
+    private static $pageLimit = 14;
+    //自增字段
+    public static $pk_id = "id";
+
+    /**
+     * @param string $pk_id
+     */
+    public static function setPkId($pk_id)
+    {
+        self::$pk_id = $pk_id;
+    }
+
+
 
     /**
      * @param int $pageLimit
@@ -35,8 +45,6 @@ class CurdService extends AuthService
     {
         self::$pageLimit = $pageLimit;
     }
-
-
 
     /**
      * @param bool $isTimestrap
@@ -48,25 +56,12 @@ class CurdService extends AuthService
 
     /**
      * @return mixed
-     * @throws \Exception
      */
     public static function getModelNameForm()
     {
-        if (empty(self::$model)) {
-            throw new Exception("没有实例化模型,无法使用表单插件");
-        }
         $arr = explode("\\", get_class(self::$model));
         self::$modelNameForm = end($arr);
         return self::$modelNameForm;
-    }
-
-    /**
-     * @return mixed
-     * @throws \Exception
-     */
-    public static function getModel()
-    {
-        return self::$model;
     }
 
     /**
@@ -75,14 +70,6 @@ class CurdService extends AuthService
     public static function setModel($model)
     {
         self::$model = $model;
-    }
-
-    /**
-     * @return string
-     */
-    public static function getCTimeKey()
-    {
-        return self::$c_time_key;
     }
 
     /**
@@ -99,7 +86,7 @@ class CurdService extends AuthService
      * @return array
      * @throws \Exception
      */
-    public static function getDataList($data=null, $filed = "*")
+    public static function getDataList($data = null, $filed = "*")
     {
         if (empty(self::$model)) {
             throw new \Exception("模型没有指定");
@@ -109,7 +96,10 @@ class CurdService extends AuthService
             foreach ($data['condition'] as $key => $val) {
                 if (!empty($val) || $val === "0") {
                     //排除为空的字段
-                    $query->andFilterCompare($key, trim($val));
+                    if (is_string($val)) {
+                        $val = trim($val);
+                    }
+                    $query->andWhere([$key => $val]);
                 }
             }
         }
@@ -152,5 +142,4 @@ class CurdService extends AuthService
         ];
         return $res;
     }
-
 }

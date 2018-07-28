@@ -1,8 +1,10 @@
-<?php
-use yii\helpers\Url;
-?>
 <br/>
 <div class="row">
+    <div class="col-md-3">
+        <div class="progress progress-small progress-striped active">
+            <div class="progress-bar progress-bar-danger" role="progressbar" style="width: 33%;"></div>
+        </div>
+    </div>
     <div class="col-md-3">
         <div class="widget widget-primary">
             <div class="widget-title">TOTAL</div>
@@ -113,9 +115,20 @@ use yii\helpers\Url;
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-xs-3 control-label">Select</label>
+                            <label class="col-xs-3 control-label" >有颜色的select</label>
                             <div class="col-xs-9">
-                                <select class="form-control select">
+                                <select class="form-control select" data-style="btn-success">
+                                    <option value="1">Option 1</option>
+                                    <option value="2">Option 2</option>
+                                    <option value="5">Option 5</option>
+                                </select>
+                                <span class="help-block">Select box example</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-xs-3 control-label">带搜索的select</label>
+                            <div class="col-xs-9">
+                                <select class="form-control select"  data-live-search="true">
                                     <option value="1">Option 1</option>
                                     <option value="2">Option 2</option>
                                     <option value="5">Option 5</option>
@@ -128,6 +141,14 @@ use yii\helpers\Url;
                             <div class="col-xs-9">
                                 <label class="check"><input type="checkbox" class="icheckbox" checked="checked"/> Checkbox title</label>
                                 <span class="help-block">Checkbox sample, easy to use</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-5">
+                                <div class="input-group bootstrap-timepicker">
+                                    <input type="text" class="form-control timepicker24">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
+                                </div>
                             </div>
                         </div>
                         <div class="form-group">

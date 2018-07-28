@@ -1,5 +1,5 @@
-#frontend配置
-server {
+#nginx配置
+    server {
     charset utf-8;
     client_max_body_size 128M;
 
