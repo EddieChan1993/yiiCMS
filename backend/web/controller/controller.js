@@ -9,7 +9,6 @@ window.onload = function () {
     },260)
 };
 var del_url;
-var loadingDom;
 function delete_row(dom){
     del_url = $(dom).attr('data-url');
     layer.confirm('是否删除该条数据？', {
@@ -21,12 +20,12 @@ function delete_row(dom){
             url: del_url,
             type:"JSON",
             beforeSend: function () {
-                loadingDom=parent._topTip.loading('数据提交中，耐心等待...', {
+                parent._topTip.loading('数据提交中，耐心等待...', {
                     auto: false
                 })
             },
             success:function (res) {
-                parent._topTip.destory(loadingDom);
+                parent._topTip.destoryAll();
                 if(res.error==0) {
                     parent._topTip.success(res.msg,{time:500})
                     window.location.reload()
@@ -47,13 +46,13 @@ $('#add_form').ajaxForm({
 });
 
 function showRequest() {
-    loadingDom=parent._topTip.loading('数据提交中，耐心等待...',{
+    parent._topTip.loading('数据提交中，耐心等待...',{
         auto:false
     })
 }
 
 function showResponse(res) {
-    parent._topTip.destory(loadingDom);
+    parent._topTip.destoryAll();
     if(res.error==0) {
         parent._topTip.success(res.msg,{
             time:500,
@@ -96,14 +95,14 @@ $('#edit_form').ajaxForm({
 });
 
 function editRequest() {
-    loadingDom=_topTip.loading('数据提交中，请耐心等待...',{
+    _topTip.loading('数据提交中，请耐心等待...',{
         auto:false
     });
 }
 
 function editResponse(res) {
     var index = parent.layer.getFrameIndex(window.name); //获取窗口索引
-    _topTip.destory(loadingDom);
+    _topTip.destoryAll();
     if(res.error==0) {
         _topTip.success(res.msg,{
             time:500
@@ -124,14 +123,14 @@ $('#edit_menu_form').ajaxForm({
 });
 
 function editRequest1() {
-    loadingDom=_topTip.loading('数据提交中，请耐心等待...',{
+    _topTip.loading('数据提交中，请耐心等待...',{
         time:false
     });
 }
 
 function editResponse1(res) {
     var index = parent.layer.getFrameIndex(window.name); //获取窗口索引
-    _topTip.destory(loadingDom);
+    _topTip.destoryAll();
     if(res.error==0) {
         _topTip.success(res.msg,{
             time:500

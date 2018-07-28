@@ -25,6 +25,7 @@ use yii\helpers\Url;
 
 <script type="text/javascript" src="<?=Url::to('@web/alpha/js/plugins/morris/raphael-min.js')?>"></script>
 <script type="text/javascript" src="<?=Url::to('@web/alpha/js/plugins/morris/morris.min.js')?>"></script>
+<script type="text/javascript" src="<?=Url::to('@web/alpha/js/plugins/knob/jquery.knob.min.js')?>"></script>
 <!-- END THIS PAGE PLUGINS -->
 <script type="text/javascript" src="<?=Url::to('@web/alpha/js/plugins.js')?>"></script>
 <script type="text/javascript" src="<?=Url::to('@web/alpha/js/actions.js')?>"></script>
