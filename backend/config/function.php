@@ -148,3 +148,15 @@ function get_users($user_id)
     }
     return $adminInfo->user_login;
 }
+
+/**
+ * 获取url参数
+ * @param $url
+ * @param string $key path或host，scheme
+ * @return
+ */
+function get_url_param($url,$key)
+{
+    $urlArr=parse_url($url);
+    return $urlArr[$key];
+}

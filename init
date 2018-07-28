@@ -14,7 +14,7 @@ if (!extension_loaded('openssl')) {
 
 $params = getParams();
 $root = str_replace('\\', '/', __DIR__);
-$envs = require "$root/environments/index.php";
+$envs = require "$root/environments/index.html";
 $envNames = array_keys($envs);
 
 echo "Yii Application Initialization Tool v1.0\n\n";
