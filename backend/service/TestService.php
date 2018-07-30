@@ -19,7 +19,7 @@ class TestService extends AuthService
     {
         $flag = false;
         try {
-            $model = new Test();
+            $model = new AlphaTest();
             $model->load($postData);
             $model->created_time = date("Y-m-d H:i:s");
             $model->created_by = self::$uid;

@@ -31,7 +31,17 @@ class TestController extends BaseController
         $where['s_date'] = $req->get("s_date");
         $where['e_date'] = $req->get('e_date');
         $res=CurdService::getDataList($where,'*');
-        return $this->render('index2', $res);
+        return $this->render('index', $res);
+    }
+
+    function actionAdd()
+    {
+        $req = \Yii::$app->request;
+        $res = TestService::add($req->post());
+        if (!$res) {
+            self::warning(TestService::getErr());
+        }
+        self::output("添加成功");
     }
 
     function actionEditP($id = null)
@@ -57,15 +67,5 @@ class TestController extends BaseController
             self::warning(TestService::getErr());
         }
         self::output("删除成功");
-    }
-
-    function actionAdd()
-    {
-        $req = \Yii::$app->request;
-        $res = TestService::add($req->post());
-        if (!$res) {
-            self::warning(TestService::getErr());
-        }
-        self::output("添加成功");
     }
 }

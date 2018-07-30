@@ -51,7 +51,6 @@ $urlArr = Yii::$app->params['link'];
                 <?php foreach ($newsInfo as $obj){?>
                     <a class="list-group-item" href="#">
                         <strong><?=$obj['message']?></strong>
-                        <br/>
                         <small class="text-muted"><?=$obj['time']?></small>
                     </a>
                 <?php }?>
