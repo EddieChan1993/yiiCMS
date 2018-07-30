@@ -31,7 +31,7 @@ class TestController extends BaseController
         $where['s_date'] = $req->get("s_date");
         $where['e_date'] = $req->get('e_date');
         $res=CurdService::getDataList($where,'*');
-        return $this->render('index', $res);
+        return $this->render('index2', $res);
     }
 
     function actionAdd()
