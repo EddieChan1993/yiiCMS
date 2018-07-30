@@ -6,7 +6,7 @@
  * Time: 16:53
  */
 
-use common\helps\FormW;
+use common\helps\FormE;
 use yii\helpers\Url;
 
 $title = $this->params['title'];
@@ -80,19 +80,19 @@ $tab_2 = $this->params['tab_2'];
                                         <div class="form-group">
                                             <label class="col-md-3 control-label">头像</label>
                                             <div class="col-md-9">
-                                                <?=FormW::SingleUpload('avatar')?>
+                                                <?=FormE::singleUpload('avatar')?>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-md-3 control-label">登录名</label>
                                             <div class="col-md-9">
-                                                <?=FormW::Input('user_login')?>
+                                                <?=FormE::input('user_login')?>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-md-3 control-label">密码</label>
                                             <div class="col-md-9">
-                                                <?=FormW::Input('user_pass',null,'password')?>
+                                                <?=FormE::input('user_pass',null,'password')?>
                                             </div>
                                         </div>
                                         <div class="form-group">

@@ -6,7 +6,7 @@
  * Time: 15:14
  */
 
-use common\helps\FormW;
+use common\helps\FormE;
 use yii\helpers\Url;
 
 ?>
@@ -19,7 +19,7 @@ use yii\helpers\Url;
                     <div class="form-group">
                         <label class="col-xs-3 control-label">头像</label>
                         <div class="col-xs-6">
-                            <?=FormW::SingleUpload('avatar',$avatar)?>
+                            <?=FormE::singleUpload('avatar',$avatar)?>
                         </div>
                     </div>
                 </div>
