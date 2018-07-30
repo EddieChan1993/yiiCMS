@@ -13,6 +13,6 @@ class ExampleController extends BaseController
 {
     function actionIndex()
     {
-        return $this->render('index');
+        return $this->render('widget');
     }
 }
