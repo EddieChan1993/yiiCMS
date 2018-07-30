@@ -1,3 +1,6 @@
+<?php
+use yii\helpers\Url;
+?>
 <br/>
 <div class="row">
     <div class="col-md-3">
@@ -6,11 +9,6 @@
             <p>September</p>
             <div class="informer informer-default dir-tr"><span class="fa fa-calendar"></span></div>
         </a>
-    </div>
-    <div class="col-md-3">
-        <div class="progress progress-small progress-striped active">
-            <div class="progress-bar progress-bar-danger" role="progressbar" style="width: 33%;"></div>
-        </div>
     </div>
     <div class="col-md-3">
         <div class="widget widget-primary">
@@ -54,10 +52,18 @@
             <input type="hidden" value="" name="id">
             <div class="panel-body">
                 <div class="row">
-                    <div class="col-xs-10">
+                    <div class="col-md-10">
                         <div class="form-group">
-                            <label class="col-xs-3 control-label">Text Field</label>
-                            <div class="col-xs-9">
+                            <label for="" class="col-md-3  control-label">进度条</label>
+                            <div class="col-md-9">
+                                    <div class="progress progress-small progress-striped active">
+                                        <div class="progress-bar progress-bar-danger" role="progressbar" style="width: 33%;"></div>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Text Field</label>
+                            <div class="col-md-9">
                                 <div class="input-group">
                                     <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
                                     <input type="text" class="form-control"/>
@@ -66,8 +72,8 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-xs-3 control-label">Password</label>
-                            <div class="col-xs-9 col-xs-12">
+                            <label class="col-md-3 control-label">Password</label>
+                            <div class="col-md-9 col-md-12">
                                 <div class="input-group">
                                     <span class="input-group-addon"><span class="fa fa-unlock-alt"></span></span>
                                     <input type="password" class="form-control"/>
@@ -76,15 +82,15 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-xs-3 control-label">Textarea</label>
-                            <div class="col-xs-9 col-xs-12">
+                            <label class="col-md-3 control-label">Textarea</label>
+                            <div class="col-md-9 col-md-12">
                                 <textarea class="form-control" rows="5"></textarea>
                                 <span class="help-block">Default textarea field</span>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-xs-3 control-label">Img</label>
-                            <div class="col-xs-9">
+                            <label class="col-md-3 control-label">Img</label>
+                            <div class="col-md-9">
                                 <div class="gallery">
                                     <a class="gallery-item"  href="javascript:void('')" title="Space picture 2" data-gallery>
                                         <div style="width: 200px;height: 80px" class="image" >
@@ -100,8 +106,8 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-xs-3 control-label">File</label>
-                            <div class="col-xs-9">
+                            <label class="col-md-3 control-label">File</label>
+                            <div class="col-md-9">
                                 <div class="gallery">
                                     <a class="gallery-item"  href="javascript:void('')" title="Space picture 2" data-gallery>
                                         <div style="width: 150px" class="image" >
@@ -117,8 +123,8 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-xs-3 control-label">Datepicker</label>
-                            <div class="col-xs-9">
+                            <label class="col-md-3 control-label">Datepicker</label>
+                            <div class="col-md-9">
                                 <div class="input-group">
                                     <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
                                     <input type="text" class="form-control datepicker" value="2014-11-01">
@@ -127,15 +133,15 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-xs-3 control-label">Tags</label>
-                            <div class="col-xs-9">
+                            <label class="col-md-3 control-label">Tags</label>
+                            <div class="col-md-9">
                                 <input type="text" class="tagsinput" value="First,Second,Third"/>
                                 <span class="help-block">Default textarea field</span>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-xs-3 control-label" >有颜色的select</label>
-                            <div class="col-xs-9">
+                            <label class="col-md-3 control-label" >有颜色的select</label>
+                            <div class="col-md-9">
                                 <select class="form-control select" data-style="btn-success">
                                     <option value="1">Option 1</option>
                                     <option value="2">Option 2</option>
@@ -145,8 +151,8 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-xs-3 control-label">带搜索的select</label>
-                            <div class="col-xs-9">
+                            <label class="col-md-3 control-label">带搜索的select</label>
+                            <div class="col-md-9">
                                 <select class="form-control select"  data-live-search="true">
                                     <option value="1">Option 1</option>
                                     <option value="2">Option 2</option>
@@ -156,14 +162,15 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-xs-3 control-label">Checkbox</label>
-                            <div class="col-xs-9">
+                            <label class="col-md-3 control-label">Checkbox</label>
+                            <div class="col-md-9">
                                 <label class="check"><input type="checkbox" class="icheckbox" checked="checked"/> Checkbox title</label>
                                 <span class="help-block">Checkbox sample, easy to use</span>
                             </div>
                         </div>
                         <div class="form-group">
-                            <div class="col-md-5">
+                            <label class="col-md-3  control-label">菜单状态</label>
+                            <div class="col-md-9">
                                 <div class="input-group bootstrap-timepicker">
                                     <input type="text" class="form-control timepicker24">
                                     <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
@@ -190,5 +197,6 @@
     </div>
 
 </div>
-<script type="text/javascript" src="<?=Url::to('@web/alpha/js/demo_charts_morris.js')?>"></script>
+<script type="text/javascript" src="
+<?= Url::to('@web/alpha/js/demo_charts_morris.js')?>"></script>
 
