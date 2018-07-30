@@ -6,7 +6,7 @@
  * Time: 15:14
  */
 
-use common\helps\FormW;
+use common\helps\FormE;
 use yii\helpers\Url;
 
 ?>
@@ -19,19 +19,19 @@ use yii\helpers\Url;
                     <div class="form-group">
                         <label class="col-xs-3 control-label">头像</label>
                         <div class="col-xs-6">
-                            <?=FormW::SingleUpload('avatar',$avatar)?>
+                            <?=FormE::singleUpload('avatar',$avatar)?>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-xs-3 control-label">登录名</label>
                         <div class="col-xs-9">
-                            <?= FormW::Input('user_login',$user_login)?>
+                            <?= FormE::input('user_login',$user_login)?>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-xs-3 control-label">密码</label>
                         <div class="col-xs-9">
-                            <?= FormW::Input('user_pass',null,'password')?>
+                            <?= FormE::input('user_pass',null,'password')?>
                         </div>
                     </div>
                     <div class="form-group">

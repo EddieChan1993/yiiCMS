@@ -7,7 +7,7 @@
  */
 
 use backend\service\core\CurdService;
-use common\helps\FormW;
+use common\helps\FormE;
 use common\models\GamesInfo;
 use yii\helpers\Url;
 use yii\widgets\LinkPager;
@@ -104,13 +104,13 @@ $type =$get['condition']['type'];
                                         <div class="form-group">
                                             <label class="col-md-3 control-label">名称</label>
                                             <div class="col-md-9">
-                                                <?=FormW::Input('game_name')?>
+                                                <?=FormE::input('game_name')?>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-md-3 control-label">状态</label>
                                             <div class="col-md-9">
-                                                <?=FormW::Select('status',["正常","无效"])?>
+                                                <?=FormE::select('status',["正常","无效"])?>
                                             </div>
                                         </div>
                                     </div>

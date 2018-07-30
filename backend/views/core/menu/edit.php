@@ -1,5 +1,5 @@
 <?php
-use common\helps\FormW;
+use common\helps\FormE;
 use \yii\helpers\Url;
 ?>
 <!DOCTYPE html>
@@ -23,35 +23,35 @@ use \yii\helpers\Url;
                     <div class="form-group">
                         <label class="col-xs-3 control-label">菜单名称</label>
                         <div class="col-xs-9">
-                            <?=FormW::Input('name',$name)?>
+                            <?=FormE::input('name',$name)?>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-xs-3 control-label">@控制器/方法</label>
                         <div class="col-xs-9">
-                            <?=FormW::Input('controller',$controller)?>
+                            <?=FormE::input('controller',$controller)?>
                             <span class="help-block">【控制器】,若有子级菜单，则填default</span>
-                            <?=FormW::Input('method',$method)?>
+                            <?=FormE::input('method',$method)?>
                             <span class="help-block">【方法】，若有子级菜单，填写default</span>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-xs-3 control-label">菜单徽标</div>
                         <div class="col-xs-9">
-                            <?=FormW::Input('icon',$icon)?>
+                            <?=FormE::input('icon',$icon)?>
                             <span class="help-block">格式:<a target="_blank" class="label label-warning" href="http://www.bootcss.com/p/font-awesome/">地址</a></span>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-xs-3 control-label">备注</label>
                         <div class="col-xs-9 col-xs-12">
-                            <?=FormW::TextArea('remark',$remark)?>
+                            <?=FormE::textArea('remark',$remark)?>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-xs-3 control-label">菜单类型</label>
                         <div class="col-xs-9">
-                            <?=FormW::Select('type',["菜单","权限认证"],$type)?>
+                            <?=FormE::select('type',["菜单","权限认证"],$type)?>
 
                             <span class="help-block">【菜单】显示在左边栏的内容</span>
                             <span class="help-block">【权限认证】仅作为功能，不显示</span>

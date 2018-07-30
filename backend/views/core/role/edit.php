@@ -1,5 +1,5 @@
 <?php
-use common\helps\FormW;
+use common\helps\FormE;
 use \yii\helpers\Url;
 ?>
 <link rel="stylesheet" type="text/css" href="<?=Url::to('@web/alpha/plugins/check-tree/checktree.css')?>" xmlns: xmlns:/>
@@ -15,7 +15,7 @@ use \yii\helpers\Url;
                         <div class="col-xs-9">
                             <div class="input-group">
                                 <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
-                                <?=FormW::Input('name',$name)?>
+                                <?=FormE::input('name',$name)?>
                             </div>
                         </div>
                     </div>
@@ -32,7 +32,7 @@ use \yii\helpers\Url;
                     <div class="form-group">
                         <label class="col-xs-3 control-label">备注</label>
                         <div class="col-xs-9 col-xs-12">
-                            <?=FormW::TextArea('remark',$remark)?>
+                            <?=FormE::textArea('remark',$remark)?>
                         </div>
                     </div>
                     <div class="form-group">

@@ -6,7 +6,7 @@
  * Time: 15:35
  */
 
-use common\helps\FormW;
+use common\helps\FormE;
 use yii\helpers\Url;
 use yii\widgets\LinkPager;
 $title = $this->params['title'];
@@ -71,14 +71,14 @@ $tab_2 = $this->params['tab_2'];
                                             <div class="col-md-9">
                                                 <div class="input-group">
                                                     <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
-                                                    <?=FormW::Input('name')?>
+                                                    <?=FormE::input('name')?>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-md-3 control-label">备注</label>
                                             <div class="col-md-9 col-xs-12">
-                                                <?=FormW::TextArea('remark')?>
+                                                <?=FormE::textArea('remark')?>
                                             </div>
                                         </div>
                                         <div class="form-group">

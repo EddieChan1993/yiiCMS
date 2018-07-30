@@ -5,7 +5,7 @@
  * Date: 2018/4/17
  * Time: 19:45
  */
-use common\helps\FormW;
+use common\helps\FormE;
 use yii\helpers\Url;
 $title = $this->params['title'];
 $tab_1 = $this->params['tab_1'];
@@ -83,35 +83,35 @@ $tab_2 = $this->params['tab_2'];
                                         <div class="form-group">
                                             <label class="col-md-3 control-label">菜单名称</label>
                                             <div class="col-md-9">
-                                                <?=FormW::Input('name')?>
+                                                <?=FormE::input('name')?>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-md-3 control-label">@控制器/方法</label>
                                             <div class="col-md-9">
-                                                <?=FormW::Input('controller','default')?>
+                                                <?=FormE::input('controller','default')?>
                                                 <span class="help-block">【控制器】,若有子级菜单，则填default</span>
-                                                <?=FormW::Input('method','default')?>
+                                                <?=FormE::input('method','default')?>
                                                 <span class="help-block">【方法】，若有子级菜单，填写default</span>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <div class="col-md-3 control-label">菜单徽标</div>
                                             <div class="col-md-9">
-                                                <?=FormW::Input('icon')?>
+                                                <?=FormE::input('icon')?>
                                                 <span class="help-block">格式:<a target="_blank" class="label label-warning" href="http://www.bootcss.com/p/font-awesome/">地址</a></span>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-md-3 control-label">备注</label>
                                             <div class="col-md-9 col-xs-12">
-                                                <?=FormW::TextArea('remark')?>
+                                                <?=FormE::textArea('remark')?>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-md-3 control-label">菜单类型</label>
                                             <div class="col-md-9">
-                                                <?=FormW::Select('type',["菜单","权限认证"])?>
+                                                <?=FormE::select('type',["菜单","权限认证"])?>
                                                 <span class="help-block">【菜单】显示在左边栏的内容</span>
                                                 <span class="help-block">【权限认证】仅作为功能，不显示</span>
                                             </div>
