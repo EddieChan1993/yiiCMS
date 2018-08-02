@@ -30,16 +30,23 @@ class NewsService extends AuthService
             'time' => !empty($time) ? $time:date("Y-m-d H:i:s")  ,
         ];
     }
+
+    //发布通告
+    private static function pushMsg($mess)
+    {
+        array_push(self::$newsArr, self::getmessArr($mess));
+    }
+
+    /**************************************************/
     public static function getNews()
     {
         self::cdkInfo();
         Yii::$app->view->params['newsInfo']=self::$newsArr;
     }
-    //获取cdk信息
+
     private static function cdkInfo()
     {
-        array_push(self::$newsArr, self::getmessArr("hi"));
-        array_push(self::$newsArr, self::getmessArr("two"));
-        array_push(self::$newsArr, self::getmessArr("three"));
+        self::pushMsg("one");
+        self::pushMsg("two");
     }
 }

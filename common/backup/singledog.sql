@@ -43,7 +43,7 @@ CREATE TABLE `alpha_menu` (
   `name` varchar(50) CHARACTER SET utf8 NOT NULL COMMENT '菜单名称',
   `icon` varchar(50) CHARACTER SET utf8 DEFAULT NULL COMMENT '菜单图标',
   `remark` varchar(255) CHARACTER SET utf8 NOT NULL DEFAULT '' COMMENT '备注',
-  `listorder` smallint(6) unsigned NOT NULL DEFAULT '0' COMMENT '排序ID',
+  `listorder` smallint(6) NOT NULL DEFAULT '0' COMMENT '排序ID',
   `nav_list` varchar(255) CHARACTER SET utf8 DEFAULT '0' COMMENT '层级关系',
   PRIMARY KEY (`id`),
   KEY `status` (`status`),

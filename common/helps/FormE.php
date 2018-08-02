@@ -85,7 +85,7 @@ class FormE
         $str .= '<a class="gallery-item"  href="javascript:void(\'\')" title="点击上传" data-gallery>';
         $str .= '<div style="width: 120px" class="image">';
         $str .= sprintf('<input value="%s" hidden name="%s" type="text" id="%s">', $value,$formModelName,$key);
-        $str .= sprintf('<img src="%s" alt="Space picture 2"/>', is_img($value));
+        $str .= sprintf('<img src="%s" alt="图片"/>', is_img($value));
         $str .= '<ul class="gallery-item-controls">';
         $str .= sprintf('<li onclick="upload_single(\'%s\',\'%s\')"><i class="fa fa-cloud-upload"></i></li>',$key,$pathName);
 //        $str .= '<li onclick="del_pic(\'inp\')"><i class="fa fa-times"></i></li>';
