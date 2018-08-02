@@ -83,10 +83,11 @@ class CurdService extends AuthService
     /**
      * @param $data
      * @param string $filed 需要显示的字段
+     * @param null $orderBy
      * @return array
      * @throws \Exception
      */
-    public static function getDataList($data = null, $filed = "*")
+    public static function getDataList($data = null, $filed = "*",$orderBy = null)
     {
         if (empty(self::$model)) {
             throw new \Exception("模型没有指定");
@@ -126,8 +127,14 @@ class CurdService extends AuthService
             'defaultPageSize' => self::$pageLimit,
             'totalCount' => $countNums,
         ]);
-        $lists = $query->orderBy("$c_time_key desc")
-            ->asArray()
+
+        if (empty($orderBy)) {
+            $query->orderBy("$c_time_key desc");
+        } else {
+            $query->orderBy($orderBy);
+        }
+
+        $lists = $query->asArray()
             ->offset($pagination->offset)
             ->limit($pagination->limit)
             ->select($filed)
