@@ -55,6 +55,9 @@ $urlArr = Yii::$app->params['link'];
                     </a>
                 <?php }?>
             </div>
+            <div class="panel-footer text-center">
+                <span href="javascript:void(0)">所有通告</span>
+            </div>
         </div>
     </li>
     <?php }?>

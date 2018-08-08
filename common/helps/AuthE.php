@@ -17,6 +17,8 @@ use yii\web\Controller;
 
 class AuthE extends Controller
 {
+    private static $logName = 'auth';
+    private static $log;
     protected $_config = [
         'auth_on' => true,           // 认证开关
         'auth_open_id' => [1]            //不需要验证的id
@@ -24,6 +26,7 @@ class AuthE extends Controller
 
     public function __construct()
     {
+        self::$log = LogE::getNewInstance(self::$logName);
         $authParams = \Yii::$app->params['auth'];
         if (!empty($authParams)) {
             //可设置配置项 auth_config, 此配置项为数组。
@@ -89,6 +92,8 @@ class AuthE extends Controller
             if (!in_array($rule_id, $rules)) {
                 //该角色不包含该权限
                 throw new \Exception('无权操作【' . $rule_name . '】权限');
+            }else{
+                self::$log->info(sprintf("用户ID:%d,操作【%s】权限", $uid, $rule_name));
             }
         } else {
             //该角色所有权限被禁
