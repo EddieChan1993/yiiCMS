@@ -123,6 +123,15 @@ use yii\helpers\Url;
                             </div>
                         </div>
                         <div class="form-group">
+                            <label class="col-md-3 control-label">开始时间</label>
+                            <div class="col-md-9">
+                                <div class="input-group bootstrap-timepicker">
+                                    <input type="text" class="form-control timepicker24">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
                             <label class="col-md-3 control-label">Datepicker</label>
                             <div class="col-md-9">
                                 <div class="input-group">
