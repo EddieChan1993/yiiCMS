@@ -57,11 +57,11 @@ class FormE
      * @param bool $isSearch
      * @return string
      */
-    public static function select($key, $keyMapValue=[], $selected=null, $disabled=null, $dataStyle="btn-success", $isSearch=false)
+    public static function select($key, $keyMapValue=[], $selected=null, $dataStyle="btn-success", $isSearch=false)
     {
         $formModelName=CurdService::getModelNameForm();
         $formModelName = sprintf("%s[%s]", $formModelName, $key);
-        $str = sprintf('<select name="%s" %s class="form-control select" data-style="%s" data-live-search="%b">',$formModelName,$disabled,$dataStyle,$isSearch);
+        $str = sprintf('<select name="%s" class="form-control select" data-style="%s" data-live-search="%b">',$formModelName,$dataStyle,$isSearch);
         foreach ($keyMapValue as $k=>$v){
             $is_selected = is_selected($selected, $k);
             $str .= '<option '.$is_selected.' value="' . $k . '">'.$v.'</option>';

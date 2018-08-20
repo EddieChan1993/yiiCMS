@@ -14,10 +14,12 @@ use common\helps\AuthE;
 use common\helps\CookieE;
 use common\service\BaseService;
 use Yii;
+use yii\helpers\ArrayHelper;
 
 class AuthService extends BaseService
 {
     protected static $uid;
+    protected static $name;
     //登录验证
     public static function isLogin()
     {
@@ -28,6 +30,7 @@ class AuthService extends BaseService
                 $res=AlphaUsers::findOne($uid);
                 if ($res && $res->user_status != AlphaUsers::STOP) {
                     CookieE::setCookie("UID", set_secret($uid), 604800);
+                    self::$name = ArrayHelper::getValue($res, 'user_login');
                     self::$uid = $uid;
                     $flag = true;
                 }
