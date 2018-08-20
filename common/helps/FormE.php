@@ -52,6 +52,7 @@ class FormE
      * @param $key
      * @param array $keyMapValue
      * @param null $selected
+     * @param null $disabled
      * @param string $dataStyle
      * @param bool $isSearch
      * @return string
