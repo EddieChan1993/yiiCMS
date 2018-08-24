@@ -81,6 +81,7 @@ function edit_row(dom) {
         offset: '40px',
         // closeBtn: 0,
         area:'869px',
+        // area:['800px', '550px'],
         shadeClose: true,
         content: $(dom).attr('data-url'),
         success: function(layero, index) {

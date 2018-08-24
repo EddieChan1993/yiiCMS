@@ -141,7 +141,8 @@ $tab_2 = $this->params['tab_2'];
 </div>
 <script type="text/javascript">
     $('.demo1').dataTable({
-        order:[]
+        order:[],
+        "lengthMenu": [15]
     });
     function change_order(dom) {
         $.post($(dom).attr('data-url'),{
