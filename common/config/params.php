@@ -1,7 +1,6 @@
 <?php
 return [
     'obs-go' => "http://obs-go.qaqgame.com/huaWeiOBS",
-    'obs-host' => "https://obs.qaqgame.com",
     'oss_host' => "https://oss.qaqgame.com",
     'tencent_cos' => [
         "region" => "ap-shanghai",

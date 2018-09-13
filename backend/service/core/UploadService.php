@@ -32,7 +32,7 @@ class UploadService extends AuthService
                 throw new Exception("请先选择文件");
             }
             $forder = \Yii::$app->params['tencent_cos']['folder'];
-            $hostNew = \Yii::$app->params['oss_host'];
+//            $hostNew = \Yii::$app->params['oss_host'];
 
             $keyHead = $postData['path'];
             $fileType = get_extension($fileData['files']['name']);
@@ -42,7 +42,7 @@ class UploadService extends AuthService
 
             $instance = TencentCos::getInstance();
             $res = $instance::upload($key, $temp_name);
-            $res = self::changeHost($res, $hostNew);
+//            $res = self::changeHost($res, $hostNew);
             self::addImgLog(AlphaImgs::TencentCosType, $res, $fileSize);
 
             $flag = $res;
