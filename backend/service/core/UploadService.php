@@ -16,6 +16,7 @@ use yii\db\Exception;
 class UploadService extends AuthService
 {
     /**
+     * 腾讯云
      * @param $fileData
      * @param $postData
      * @return string
@@ -53,6 +54,13 @@ class UploadService extends AuthService
         return $flag;
     }
 
+    /**
+     * 华为云
+     * @param $fileData
+     * @param $postData
+     * @return string
+     * @throws Exception
+     */
     public static function obsUpload($fileData, $postData): string
     {
         $db = \Yii::$app->db;
