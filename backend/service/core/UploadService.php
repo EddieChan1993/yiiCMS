@@ -21,7 +21,7 @@ class UploadService extends AuthService
      * @return string
      * @throws Exception
      */
-    public static function tencentCos($fileData, $postData):string
+    public static function tencentCos($fileData, $postData): string
     {
         $db = \Yii::$app->db;
         $trans = $db->beginTransaction();
@@ -31,17 +31,18 @@ class UploadService extends AuthService
                 throw new Exception("请先选择文件");
             }
             $forder = \Yii::$app->params['tencent_cos']['folder'];
+            $hostNew = \Yii::$app->params['oss_host'];
 
             $keyHead = $postData['path'];
-            $fileType=get_extension($fileData['files']['name']);
+            $fileType = get_extension($fileData['files']['name']);
             $fileSize = $fileData['files']['size'];
-            $key = sprintf("%s/%s/%d%d.%s", $forder,$keyHead,time(),rand(1000,9999), $fileType);
+            $key = sprintf("%s/%s/%d%d.%s", $forder, $keyHead, time(), rand(1000, 9999), $fileType);
             $temp_name = $fileData['files']['tmp_name'];
 
             $instance = TencentCos::getInstance();
             $res = $instance::upload($key, $temp_name);
-            $res=self::changeHost($res);
-            self::addImgLog(AlphaImgs::TencentCosType, $res,$fileSize);
+            $res = self::changeHost($res, $hostNew);
+            self::addImgLog(AlphaImgs::TencentCosType, $res, $fileSize);
 
             $flag = $res;
             $trans->commit();
@@ -52,6 +53,46 @@ class UploadService extends AuthService
         return $flag;
     }
 
+    public static function obsUpload($fileData, $postData): string
+    {
+        $db = \Yii::$app->db;
+        $trans = $db->beginTransaction();
+        $flag = "";
+        try {
+            if (empty($fileData)) {
+                throw new Exception("请先选择文件");
+            }
+            $hostOBS = \Yii::$app->params['obs-go'];
+            $hostNew = \Yii::$app->params['obs-host'];
+
+            $forder = \Yii::$app->params['tencent_cos']['folder'];
+            $keyHead = $postData['path'];
+            $fileSize = $fileData['files']['size'];
+            $folders = sprintf("%s/%s", $forder, $keyHead);
+            $temp_name = $fileData['files']['tmp_name'];
+            $data = ['file' => new \CURLFile($temp_name,"",$fileData['files']['name']), 'folder' => $folders];
+            $resData = http_curl($hostOBS, $data);
+            if ($resData['error'] == 1) {
+                throw new \Exception($resData['data']);
+            }
+            $urlPath = $resData['data'];
+            $urlPath = self::changeHost($urlPath, $hostNew);
+            self::addImgLog(AlphaImgs::HUWeiOBSType, $urlPath, $fileSize);
+            $flag = $urlPath;
+            $trans->commit();
+        } catch (\Exception $e) {
+            $trans->rollBack();
+            self::setErr($e);
+        }
+        return $flag;
+    }
+
+    public static function curl_file_create($filename, $mimetype = '', $postname = '')
+    {
+        return "@$filename;filename="
+            . ($postname ?: basename($filename))
+            . ($mimetype ? ";type=$mimetype" : '');
+    }
     //添加到数据库
 
     /**
@@ -62,7 +103,7 @@ class UploadService extends AuthService
      */
     private static function addImgLog($type, $url, $size)
     {
-        $model=new AlphaImgs();
+        $model = new AlphaImgs();
         $model->img_size = getFileSize($size);
         $model->upload_date = time();
         $model->user_id = self::$uid;
@@ -75,14 +116,14 @@ class UploadService extends AuthService
     }
 
     /**
-     * 改变oss的host地址
+     * 改变host地址
      * @param $url
+     * @param $newUrl
      * @return string
      */
-    private static function changeHost($url)
+    private static function changeHost($url, $newUrl)
     {
-        $hostNew = \Yii::$app->params['oss_host'];
-        $path=get_url_param($url, 'path');
-        return sprintf("%s%s", $hostNew, $path);
+        $path = get_url_param($url, 'path');
+        return sprintf("%s%s", $newUrl, $path);
     }
 }

@@ -19,6 +19,7 @@ class AlphaImgs extends \yii\db\ActiveRecord
 {
     //文件保存的第三方位置
     const TencentCosType = 0;
+    const HUWeiOBSType = 1;
     /**
      * @inheritdoc
      */
@@ -29,6 +30,7 @@ class AlphaImgs extends \yii\db\ActiveRecord
 
     public static $uploadName = [
         self::TencentCosType => "腾讯COS",
+        self::HUWeiOBSType => "华为OBS",
     ];
     /**
      * @inheritdoc

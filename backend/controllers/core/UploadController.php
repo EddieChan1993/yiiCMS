@@ -29,7 +29,8 @@ class UploadController extends BaseController
         $file = $_FILES;
         $req = \Yii::$app->request;
         $postData=$req->post();
-        $res=UploadService::tencentCos($file,$postData);
+        $res = UploadService::obsUpload($file, $postData);
+//        $res=UploadService::tencentCos($file,$postData);
         if (empty($res)) {
             self::warning(UploadService::getErr());
         }

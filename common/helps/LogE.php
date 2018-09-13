@@ -20,7 +20,7 @@ class LogE
     private static $instance;
     private static $fileName;
     private static $maxFileSize = 2048;
-    private static $maxLogFiles = 1;
+    private static $maxLogFiles = 0;
 
 
     /**
