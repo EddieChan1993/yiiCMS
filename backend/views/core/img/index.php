@@ -1,4 +1,7 @@
 <?php
+
+use app\models\AlphaImgs;
+
 $panel_title = $this->params['panel_title'];
 ?>
 <div class="row animated fadeIn">
@@ -29,7 +32,7 @@ $panel_title = $this->params['panel_title'];
                         <tr class="del_tr">
                             <td style="background: url(<?=$v['img_path']?>);background-repeat: no-repeat;background-size: contain"></td>
                             <td><?=$v['img_size']?></td>
-                            <td><span class="label label-success"><?=\app\models\AlphaImgs::$uploadName[$v['type']]?></span></td>
+                            <td><?= AlphaImgs::showUpload($v['type'])?></td>
                             <td><?=tranTime($v['upload_date'])?></td>
                             <td><?=get_users($v['user_id'])?></td>
                             <td><?=$v['ip']?></td>
