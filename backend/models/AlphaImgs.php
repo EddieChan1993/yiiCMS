@@ -30,6 +30,18 @@ class AlphaImgs extends \yii\db\ActiveRecord
     public static $uploadName = [
         self::TencentCosType => "腾讯COS",
     ];
+
+    public static function showUpload($type)
+    {
+        switch ($type) {
+            case self::TencentCosType:
+                return "<span class='label label-success'>".self::$uploadName[$type]."</span>";
+                break;
+            default:
+                return "<span class='label label-danger'>非法状态".$type."</span>";
+                break;
+        }
+    }
     /**
      * @inheritdoc
      */
