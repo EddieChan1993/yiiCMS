@@ -95,15 +95,8 @@ class UploadService extends AuthService
         return $flag;
     }
 
-    public static function curl_file_create($filename, $mimetype = '', $postname = '')
-    {
-        return "@$filename;filename="
-            . ($postname ?: basename($filename))
-            . ($mimetype ? ";type=$mimetype" : '');
-    }
-    //添加到数据库
-
     /**
+     * 添加到数据库
      * @param $type
      * @param $url
      * @param $size
