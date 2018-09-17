@@ -70,8 +70,7 @@ class UploadService extends AuthService
             if (empty($fileData)) {
                 throw new Exception("请先选择文件");
             }
-            $hostOBS = \Yii::$app->params['obs-go'];
-            $hostNew = \Yii::$app->params['obs-host'];
+            $hostOBS = \Yii::$app->params['obs-host'];
 
             $forder = \Yii::$app->params['tencent_cos']['folder'];
             $keyHead = $postData['path'];
@@ -84,7 +83,6 @@ class UploadService extends AuthService
                 throw new \Exception($resData['data']);
             }
             $urlPath = $resData['data'];
-            $urlPath = self::changeHost($urlPath, $hostNew);
             self::addImgLog(AlphaImgs::HUWeiOBSType, $urlPath, $fileSize);
             $flag = $urlPath;
             $trans->commit();

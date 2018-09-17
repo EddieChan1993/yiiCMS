@@ -39,6 +39,9 @@ class AlphaImgs extends \yii\db\ActiveRecord
             case self::TencentCosType:
                 return "<span class='label label-success'>".self::$uploadName[$type]."</span>";
                 break;
+            case self::HUWeiOBSType:
+                return "<span class='label label-info'>".self::$uploadName[$type]."</span>";
+                break;
             default:
                 return "<span class='label label-danger'>非法状态".$type."</span>";
                 break;
